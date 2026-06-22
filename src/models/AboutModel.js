@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 
@@ -14,7 +14,7 @@ class AboutModel {
   static getTeam() {
     return [
       { name: 'ĐỨC ANH',  role: 'Founder & Lead Photographer', tag: 'Founder',  num: 'T1', photo: U('1487528001669-63c47a53fd39',400,533) },
-      { name: 'HẢI YẾN',  role: 'Wedding Photographer',        tag: 'Wedding',  num: 'T2', photo: U('1703118952348-24b89f059f7c',400,533) },
+      { name: 'HẢI YẾN',  role: 'Wedding Photographer',        tag: 'Wedding',  num: 'T2', photo: U('1573496359142-b8d87734a5a2',400,533) },
       { name: 'QUỐC BẢO', role: 'Fashion Photographer',        tag: 'Editorial',num: 'T3', photo: U('1609006998306-60b2fc4ba6a0',400,533) },
       { name: 'MAI CHI',  role: 'Retoucher & Studio Manager',  tag: 'Hậu kỳ',  num: 'T4', photo: U('1584016235603-290a5f94af4a',400,533) }
     ];
@@ -32,3 +32,4 @@ class AboutModel {
 }
 
 module.exports = AboutModel;
+

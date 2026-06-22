@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head><%- include('../partials/head') %></head>
 <body>
@@ -127,7 +127,7 @@
     <div class="blog-cats-grid stagger">
       <% [
         { id:'bts',      label:'Behind the Scenes', sub:'Hậu trường & quy trình',   photo:'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='bts').length },
-        { id:'tips',     label:'Tips & Tricks',     sub:'Kỹ thuật & kinh nghiệm',   photo:'https://images.unsplash.com/photo-1505780674400-60e4d324d370?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='tips').length },
+        { id:'tips',     label:'Tips & Tricks',     sub:'Kỹ thuật & kinh nghiệm',   photo:'https://images.unsplash.com/photo-1654512697681-8434b50096dd?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='tips').length },
         { id:'location', label:'Locations',         sub:'Địa điểm đẹp ít ai biết',  photo:'https://images.unsplash.com/photo-1690812063433-36b580074b8b?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='location').length }
       ].forEach(cat => { %>
       <a href="/blog?cat=<%= cat.id %>" class="blog-cat-card reveal">
@@ -184,3 +184,4 @@
 <script src="/js/script.js"></script>
 </body>
 </html>
+

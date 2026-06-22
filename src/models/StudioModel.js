@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 class StudioModel {
   static getInfo() {
@@ -29,8 +29,8 @@ class StudioModel {
   static getCategories() {
     return [
       { id: 'cuoi',        label: 'Cưới',        enLabel: 'Wedding',   sub: 'Wedding & Pre-wedding', num: 'FRAME 011', photo: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=1600&h=1000&fit=crop&auto=format&q=80', ar: '16/10', big: true  },
-      { id: 'thoitrang',   label: 'Thời trang',  enLabel: 'Fashion',   sub: 'Editorial',             num: '012',       photo: 'https://images.unsplash.com/photo-1662111456136-166d3ab54673?w=400&h=500&fit=crop&auto=format&q=80', ar: '4/5',   big: false },
-      { id: 'doanhnghiep', label: 'Doanh nghiệp',enLabel: 'Brand',     sub: 'Brand & Portrait',     num: '013',       photo: 'https://images.unsplash.com/photo-1664439709257-7d4dde51b775?w=400&h=500&fit=crop&auto=format&q=80', ar: '4/5',   big: false },
+      { id: 'thoitrang',   label: 'Thời trang',  enLabel: 'Fashion',   sub: 'Editorial',             num: '012',       photo: 'https://images.unsplash.com/photo-1608497275992-b04e06353862?w=400&h=500&fit=crop&auto=format&q=80', ar: '4/5',   big: false },
+      { id: 'doanhnghiep', label: 'Doanh nghiệp',enLabel: 'Brand',     sub: 'Brand & Portrait',     num: '013',       photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop&auto=format&q=80', ar: '4/5',   big: false },
       { id: 'doithuong',   label: 'Đời thường',  enLabel: 'Lifestyle', sub: 'Street & Lifestyle',    num: '014',       photo: 'https://images.unsplash.com/photo-1690812063433-36b580074b8b?w=400&h=500&fit=crop&auto=format&q=80', ar: '4/5',   big: false }
     ];
   }
@@ -56,3 +56,4 @@ class StudioModel {
 }
 
 module.exports = StudioModel;
+

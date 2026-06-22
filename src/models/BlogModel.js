@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 
@@ -87,7 +87,7 @@ class BlogModel {
         catId:    'bts',
         date:     '2026-02-18',
         readTime: 7,
-        photo:    U('1662111456136-166d3ab54673',1200,750),
+        photo:    U('1608497275992-b04e06353862',1200,750),
         content: `
           <p>Khi brand K— liên hệ với Lệch Studio vào tháng 11/2025, yêu cầu của họ rất đơn giản: "Chúng tôi muốn lookbook trông như tạp chí, không phải catalogue". Đó là bắt đầu của 3 tuần làm việc cùng nhau.</p>
           <h2>Tuần 1: Concept và mood board</h2>
@@ -122,3 +122,4 @@ class BlogModel {
 }
 
 module.exports = BlogModel;
+

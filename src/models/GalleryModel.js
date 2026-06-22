@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 
@@ -11,7 +11,7 @@ class GalleryModel {
       { id:  9, category: 'wedding', label: 'Tiệc cưới',  caption: 'Pháo giấy & nụ cười',          num: '109', photo: U('1532712938310-34cb3982ef74',500,400), ar: '5/4'  },
       { id: 13, category: 'wedding', label: 'Cưới',        caption: 'Hà & Minh — Đà Nẵng',         num: '113', photo: U('1537633552985-df8429e8048b',400,533), ar: '3/4'  },
       // Portrait
-      { id:  3, category: 'portrait', label: 'CEO',         caption: 'Chân dung lãnh đạo',          num: '103', photo: U('1703118952348-24b89f059f7c',400,400), ar: '1/1'  },
+      { id:  3, category: 'portrait', label: 'CEO',         caption: 'Chân dung lãnh đạo',          num: '103', photo: U('1573496359142-b8d87734a5a2',400,400), ar: '1/1'  },
       { id:  7, category: 'portrait', label: 'Family',      caption: 'Gia đình anh Tuấn',           num: '107', photo: U('1552699611-e2c208d5d9cf',400,400),   ar: '1/1'  },
       { id: 11, category: 'portrait', label: 'Cá nhân',    caption: 'Sài Gòn — Q.1 lúc 23h',       num: '111', photo: U('1487528001669-63c47a53fd39',400,500), ar: '4/5'  },
       { id: 14, category: 'portrait', label: 'Chân dung',  caption: 'Bộ ảnh nghệ sĩ Hà Nội',       num: '114', photo: U('1484515991647-c5760fcecfc7',400,500), ar: '4/5'  },
@@ -21,7 +21,7 @@ class GalleryModel {
       { id: 17, category: 'product',  label: 'Thời trang',  caption: 'Bộ sưu tập SS26',             num: '117', photo: U('1613506240218-738319838405',500,400), ar: '5/4'  },
       { id: 18, category: 'product',  label: 'Interior',    caption: 'Không gian văn phòng Q.2',    num: '118', photo: U('1631330612137-07b3a03f7cf1',400,400), ar: '1/1'  },
       // Commercial
-      { id:  2, category: 'commercial', label: 'Editorial',  caption: 'BST Thu Đông — Look 03',     num: '102', photo: U('1662111456136-166d3ab54673',400,533), ar: '3/4'  },
+      { id:  2, category: 'commercial', label: 'Editorial',  caption: 'BST Thu Đông — Look 03',     num: '102', photo: U('1608497275992-b04e06353862',400,533), ar: '3/4'  },
       { id:  6, category: 'commercial', label: 'Lookbook',   caption: 'Local brand — SS26',          num: '106', photo: U('1606221982782-407853fb4627',400,500), ar: '4/5'  },
       { id:  8, category: 'commercial', label: 'Đội ngũ',   caption: 'Văn phòng startup Q.2',       num: '108', photo: U('1630491198015-3d997fe8db72',400,533), ar: '3/4'  },
       { id: 12, category: 'commercial', label: 'Sự kiện',   caption: 'Hội nghị thường niên',         num: '112', photo: U('1675655588018-362521ece58d',400,400), ar: '1/1'  }
@@ -44,3 +44,4 @@ class GalleryModel {
 }
 
 module.exports = GalleryModel;
+

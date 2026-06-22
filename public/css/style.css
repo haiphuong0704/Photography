@@ -2864,7 +2864,7 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
   flex-wrap:wrap;
 }
 .bk-submit-title{
-  font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.0;
+  font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.2;
   color:var(--void);margin-bottom:12px;
 }
 .bk-submit-note {

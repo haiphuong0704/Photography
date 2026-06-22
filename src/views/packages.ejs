@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<!-- ============================================================
+     PAGE HERO  (background photo + stats panel)
+     ============================================================ -->
+<header class="page-hero pkg-hero">
+  <%/* Parallax bg photo */%>
+  <div class="pkg-hero-bg" aria-hidden="true">
+    <div class="pkg-hero-bg-img" style="background-image:url('https://picsum.photos/seed/pkg_hero_bg/1800/900')"></div>
+    <div class="pkg-hero-bg-grain"></div>
+  </div>
+
+  <div class="wrap pkg-hero-inner">
+    <div class="pkg-hero-text">
+      <span class="eyebrow">Dịch vụ & Định giá</span>
+      <h1 class="display page-hero-title reveal" data-chars>BẢNG GIÁ.</h1>
+      <p class="page-hero-sub reveal">Minh bạch — không phụ phí ẩn.<br>Chọn gói phù hợp, đặt lịch trong 2 phút.</p>
+      <div class="pkg-hero-meta mono reveal">
+        <span>03 gói dịch vụ</span>
+        <span class="pkg-hero-dot"></span>
+        <span>Sài Gòn · Hà Nội · Đà Nẵng</span>
+        <span class="pkg-hero-dot"></span>
+        <span>Tư vấn miễn phí</span>
+      </div>
+    </div>
+    <div class="pkg-hero-visual reveal">
+      <div class="pkg-hero-stat">
+        <span class="display pkg-hero-stat-val" data-target="86">0</span>
+        <span class="mono pkg-hero-stat-label">đám cưới</span>
+      </div>
+      <div class="pkg-hero-stat">
+        <span class="display pkg-hero-stat-val" data-target="230">0</span>
+        <span class="mono pkg-hero-stat-label">buổi chụp</span>
+      </div>
+      <div class="pkg-hero-stat">
+        <span class="display pkg-hero-stat-val" data-target="8">0</span>
+        <span class="mono pkg-hero-stat-label">năm kinh nghiệm</span>
+      </div>
+      <div class="pkg-hero-promise mono">
+        "Không phụ phí ẩn. Không bất ngờ."
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     QUY TRÌNH  (with step photos)
+     ============================================================ -->
+<section class="process-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Cách hoạt động</span>
+      <h2 class="display section-title">QUY TRÌNH<br>4 BƯỚC.</h2>
+    </div>
+    <div class="process-grid stagger">
+
+      <div class="process-step reveal">
+        <div class="frame process-frame">
+          <div class="frame-img" style="--ar:3/4;" data-photo="https://picsum.photos/seed/process_consult/400/533"></div>
+          <div class="frame-meta"><span>Tư vấn</span><span class="num">P01</span></div>
+        </div>
+        <span class="process-num mono">01</span>
+        <div class="process-body">
+          <h3 class="display process-title">TƯ VẤN</h3>
+          <p class="process-desc">Kể ý tưởng — chúng tôi tư vấn phong cách, địa điểm và gói phù hợp. Miễn phí, không ràng buộc.</p>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="frame process-frame">
+          <div class="frame-img" style="--ar:3/4;" data-photo="https://picsum.photos/seed/process_book/400/533"></div>
+          <div class="frame-meta"><span>Đặt lịch</span><span class="num">P02</span></div>
+        </div>
+        <span class="process-num mono">02</span>
+        <div class="process-body">
+          <h3 class="display process-title">ĐẶT LỊCH</h3>
+          <p class="process-desc">Xác nhận ngày, đặt cọc 50% qua chuyển khoản. Lịch được giữ ngay sau khi nhận cọc.</p>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="frame process-frame">
+          <div class="frame-img" style="--ar:3/4;" data-photo="https://picsum.photos/seed/process_shoot/400/533"></div>
+          <div class="frame-meta"><span>Buổi chụp</span><span class="num">P03</span></div>
+        </div>
+        <span class="process-num mono">03</span>
+        <div class="process-body">
+          <h3 class="display process-title">BUỔI CHỤP</h3>
+          <p class="process-desc">Chụp tự nhiên, không dàn dựng cứng nhắc. Chúng tôi dẫn dắt — bạn chỉ cần là chính mình.</p>
+        </div>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="frame process-frame">
+          <div class="frame-img" style="--ar:3/4;" data-photo="https://picsum.photos/seed/process_deliver/400/533"></div>
+          <div class="frame-meta"><span>Nhận ảnh</span><span class="num">P04</span></div>
+        </div>
+        <span class="process-num mono">04</span>
+        <div class="process-body">
+          <h3 class="display process-title">NHẬN ẢNH</h3>
+          <p class="process-desc">Ảnh chỉnh sửa giao qua Google Drive private. Đúng hạn, đúng phong cách đã thống nhất.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PACKAGES GRID
+     ============================================================ -->
+<section class="packages-section">
+  <div class="wrap">
+
+    <div class="packages-grid">
+      <% packages.forEach((pkg, i) => { %>
+      <div class="pkg-card reveal<%= pkg.highlighted ? ' pkg-card--highlight' : '' %> pkg-card--<%= pkg.id %>">
+
+        <div class="pkg-film-holes" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="pkg-inner">
+
+          <div class="pkg-num-row">
+            <span class="pkg-num mono">0<%= i+1 %> / 03</span>
+            <% if (pkg.highlighted) { %><span class="pkg-badge mono">★ ĐỀ XUẤT</span><% } %>
+          </div>
+
+          <div class="pkg-header">
+            <h2 class="display pkg-name"><%= pkg.name %></h2>
+            <p class="pkg-tagline mono"><%= pkg.tagline %></p>
+          </div>
+
+          <div class="pkg-specs">
+            <div class="pkg-spec">
+              <span class="pkg-spec-label mono">Thời gian</span>
+              <span class="pkg-spec-val"><%= pkg.duration %></span>
+            </div>
+            <div class="pkg-spec">
+              <span class="pkg-spec-label mono">Số ảnh</span>
+              <span class="pkg-spec-val"><%= pkg.photos %></span>
+            </div>
+            <div class="pkg-spec">
+              <span class="pkg-spec-label mono">Giao ảnh</span>
+              <span class="pkg-spec-val"><%= pkg.delivery.replace('Giao trong ','') %></span>
+            </div>
+          </div>
+
+          <div class="pkg-price-block">
+            <span class="pkg-price-val"><%= pkg.priceLabel %></span>
+            <span class="pkg-price-note mono">trọn gói</span>
+          </div>
+
+          <div class="pkg-rule"></div>
+
+          <ul class="pkg-features">
+            <% pkg.features.forEach(f => { %>
+            <li><span class="pkg-dot" aria-hidden="true"></span><%= f %></li>
+            <% }) %>
+          </ul>
+
+          <% if (pkg.extras.length) { %>
+          <div class="pkg-extras">
+            <% pkg.extras.forEach(e => { %>
+            <span class="mono pkg-extra-item">↳ <%= e %></span>
+            <% }) %>
+          </div>
+          <% } %>
+
+          <a href="/booking?package=<%= pkg.id %>"
+             class="btn<%= pkg.highlighted ? ' btn-volt' : ' btn-on-dark' %> pkg-cta">
+            <%= pkg.cta %> →
+          </a>
+
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- Who fits -->
+    <div class="who-fits reveal">
+      <div class="who-fits-label mono">Gói nào phù hợp với bạn?</div>
+      <div class="who-fits-grid">
+        <div class="who-fits-col">
+          <span class="who-fits-pkg mono">STANDARD</span>
+          <ul class="who-fits-list">
+            <li>Chân dung cá nhân</li>
+            <li>Sinh nhật / Kỷ niệm</li>
+            <li>Headshot doanh nghiệp</li>
+            <li>Lifestyle nhẹ nhàng</li>
+          </ul>
+        </div>
+        <div class="who-fits-col who-fits-col--mid">
+          <span class="who-fits-pkg mono">SIGNATURE ★</span>
+          <ul class="who-fits-list">
+            <li>Pre-wedding & Cưới nhỏ</li>
+            <li>Editorial / Thời trang</li>
+            <li>Brand photoshoot</li>
+            <li>Gia đình & Maternity</li>
+          </ul>
+        </div>
+        <div class="who-fits-col">
+          <span class="who-fits-pkg mono">PREMIUM</span>
+          <ul class="who-fits-list">
+            <li>Đám cưới toàn ngày</li>
+            <li>Commercial campaign</li>
+            <li>Sự kiện lớn</li>
+            <li>Full production</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add-ons menu -->
+    <div class="pkg-addons reveal">
+      <div class="pkg-addons-head">
+        <h3 class="display pkg-addons-title">DỊCH VỤ BỔ SUNG</h3>
+        <span class="mono pkg-addons-sub">Thêm vào bất kỳ gói nào</span>
+      </div>
+      <div class="pkg-menu">
+        <div class="pkg-menu-item">
+          <span class="pkg-menu-name mono">In ảnh thêm</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">200.000 ₫ / tấm (20×30)</span>
+        </div>
+        <div class="pkg-menu-item">
+          <span class="pkg-menu-name mono">Rush delivery</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">+500.000 ₫ (trong 48h)</span>
+        </div>
+        <div class="pkg-menu-item">
+          <span class="pkg-menu-name mono">Di chuyển ngoại thành</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">+300.000 – 800.000 ₫</span>
+        </div>
+        <div class="pkg-menu-item">
+          <span class="pkg-menu-name mono">Địa điểm thứ 3+</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">+500.000 ₫ / địa điểm</span>
+        </div>
+        <div class="pkg-menu-item pkg-menu-item--contact">
+          <span class="pkg-menu-name mono">Video highlight</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">Liên hệ báo giá</span>
+        </div>
+        <div class="pkg-menu-item pkg-menu-item--contact">
+          <span class="pkg-menu-name mono">Gói tùy chỉnh</span>
+          <span class="pkg-menu-dots" aria-hidden="true"></span>
+          <span class="pkg-menu-price">Liên hệ để thiết kế</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CAM KẾT
+     ============================================================ -->
+<section class="guarantee-section">
+  <div class="wrap">
+    <div class="guarantee-eyebrow mono reveal">Lệch Studio cam kết</div>
+    <div class="guarantee-grid stagger">
+      <div class="guarantee-item reveal">
+        <span class="guarantee-num mono">I</span>
+        <h3 class="display guarantee-title">MINH BẠCH GIÁ</h3>
+        <p class="guarantee-desc">Giá niêm yết là giá cuối. Không phụ phí ẩn, không bất ngờ sau buổi chụp.</p>
+      </div>
+      <div class="guarantee-item reveal">
+        <span class="guarantee-num mono">II</span>
+        <h3 class="display guarantee-title">ĐÚNG HẠN</h3>
+        <p class="guarantee-desc">Trễ giao ảnh quá 48h so với cam kết — hoàn 10% giá trị gói, không cần hỏi.</p>
+      </div>
+      <div class="guarantee-item reveal">
+        <span class="guarantee-num mono">III</span>
+        <h3 class="display guarantee-title">SỬA LẠI MIỄN PHÍ</h3>
+        <p class="guarantee-desc">1 lần chỉnh sửa màu sắc miễn phí trong 7 ngày sau khi nhận ảnh.</p>
+      </div>
+      <div class="guarantee-item reveal">
+        <span class="guarantee-num mono">IV</span>
+        <h3 class="display guarantee-title">TƯ VẤN MIỄN PHÍ</h3>
+        <p class="guarantee-desc">Chưa chắc về gói? Nhắn tin — Lệch Studio tư vấn trực tiếp không tính phí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FILM STRIP  (auto-scrolling contact sheet)
+     ============================================================ -->
+<div class="pkg-filmstrip" aria-hidden="true">
+  <div class="filmstrip-holes filmstrip-holes--top"></div>
+  <div class="filmstrip-track-wrap">
+    <div class="filmstrip-track" id="filmstrip-track">
+      <% [
+        {photo:'https://picsum.photos/seed/fs_wed1/400/300', label:'Wedding · 2026'},
+        {photo:'https://picsum.photos/seed/fs_pre1/400/300', label:'Pre-wedding'},
+        {photo:'https://picsum.photos/seed/fs_por1/400/300', label:'Portrait'},
+        {photo:'https://picsum.photos/seed/fs_fsh1/400/300', label:'Fashion'},
+        {photo:'https://picsum.photos/seed/fs_evt1/400/300', label:'Event'},
+        {photo:'https://picsum.photos/seed/fs_bts1/400/300', label:'BTS'},
+        {photo:'https://picsum.photos/seed/fs_str1/400/300', label:'Street'},
+        {photo:'https://picsum.photos/seed/fs_brn1/400/300', label:'Brand'},
+        {photo:'https://picsum.photos/seed/fs_wed2/400/300', label:'Wedding · HN'},
+        {photo:'https://picsum.photos/seed/fs_mat1/400/300', label:'Maternity'}
+      ].concat([
+        {photo:'https://picsum.photos/seed/fs_wed1/400/300', label:'Wedding · 2026'},
+        {photo:'https://picsum.photos/seed/fs_pre1/400/300', label:'Pre-wedding'},
+        {photo:'https://picsum.photos/seed/fs_por1/400/300', label:'Portrait'},
+        {photo:'https://picsum.photos/seed/fs_fsh1/400/300', label:'Fashion'},
+        {photo:'https://picsum.photos/seed/fs_evt1/400/300', label:'Event'},
+        {photo:'https://picsum.photos/seed/fs_bts1/400/300', label:'BTS'},
+        {photo:'https://picsum.photos/seed/fs_str1/400/300', label:'Street'},
+        {photo:'https://picsum.photos/seed/fs_brn1/400/300', label:'Brand'},
+        {photo:'https://picsum.photos/seed/fs_wed2/400/300', label:'Wedding · HN'},
+        {photo:'https://picsum.photos/seed/fs_mat1/400/300', label:'Maternity'}
+      ]).forEach((f,i) => { %>
+      <div class="filmstrip-frame">
+        <span class="filmstrip-frame-num mono"><%= String(i % 10 + 1).padStart(2,'0') %></span>
+        <div class="filmstrip-img" style="background-image:url('<%= f.photo %>')"></div>
+        <span class="filmstrip-label mono"><%= f.label %></span>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="filmstrip-holes filmstrip-holes--bot"></div>
+</div>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section-pad faq-section">
+  <div class="wrap faq-wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Câu hỏi thường gặp</span>
+      <h2 class="display section-title">FAQ.</h2>
+    </div>
+    <div class="faq-list">
+      <% const faqs = [
+        { q: 'Tôi cần đặt cọc bao nhiêu?',     a: '50% giá trị gói để xác nhận lịch. Phần còn lại thanh toán trước hoặc ngay sau buổi chụp.' },
+        { q: 'Nếu hủy lịch thì sao?',           a: 'Hủy trước 7 ngày — hoàn cọc 100%. Hủy trong 3–7 ngày — hoàn 50%. Hủy dưới 3 ngày — không hoàn cọc (trừ bất khả kháng).' },
+        { q: 'Bao lâu thì nhận được ảnh?',      a: 'Standard 10 ngày · Signature 7 ngày · Premium 5 ngày làm việc. Ảnh giao qua Google Drive private link.' },
+        { q: 'Tôi có được chọn ảnh không?',     a: 'Không — điều đó thường kéo dài thời gian và làm giảm chất lượng bộ ảnh. Lệch Studio chọn những tấm đẹp nhất đúng phong cách đã thống nhất.' },
+        { q: 'Có chụp ngoài Sài Gòn không?',   a: 'Có. Hà Nội và Đà Nẵng mỗi tháng 1–2 chuyến. Tỉnh khác liên hệ để biết lịch gần nhất.' },
+        { q: 'Định dạng ảnh giao là gì?',       a: 'File JPG độ phân giải cao (thường 4000px+), đã chỉnh màu hoàn chỉnh. Premium bao gồm file RAW theo yêu cầu.' }
+      ] %>
+      <% faqs.forEach((f, i) => { %>
+      <details class="faq-item reveal">
+        <summary class="faq-q">
+          <span class="faq-num mono">0<%= i+1 %></span>
+          <span class="faq-q-text"><%= f.q %></span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <p class="faq-a"><%= f.a %></p>
+      </details>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal">CÒN THẮC MẮC?<br>CỨ HỎI THẲNG.</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);">Lệch Studio trả lời trong 2 giờ trong giờ làm việc.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/booking" class="btn btn-on-dark">Đặt lịch ngay →</a>
+        <a href="/contact" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Nhắn tin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

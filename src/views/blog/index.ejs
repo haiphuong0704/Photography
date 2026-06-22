@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('../partials/head') %></head>
+<body>
+
+<%- include('../partials/loader') %>
+<%- include('../partials/nav') %>
+
+<!-- ============================================================
+     BLOG HERO  (magazine masthead style)
+     ============================================================ -->
+<header class="blog-hero">
+  <% if (posts[0]) { %>
+  <div class="blog-hero-bg" style="background-image:url('<%= posts[0].photo %>')"></div>
+  <% } %>
+  <div class="blog-hero-grain" aria-hidden="true"></div>
+  <div class="wrap blog-hero-inner">
+    <div class="blog-hero-top mono reveal">
+      <span class="blog-hero-issue">ISSUE 04 · THÁNG 5 / 2026</span>
+      <span class="blog-hero-edition">LỆCH STUDIO EDITORIAL</span>
+    </div>
+    <h1 class="display blog-hero-title reveal" data-chars>BLOG.</h1>
+    <p class="blog-hero-sub reveal">Behind the scenes — Tips nhiếp ảnh —<br>Những địa điểm ít ai biết.</p>
+    <div class="blog-hero-stats mono reveal">
+      <span><%= posts.length %> bài viết</span>
+      <span class="blog-hero-sep">·</span>
+      <span><%= categories.length - 1 %> chuyên mục</span>
+      <span class="blog-hero-sep">·</span>
+      <span>Cập nhật mỗi tuần</span>
+    </div>
+  </div>
+  <div class="blog-hero-scroll-hint mono" aria-hidden="true">CUỘN XUỐNG ↓</div>
+</header>
+
+<!-- ============================================================
+     FEATURED POST  (cinematic full-width, only on "all" view)
+     ============================================================ -->
+<% if (activeCategory === 'all' && posts.length > 0) { const feat = posts[0]; %>
+<a href="/blog/<%= feat.slug %>" class="blog-featured reveal">
+  <div class="blog-featured-bg" style="background-image:url('<%= feat.photo %>')"></div>
+  <div class="blog-featured-overlay"></div>
+  <div class="blog-featured-filmstrip" aria-hidden="true"></div>
+  <div class="wrap blog-featured-inner">
+    <div class="blog-featured-left">
+      <div class="blog-featured-label mono">
+        <span class="blog-featured-tag"><%= feat.category %></span>
+        <span class="blog-featured-sep">·</span>
+        <span><%= feat.date %></span>
+        <span class="blog-featured-sep">·</span>
+        <span><%= feat.readTime %> phút đọc</span>
+      </div>
+      <h2 class="display blog-featured-title"><%- feat.title %></h2>
+      <p class="blog-featured-excerpt"><%= feat.excerpt %></p>
+      <span class="blog-featured-read mono">Đọc bài → </span>
+    </div>
+    <div class="blog-featured-num mono" aria-hidden="true">01</div>
+  </div>
+</a>
+<% } %>
+
+<!-- ============================================================
+     FILTER BAR
+     ============================================================ -->
+<div class="blog-filter-bar">
+  <div class="wrap">
+    <nav class="blog-filter-nav">
+      <% categories.forEach(cat => { %>
+      <a href="/blog?cat=<%= cat.id %>"
+         class="blog-filter-btn mono<%= activeCategory === cat.id ? ' is-active' : '' %>">
+        <%= cat.label %>
+        <% const count = cat.id === 'all' ? posts.length : posts.filter(p=>p.catId===cat.id).length; %>
+        <span class="blog-filter-count"><%= count %></span>
+      </a>
+      <% }) %>
+    </nav>
+  </div>
+</div>
+
+<!-- ============================================================
+     POSTS GRID  (editorial mixed layout)
+     ============================================================ -->
+<section class="blog-index-section">
+  <div class="wrap">
+    <% const gridPosts = activeCategory === 'all' ? posts.slice(1) : posts; %>
+    <% if (posts.length === 0) { %>
+    <p style="color:var(--bone-dim);text-align:center;padding:80px 0;">Chưa có bài viết trong mục này.</p>
+    <% } else if (gridPosts.length === 0) { %>
+    <div style="text-align:center;padding:80px 0;">
+      <p style="color:var(--bone-dim);">Tất cả bài viết trong mục này đang được hiển thị ở trên.</p>
+      <a href="/blog" class="btn btn-ghost" style="margin-top:16px;">Xem tất cả →</a>
+    </div>
+    <% } else { %>
+    <div class="blog-index-grid stagger">
+      <% gridPosts.forEach((post, i) => { %>
+      <a href="/blog/<%= post.slug %>"
+         class="blog-card-v2 reveal<%= i === 0 ? ' blog-card-v2--wide' : '' %>">
+        <div class="blog-card-v2-img" style="background-image:url('<%= post.photo %>')">
+          <div class="blog-card-v2-img-overlay"></div>
+        </div>
+        <div class="blog-card-v2-body">
+          <div class="blog-card-v2-top">
+            <span class="blog-card-v2-num mono">0<%= i + (activeCategory === 'all' ? 2 : 1) %></span>
+            <span class="blog-card-v2-cat mono"><%= post.category %></span>
+          </div>
+          <h2 class="blog-card-v2-title"><%= post.title %></h2>
+          <p class="blog-card-v2-excerpt"><%= post.excerpt %></p>
+          <div class="blog-card-v2-footer">
+            <span class="mono blog-card-v2-date"><%= post.date %></span>
+            <span class="mono blog-card-v2-read"><%= post.readTime %> phút →</span>
+          </div>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORIES STRIP
+     ============================================================ -->
+<section class="blog-cats-section">
+  <div class="wrap">
+    <div class="blog-cats-head reveal">
+      <span class="eyebrow">Đọc theo chủ đề</span>
+    </div>
+    <div class="blog-cats-grid stagger">
+      <% [
+        { id:'bts',      label:'Behind the Scenes', sub:'Hậu trường & quy trình',   photo:'https://picsum.photos/seed/cat_bts/600/400',  count: posts.filter(p=>p.catId==='bts').length },
+        { id:'tips',     label:'Tips & Tricks',     sub:'Kỹ thuật & kinh nghiệm',   photo:'https://picsum.photos/seed/cat_tips/600/400', count: posts.filter(p=>p.catId==='tips').length },
+        { id:'location', label:'Locations',         sub:'Địa điểm đẹp ít ai biết',  photo:'https://picsum.photos/seed/cat_loc/600/400',  count: posts.filter(p=>p.catId==='location').length }
+      ].forEach(cat => { %>
+      <a href="/blog?cat=<%= cat.id %>" class="blog-cat-card reveal">
+        <div class="blog-cat-card-bg" style="background-image:url('<%= cat.photo %>')"></div>
+        <div class="blog-cat-card-overlay"></div>
+        <div class="blog-cat-card-body">
+          <span class="mono blog-cat-count"><%= cat.count %> bài</span>
+          <h3 class="display blog-cat-title"><%= cat.label %></h3>
+          <p class="mono blog-cat-sub"><%= cat.sub %></p>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MANIFESTO
+     ============================================================ -->
+<section class="blog-manifesto">
+  <span class="manifesto-bg-mark" aria-hidden="true">"</span>
+  <div class="wrap blog-manifesto-inner">
+    <div class="manifesto-label mono reveal">Triết lý nhiếp ảnh · Lệch Studio</div>
+    <blockquote class="manifesto-body">
+      <p class="manifesto-line reveal"><em>Mọi studio đều có công thức.</em></p>
+      <p class="manifesto-line manifesto-line--accent reveal">Lệch Studio không có.</p>
+      <p class="manifesto-line reveal"><em>Vì cảm xúc thật</em></p>
+      <p class="manifesto-line manifesto-line--accent reveal">không có công thức nào.</p>
+    </blockquote>
+    <div class="manifesto-footer reveal">
+      <span class="manifesto-rule" aria-hidden="true"></span>
+      <cite class="mono manifesto-cite">— Lệch Studio · Sài Gòn · est. 2018</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BAND
+     ============================================================ -->
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/booking" class="btn btn-on-dark">Đặt lịch ngay →</a>
+        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('../partials/head') %></head>
+<body>
+
+<%- include('../partials/nav') %>
+
+<main class="portal-login-page">
+  <div class="portal-login-card">
+    <a href="/" class="nav-logo portal-logo">Lệch.</a>
+    <span class="eyebrow" style="display:block;margin:12px 0 4px;">Gallery riêng tư</span>
+    <h1 class="display portal-login-title">CLIENT<br>PORTAL.</h1>
+    <p class="portal-login-sub">Nhập mã truy cập được gửi kèm trong email giao ảnh của bạn.</p>
+
+    <% if (error === 'invalid') { %>
+    <div class="portal-error mono">Mã không đúng — thử lại hoặc liên hệ Lệch Studio.</div>
+    <% } %>
+
+    <form class="portal-form" action="/portal/login" method="POST">
+      <div class="booking-field">
+        <label for="code" class="mono">Mã truy cập</label>
+        <input type="text" id="code" name="code" required
+          placeholder="XXXXXX26"
+          autocomplete="off"
+          style="text-transform:uppercase;letter-spacing:.15em;">
+      </div>
+      <button type="submit" class="btn btn-fill portal-submit">Xem Gallery →</button>
+    </form>
+
+    <p class="portal-help mono">Không có mã? <a href="/contact">Liên hệ chúng tôi</a></p>
+  </div>
+</main>
+
+<%- include('../partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

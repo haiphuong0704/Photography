@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<!-- ---------- HERO ---------- -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <span class="eyebrow"
+            data-vi="Studio nhiếp ảnh — Sài Gòn"
+            data-en="Photography Studio — Saigon">Studio nhiếp ảnh — Sài Gòn</span>
+      <h1 class="display hero-title">
+        <span class="tilt-2" style="display:block;" data-chars>ẢNH KHÔNG</span>
+        <span class="tilt-1" style="display:block;color:var(--rust);" data-chars>THEO KHUÔN.</span>
+      </h1>
+      <p class="hero-sub"
+         data-vi="Lệch Studio chụp những khoảnh khắc thật — không dàn dựng giả tạo, không công thức rập khuôn. Cưới, thời trang, doanh nghiệp, đời thường: mỗi khung hình là một góc nhìn riêng."
+         data-en="Lệch Studio captures real moments — no fake staging, no cookie-cutter formulas. Wedding, fashion, brand, lifestyle: every frame is a perspective of its own.">Lệch Studio chụp những khoảnh khắc thật — không dàn dựng giả tạo, không công thức rập khuôn. Cưới, thời trang, doanh nghiệp, đời thường: mỗi khung hình là một góc nhìn riêng.</p>
+      <div class="hero-cta">
+        <a href="/packages" class="btn btn-volt"
+           data-vi="Xem bảng giá" data-en="See pricing">Xem bảng giá</a>
+        <a href="/booking"  class="btn btn-on-dark"
+           data-vi="Đặt lịch chụp →" data-en="Book a session →">Đặt lịch chụp →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="frame frame-hero">
+        <div class="frame-strip">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="frame-img" style="--ar:4/5;" data-photo="<%= heroPhotos.main.photo %>">
+          <span class="frame-tag">SG<br>2026</span>
+        </div>
+        <div class="frame-meta">
+          <span>F/1.4 — 1/320 — ISO 200</span>
+          <span class="num">FRAME 001</span>
+        </div>
+      </div>
+      <div class="frame frame-hero-small">
+        <div class="frame-img" style="--ar:<%= heroPhotos.small.ar %>;" data-photo="<%= heroPhotos.small.photo %>"></div>
+        <div class="frame-meta">
+          <span>F/2.8 — 1/200</span>
+          <span class="num">002</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>KHÔNG TEMPLATE</span><span>KHÔNG DÀN DỰNG GIẢ TẠO</span><span>CHỈ CÓ KHOẢNH KHẮC THẬT</span><span>SÀI GÒN — HÀ NỘI — ĐÀ NẴNG</span>
+    <span>KHÔNG TEMPLATE</span><span>KHÔNG DÀN DỰNG GIẢ TẠO</span><span>CHỈ CÓ KHOẢNH KHẮC THẬT</span><span>SÀI GÒN — HÀ NỘI — ĐÀ NẴNG</span>
+  </div>
+</div>
+
+<!-- ---------- CHUYÊN MÔN ---------- -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"
+            data-vi="04 chuyên môn"
+            data-en="04 specialties">04 chuyên môn</span>
+      <h2 class="display section-title"
+          data-vi="CHỤP GÌ<br>CŨNG LỆCH GU."
+          data-en="EVERY SHOT<br>DISTINCTLY LỆCH.">CHỤP GÌ<br>CŨNG LỆCH GU.</h2>
+    </div>
+    <div class="cat-grid stagger">
+      <% categories.forEach(cat => { %>
+      <a href="/portfolio#<%= cat.id %>" class="frame reveal<%= cat.big ? ' cat-big' : '' %>">
+        <div class="frame-img" style="--ar:<%= cat.ar %>;" data-photo="<%= cat.photo %>">
+          <span class="frame-tag"
+                data-vi="<%= cat.label %>"
+                data-en="<%= cat.enLabel || cat.label %>"><%= cat.label %></span>
+        </div>
+        <div class="frame-meta">
+          <span><%= cat.sub %></span>
+          <span class="num"><%= cat.num %></span>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- SELECTED WORK ---------- -->
+<section class="section-pad work-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"
+            data-vi="Tuyển chọn"
+            data-en="Selected">Tuyển chọn</span>
+      <h2 class="display section-title"
+          data-vi="CONTACT SHEET<br>GẦN ĐÂY."
+          data-en="CONTACT SHEET<br>RECENT.">CONTACT SHEET<br>GẦN ĐÂY.</h2>
+    </div>
+    <div class="work-mosaic">
+      <% recentWork.forEach(item => { %>
+      <div class="frame reveal <%= item.cls %>">
+        <div class="frame-img" style="--ar:<%= item.ar %>;" data-photo="<%= item.photo %>">
+          <span class="frame-tag"><%= item.tag %></span>
+        </div>
+        <div class="frame-meta">
+          <span><%= item.caption %></span>
+          <span class="num"><%= item.num %></span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+    <div class="reveal" style="margin-top:36px;">
+      <a href="/gallery" class="btn btn-volt"
+         data-vi="Xem toàn bộ Gallery →"
+         data-en="View full Gallery →">Xem toàn bộ Gallery →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- STATS ---------- -->
+<section class="stats-strip">
+  <div class="wrap stats-grid stagger">
+    <% stats.forEach(s => { %>
+    <div class="stat reveal">
+      <span class="display"><%= s.value %></span>
+      <span class="mono"
+            data-vi="<%= s.label %>"
+            data-en="<%= s.enLabel || s.label %>"><%= s.label %></span>
+    </div>
+    <% }) %>
+  </div>
+</section>
+
+<!-- ---------- VIDEO REEL ---------- -->
+<section class="reel-section">
+  <div class="reel-wrapper">
+    <% if (showreel.youtubeId) { %>
+      <iframe class="reel-video reel-iframe"
+        src="https://www.youtube.com/embed/<%= showreel.youtubeId %>?autoplay=1&mute=1&loop=1&playlist=<%= showreel.youtubeId %>&controls=0&rel=0&playsinline=1"
+        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <% } else if (showreel.vimeoId) { %>
+      <iframe class="reel-video reel-iframe"
+        src="https://player.vimeo.com/video/<%= showreel.vimeoId %>?autoplay=1&muted=1&loop=1&background=1"
+        frameborder="0" allow="autoplay; fullscreen"></iframe>
+    <% } else { %>
+      <video class="reel-video" autoplay muted loop playsinline></video>
+    <% } %>
+    <div class="reel-gradient"></div>
+    <div class="reel-scanlines"></div>
+    <div class="reel-overlay">
+      <div class="wrap reel-overlay-grid">
+        <div class="reel-content">
+          <div class="reel-meta-bar mono reveal">
+            <span>Lệch Studio</span>
+            <span class="reel-meta-dot"></span>
+            <span data-vi="Sài Gòn" data-en="Saigon">Sài Gòn</span>
+            <span class="reel-meta-dot"></span>
+            <span>2026</span>
+          </div>
+          <h2 class="display reel-title reveal">
+            <span data-vi="CHÚNG TÔI" data-en="WE">CHÚNG TÔI</span><br>
+            <span data-vi="CHỤP." data-en="SHOOT.">CHỤP.</span><br>
+            <span style="color:var(--volt);" data-vi="BẠN CẢM." data-en="YOU FEEL.">BẠN CẢM.</span>
+          </h2>
+          <p class="reel-sub reveal"
+             data-vi="Đặt lịch ngay — Sài Gòn, Hà Nội, Đà Nẵng.<br>Chúng tôi di chuyển, không bạn."
+             data-en="Book now — Saigon, Hanoi, Da Nang.<br>We travel to you, not the other way.">Đặt lịch ngay — Sài Gòn, Hà Nội, Đà Nẵng.<br>Chúng tôi di chuyển, không bạn.</p>
+          <a href="/booking" class="btn btn-on-dark reveal"
+             data-vi="Đặt lịch chụp →"
+             data-en="Book a session →">Đặt lịch chụp →</a>
+        </div>
+        <div class="reel-side-frames reveal">
+          <div class="frame reel-frame-a">
+            <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
+            <div class="frame-img" style="--ar:4/5;" data-photo="https://picsum.photos/seed/reel_a/400/500">
+              <span class="frame-tag">F/1.4<br>1/320</span>
+            </div>
+            <div class="frame-meta">
+              <span>ISO 200 · <span data-vi="SÀI GÒN" data-en="SAIGON">SÀI GÒN</span></span>
+              <span class="num">021</span>
+            </div>
+          </div>
+          <div class="frame reel-frame-b">
+            <div class="frame-img" style="--ar:1/1;" data-photo="https://picsum.photos/seed/reel_b/300/300"></div>
+            <div class="frame-meta">
+              <span>F/2.8 · 1/200</span>
+              <span class="num">022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reel-counter mono">SG — 2026 // FRAME 001</div>
+    <div class="reel-film-top"></div>
+  </div>
+</section>
+
+<!-- ---------- QUOTE ---------- -->
+<section class="quote-section">
+  <span class="quote-bg-mark" aria-hidden="true">"</span>
+  <div class="wrap quote-grid">
+    <div class="quote-inner reveal">
+      <p class="quote-text display"><%- quote.text %></p>
+      <div class="quote-credit">
+        <div class="quote-credit-info">
+          <span class="quote-credit-name"><%= quote.author %></span>
+          <span class="mono quote-credit-role"
+                data-vi="<%= quote.role %>"
+                data-en="Bride"><%= quote.role %></span>
+        </div>
+        <span class="quote-credit-sep" aria-hidden="true"></span>
+        <span class="mono quote-credit-context"><%= quote.context %></span>
+      </div>
+    </div>
+    <div class="quote-visual reveal">
+      <div class="frame quote-frame-main">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:4/5;" data-photo="https://picsum.photos/seed/wedding_bride/400/500">
+          <span class="frame-tag">Minh Anh<br>03/2026</span>
+        </div>
+        <div class="frame-meta">
+          <span>F/1.4 — 1/320 — ISO 400</span>
+          <span class="num">FRAME 027</span>
+        </div>
+      </div>
+      <div class="frame quote-frame-small">
+        <div class="frame-img" style="--ar:3/2;" data-photo="https://picsum.photos/seed/wedding_detail/300/200"></div>
+        <div class="frame-meta">
+          <span>Detail shot</span>
+          <span class="num">028</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- BLOG PREVIEW ---------- -->
+<% if (recentPosts && recentPosts.length) { %>
+<section class="section-pad blog-preview-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"
+            data-vi="Câu chuyện sau ống kính"
+            data-en="Stories behind the lens">Câu chuyện sau ống kính</span>
+      <h2 class="display section-title">BLOG &<br>BTS.</h2>
+    </div>
+    <div class="blog-preview-grid stagger">
+      <% recentPosts.forEach((post, i) => { %>
+      <a href="/blog/<%= post.slug %>" class="blog-card reveal<%= i === 0 ? ' blog-card--featured' : '' %>">
+        <div class="blog-card-img" style="background-image:url('<%= post.photo %>')">
+          <div class="blog-card-img-overlay"></div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-top">
+            <span class="blog-card-num mono">0<%= i+1 %></span>
+            <span class="blog-card-cat mono"><%= post.category %></span>
+          </div>
+          <h3 class="blog-card-title"><%= post.title %></h3>
+          <% if (i === 0) { %>
+          <p class="blog-card-excerpt"><%= post.excerpt %></p>
+          <% } %>
+          <span class="blog-card-read mono"><%= post.readTime %> <span data-vi="phút đọc →" data-en="min read →">phút đọc →</span></span>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+    <div class="reveal" style="margin-top:36px;">
+      <a href="/blog" class="btn btn-on-dark"
+         data-vi="Đọc thêm bài viết →"
+         data-en="Read more →">Đọc thêm bài viết →</a>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<!-- ---------- CTA ---------- -->
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal"
+        data-vi="SẴN SÀNG CÓ<br>KHUNG HÌNH<br>CỦA RIÊNG BẠN?"
+        data-en="READY FOR<br>YOUR OWN<br>FRAME?">SẴN SÀNG CÓ<br>KHUNG HÌNH<br>CỦA RIÊNG BẠN?</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);"
+         data-vi="Chọn gói phù hợp, đặt lịch online — Lệch Studio sẽ liên hệ trong 24 giờ."
+         data-en="Choose your package, book online — Lệch Studio will follow up within 24 hours.">Chọn gói phù hợp, đặt lịch online — Lệch Studio sẽ liên hệ trong 24 giờ.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/packages" class="btn btn-on-dark"
+           data-vi="Xem bảng giá" data-en="See pricing">Xem bảng giá</a>
+        <a href="/booking"  class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);"
+           data-vi="Đặt lịch ngay →" data-en="Book now →">Đặt lịch ngay →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

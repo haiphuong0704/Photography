@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<% if (success) { %>
+<!-- ============================================================
+     SUCCESS STATE
+     ============================================================ -->
+<section class="bk-success">
+  <div class="wrap bk-success-inner">
+    <div class="bk-success-check reveal" aria-hidden="true">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1 class="display bk-success-title reveal">ĐÃ NHẬN<br>YÊU CẦU.</h1>
+    <p class="bk-success-sub reveal">Lệch Studio sẽ liên hệ lại trong vòng <strong>24 giờ</strong> để xác nhận lịch và gửi invoice.</p>
+    <div class="bk-success-links reveal">
+      <a href="/" class="btn btn-on-dark">Về trang chủ</a>
+      <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+    </div>
+    <span class="mono bk-success-note">Kiểm tra hộp thư — xác nhận sẽ được gửi tới email của bạn.</span>
+  </div>
+</section>
+
+<% } else { %>
+
+<!-- ============================================================
+     HERO  — split layout
+     ============================================================ -->
+<header class="bk-hero">
+  <div class="bk-hero-bg" aria-hidden="true"></div>
+  <div class="wrap bk-hero-inner">
+
+    <div class="bk-hero-text">
+      <span class="mono bk-hero-eyebrow reveal">Lệch Studio · Đặt lịch</span>
+      <h1 class="display bk-hero-title reveal" data-chars>ĐẶT<br>LỊCH.</h1>
+      <p class="bk-hero-sub reveal">Điền form — nhận xác nhận trong 24 giờ.<br>Không cần đặt cọc để giữ slot.</p>
+      <div class="bk-hero-facts reveal">
+        <div class="bk-fact"><span class="display bk-fact-num">24h</span><span class="mono">xác nhận</span></div>
+        <div class="bk-fact-sep" aria-hidden="true"></div>
+        <div class="bk-fact"><span class="display bk-fact-num">3</span><span class="mono">gói chụp</span></div>
+        <div class="bk-fact-sep" aria-hidden="true"></div>
+        <div class="bk-fact"><span class="display bk-fact-num">0₫</span><span class="mono">đặt cọc</span></div>
+      </div>
+    </div>
+
+    <div class="bk-hero-visual reveal">
+      <div class="frame bk-frame-main">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:4/5;" data-photo="https://picsum.photos/seed/bk_hero1/400/500">
+          <span class="frame-tag">Booking<br>2026</span>
+        </div>
+        <div class="frame-meta"><span>Sài Gòn</span><span class="num">B01</span></div>
+      </div>
+      <div class="frame bk-frame-small">
+        <div class="frame-img" style="--ar:3/2;" data-photo="https://picsum.photos/seed/bk_hero2/400/267"></div>
+        <div class="frame-meta"><span>Studio Q.1</span><span class="num">B02</span></div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============================================================
+     PROCESS STRIP  — 4 bước
+     ============================================================ -->
+<div class="bk-process">
+  <div class="wrap bk-process-inner">
+    <% [
+      { n:'01', title:'Điền form',   desc:'Chọn gói & điền thông tin' },
+      { n:'02', title:'Xác nhận',   desc:'Lệch liên hệ trong 24 giờ' },
+      { n:'03', title:'Buổi chụp',  desc:'Gặp nhau, chụp, tạo ra ảnh' },
+      { n:'04', title:'Nhận ảnh',   desc:'Giao file chỉnh sửa hoàn chỉnh' }
+    ].forEach((s, i) => { %>
+    <div class="bk-proc-step reveal">
+      <span class="mono bk-proc-num"><%= s.n %></span>
+      <div class="bk-proc-arrow" aria-hidden="true"></div>
+      <h3 class="display bk-proc-title"><%= s.title %></h3>
+      <p class="bk-proc-desc"><%= s.desc %></p>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<!-- ============================================================
+     FORM
+     ============================================================ -->
+<section class="bk-form-section">
+  <div class="wrap bk-form-wrap">
+    <form class="bk-form" action="/booking" method="POST" id="bk-form">
+
+      <!-- ── 01: Package ── -->
+      <div class="bk-step reveal">
+        <div class="bk-step-head">
+          <span class="bk-step-num mono">01</span>
+          <div>
+            <h2 class="display bk-step-title">Chọn gói</h2>
+            <p class="bk-step-hint">Bạn có thể đổi gói sau khi chúng tôi liên hệ.</p>
+          </div>
+        </div>
+        <div class="bk-pkg-grid">
+          <% packages.forEach((pkg, i) => { %>
+          <label class="bk-pkg-card<%= pkg.highlighted ? ' bk-pkg-card--hot' : '' %>">
+            <input type="radio" name="package" value="<%= pkg.id %>"
+              <%= prefPackage === pkg.id ? 'checked' : (prefPackage === '' && pkg.highlighted ? 'checked' : '') %>>
+            <div class="bk-pkg-inner">
+              <% if (pkg.highlighted) { %><span class="bk-pkg-badge mono">Đề xuất</span><% } %>
+              <span class="mono bk-pkg-index">0<%= i+1 %></span>
+              <h3 class="display bk-pkg-name"><%= pkg.name %></h3>
+              <p class="bk-pkg-price"><%= pkg.priceLabel %></p>
+              <div class="bk-pkg-specs">
+                <span><%= pkg.duration %></span>
+                <span class="bk-pkg-dot">·</span>
+                <span><%= pkg.photos %></span>
+                <span class="bk-pkg-dot">·</span>
+                <span><%= pkg.delivery %></span>
+              </div>
+              <div class="bk-pkg-check" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+            </div>
+          </label>
+          <% }) %>
+        </div>
+      </div>
+
+      <!-- ── 02: Session + Date ── -->
+      <div class="bk-step reveal">
+        <div class="bk-step-head">
+          <span class="bk-step-num mono">02</span>
+          <div>
+            <h2 class="display bk-step-title">Loại & Ngày</h2>
+            <p class="bk-step-hint">Đề xuất ngày dự phòng trong phần ghi chú nếu cần.</p>
+          </div>
+        </div>
+        <div class="bk-fields-row">
+          <div class="bk-field">
+            <label for="session_type">Loại buổi chụp <span class="req">*</span></label>
+            <select id="session_type" name="session_type" required>
+              <option value="" disabled selected>Chọn loại...</option>
+              <% sessionTypes.forEach(t => { %><option value="<%= t %>"><%= t %></option><% }) %>
+            </select>
+          </div>
+          <div class="bk-field">
+            <label for="preferred_date">Ngày mong muốn <span class="req">*</span></label>
+            <input type="date" id="preferred_date" name="preferred_date" required
+              min="<%= new Date(Date.now() + 86400000*3).toISOString().split('T')[0] %>">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 03: Location ── -->
+      <div class="bk-step reveal">
+        <div class="bk-step-head">
+          <span class="bk-step-num mono">03</span>
+          <div>
+            <h2 class="display bk-step-title">Địa điểm</h2>
+            <p class="bk-step-hint">Chụp ngoại thành có phụ phí di chuyển từ 300.000 ₫.</p>
+          </div>
+        </div>
+        <div class="bk-fields-row">
+          <div class="bk-field">
+            <label for="city">Thành phố <span class="req">*</span></label>
+            <select id="city" name="city" required>
+              <option value="" disabled selected>Chọn thành phố...</option>
+              <option>TP. Hồ Chí Minh</option>
+              <option>Hà Nội</option>
+              <option>Đà Nẵng</option>
+              <option>Đà Lạt</option>
+              <option>Khác (ghi rõ bên dưới)</option>
+            </select>
+          </div>
+          <div class="bk-field">
+            <label for="location_detail">Địa điểm cụ thể</label>
+            <input type="text" id="location_detail" name="location_detail"
+              placeholder="Công viên, studio, địa chỉ...">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 04: Contact ── -->
+      <div class="bk-step reveal">
+        <div class="bk-step-head">
+          <span class="bk-step-num mono">04</span>
+          <div>
+            <h2 class="display bk-step-title">Liên hệ</h2>
+            <p class="bk-step-hint">Thông tin chỉ dùng để xác nhận lịch — không spam.</p>
+          </div>
+        </div>
+        <div class="bk-fields-row">
+          <div class="bk-field">
+            <label for="name">Họ & Tên <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="bk-field">
+            <label for="phone">Số điện thoại <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="09x xxx xxxx">
+          </div>
+        </div>
+        <div class="bk-fields-row">
+          <div class="bk-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@example.com">
+          </div>
+          <div class="bk-field">
+            <label for="instagram">Instagram</label>
+            <input type="text" id="instagram" name="instagram" placeholder="@username">
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 05: Notes ── -->
+      <div class="bk-step reveal">
+        <div class="bk-step-head">
+          <span class="bk-step-num mono">05</span>
+          <div>
+            <h2 class="display bk-step-title">Ghi chú</h2>
+            <p class="bk-step-hint">Concept, trang phục, số người, yêu cầu riêng...</p>
+          </div>
+        </div>
+        <textarea name="notes" rows="5" class="bk-textarea"
+          placeholder="Ví dụ: Tôi muốn chụp ngoài trời buổi chiều, mặc áo dài trắng, 2 người. Nếu có thể muốn thêm 1 địa điểm với bối cảnh đô thị..."></textarea>
+      </div>
+
+      <!-- ── Submit ── -->
+      <div class="bk-submit-zone reveal">
+        <div class="bk-submit-inner">
+          <div class="bk-submit-text">
+            <h3 class="display bk-submit-title">Sẵn sàng<br>rồi chứ?</h3>
+            <p class="mono bk-submit-note">Lệch Studio xác nhận trong <strong>24 giờ</strong>.<br>Không đặt cọc — không ràng buộc.</p>
+          </div>
+          <button type="submit" class="btn btn-volt bk-submit-btn">
+            Gửi yêu cầu đặt lịch →
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<% } %>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+<script>
+// Highlight selected package card
+(function(){
+  document.querySelectorAll('.bk-pkg-card input[type=radio]').forEach(function(r){
+    r.addEventListener('change', function(){
+      document.querySelectorAll('.bk-pkg-card').forEach(function(c){ c.classList.remove('is-selected'); });
+      r.closest('.bk-pkg-card').classList.add('is-selected');
+    });
+    if(r.checked) r.closest('.bk-pkg-card').classList.add('is-selected');
+  });
+})();
+</script>
+</body>
+</html>

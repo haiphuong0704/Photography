@@ -1,0 +1,70 @@
+<!-- ── Back to top ── -->
+<button class="back-to-top" id="back-to-top" aria-label="Lên đầu trang">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ── Floating contact ── -->
+<%
+  const _rawPhone = studioInfo.phone.replace(/\s/g,'');
+  const _zaloPhone = _rawPhone.startsWith('+84') ? '0' + _rawPhone.slice(3) : _rawPhone;
+%>
+<div class="float-cta" id="float-cta">
+  <div class="float-cta-items">
+    <a href="tel:<%= _rawPhone %>" class="fci fci--call" data-label="Gọi ngay">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="https://zalo.me/<%= _zaloPhone %>" target="_blank" rel="noopener" class="fci fci--zalo" data-label="Zalo">
+      <svg width="20" height="20" viewBox="0 0 48 48" fill="currentColor"><text y="36" font-size="32" font-family="Arial Black,sans-serif" font-weight="900">Z</text></svg>
+    </a>
+    <a href="<%= studioInfo.social.instagram %>" target="_blank" rel="noopener" class="fci fci--ig" data-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="<%= studioInfo.social.facebook %>" target="_blank" rel="noopener" class="fci fci--fb" data-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    </a>
+  </div>
+  <button class="float-cta-btn" id="float-cta-btn" aria-label="Mở liên hệ" aria-expanded="false">
+    <svg class="fct-ico fct-ico--open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="fct-ico fct-ico--close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+</div>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-col">
+        <span class="footer-logo">Lệch.</span>
+        <p style="opacity:.7;font-size:14px;max-width:280px;">
+          <span data-vi="Studio nhiếp ảnh độc lập tại Sài Gòn. Ảnh không theo khuôn — kể từ"
+                data-en="Independent photography studio in Saigon. Unconventional frames — since">Studio nhiếp ảnh độc lập tại Sài Gòn. Ảnh không theo khuôn — kể từ</span>
+          <%= studioInfo.founded %>.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-vi="Điều hướng" data-en="Navigation">Điều hướng</span></h4>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/packages"><span data-vi="Bảng giá" data-en="Pricing">Bảng giá</span></a>
+        <a href="/blog">Blog</a>
+        <a href="/about"><span data-vi="Về chúng tôi" data-en="About">Về chúng tôi</span></a>
+        <a href="/contact"><span data-vi="Liên hệ" data-en="Contact">Liên hệ</span></a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-vi="Liên hệ" data-en="Contact">Liên hệ</span></h4>
+        <p><%= studioInfo.email %></p>
+        <p><%= studioInfo.phone %></p>
+        <p><%= studioInfo.address %></p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-vi="Theo dõi" data-en="Follow">Theo dõi</span></h4>
+        <a href="<%= studioInfo.social.instagram %>">Instagram</a>
+        <a href="<%= studioInfo.social.facebook %>">Facebook</a>
+        <a href="<%= studioInfo.social.behance %>">Behance</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <%= new Date().getFullYear() %> Lệch Studio. <span data-vi="Mọi khung hình đã được bảo lưu." data-en="All frames reserved.">Mọi khung hình đã được bảo lưu.</span></span>
+      <span><span data-vi="Thiết kế táo bạo, chụp ảnh thật." data-en="Bold design, real photography.">Thiết kế táo bạo, chụp ảnh thật.</span></span>
+    </div>
+  </div>
+</footer>

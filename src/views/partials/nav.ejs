@@ -1,0 +1,59 @@
+<nav class="nav">
+  <a href="/" class="nav-logo">Lệch.</a>
+  <ul class="nav-links">
+    <li><a href="/"          class="<%= currentPage === 'index'     ? 'is-active' : '' %>"><span data-vi="Trang chủ"    data-en="Home">Trang chủ</span></a></li>
+    <li><a href="/portfolio" class="<%= currentPage === 'portfolio' ? 'is-active' : '' %>"><span data-vi="Portfolio"    data-en="Portfolio">Portfolio</span></a></li>
+    <!--<li><a href="/gallery"   class="<%= currentPage === 'gallery'   ? 'is-active' : '' %>"><span data-vi="Gallery"      data-en="Gallery">Gallery</span></a></li>-->
+    <li><a href="/packages"  class="<%= currentPage === 'packages'  ? 'is-active' : '' %>"><span data-vi="Bảng giá"     data-en="Pricing">Bảng giá</span></a></li>
+    <li><a href="/blog"      class="<%= currentPage === 'blog'      ? 'is-active' : '' %>"><span data-vi="Blog"         data-en="Blog">Blog</span></a></li>
+    <li><a href="/about"     class="<%= currentPage === 'about'     ? 'is-active' : '' %>"><span data-vi="Về chúng tôi" data-en="About">Về chúng tôi</span></a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <!-- Liên hệ -->
+    <a href="/contact" class="nav-pill nav-pill--outline">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.5 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.41 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.27-.76a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/>
+      </svg>
+      <span data-vi="Liên hệ" data-en="Contact">Liên hệ</span>
+    </a>
+
+    <!-- Đặt lịch -->
+    <a href="/booking" class="nav-pill nav-pill--book">
+      <span data-vi="Đặt lịch" data-en="Book now">Đặt lịch</span>
+    </a>
+
+    <!-- Language dropdown -->
+    <div class="lang-drop" id="lang-drop">
+      <button class="lang-drop-trigger" aria-haspopup="listbox" aria-expanded="false">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+        </svg>
+        <span id="lang-label">VI</span>
+        <svg class="lang-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <ul class="lang-drop-menu" role="listbox">
+        <li><button class="lang-opt is-active" data-lang="vi" role="option">
+          <span class="lang-flag">🇻🇳</span> Tiếng Việt
+        </button></li>
+        <li><button class="lang-opt" data-lang="en" role="option">
+          <span class="lang-flag">EN</span> English
+        </button></li>
+      </ul>
+    </div>
+
+    <!-- Đăng nhập / Portal -->
+    <a href="/portal" class="nav-pill nav-pill--login">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      <span data-vi="Đăng nhập" data-en="Login">Đăng nhập</span>
+    </a>
+
+    <button class="nav-burger">MENU</button>
+  </div>
+</nav>

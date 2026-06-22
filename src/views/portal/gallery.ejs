@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('../partials/head') %></head>
+<body>
+
+<%- include('../partials/nav') %>
+
+<!-- ---------- PORTAL HEADER ---------- -->
+<header class="page-hero portal-header">
+  <div class="wrap">
+    <div class="portal-header-row">
+      <div>
+        <span class="eyebrow">Gallery riêng tư</span>
+        <h1 class="display page-hero-title reveal"><%= client.name %></h1>
+        <div class="portal-session-meta mono">
+          <span><%= client.session %></span>
+          <span>·</span>
+          <span><%= client.date %></span>
+          <span>·</span>
+          <span>Gói <%= client.package %></span>
+        </div>
+        <% if (client.note) { %>
+        <p class="page-hero-sub" style="margin-top:8px;"><%= client.note %></p>
+        <% } %>
+      </div>
+      <a href="/portal/logout" class="btn btn-ghost portal-logout">Đăng xuất</a>
+    </div>
+  </div>
+</header>
+
+<!-- ---------- GALLERY GRID ---------- -->
+<section class="section-pad portal-gallery-section">
+  <div class="wrap">
+    <div class="portal-info-bar mono reveal">
+      <span><%= client.photos.length %> ảnh hoàn chỉnh</span>
+      <span>·</span>
+      <span>Bản quyền © Lệch Studio <%= new Date().getFullYear() %></span>
+    </div>
+
+    <div class="portal-grid stagger">
+      <% client.photos.forEach(photo => { %>
+      <div class="frame portal-frame reveal" data-lightbox>
+        <div class="frame-img" style="--ar:<%= photo.ar %>;" data-photo="<%= photo.photo %>">
+          <span class="frame-tag"><%= photo.num %></span>
+        </div>
+        <div class="frame-meta">
+          <span><%= photo.caption %></span>
+          <span class="num"><%= photo.num %></span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- Download notice -->
+    <div class="portal-download-note reveal">
+      <p class="mono">Để tải ảnh gốc độ phân giải cao, vui lòng sử dụng link Google Drive trong email giao ảnh.<br>Gallery này chỉ hiển thị preview — không áp dụng watermark.</p>
+      <a href="/contact" class="btn btn-ghost" style="margin-top:16px;">Hỗ trợ → Liên hệ</a>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

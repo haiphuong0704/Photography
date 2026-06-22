@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"><%= items.length %> khung hình — cập nhật 06/2026</span>
+    <h1 class="display page-hero-title tilt-2">GALLERY.</h1>
+    <p class="hero-sub">Bấm vào một khung để xem lớn. Lọc theo chuyên môn nếu bạn đang tìm một thể loại cụ thể.</p>
+    <div class="filter-row mono" data-filter-row data-active-filter="<%= activeFilter %>">
+      <% filters.forEach(f => { %>
+      <button class="filter-btn<%= f.id === activeFilter ? ' is-active' : '' %>" data-filter="<%= f.id %>">
+        <%= f.label %>
+      </button>
+      <% }) %>
+    </div>
+  </div>
+</header>
+
+<section class="section-pad" style="padding-top:50px;">
+  <div class="wrap">
+    <div class="gallery-grid" data-lightbox-grid>
+      <% items.forEach(item => { %>
+      <div class="frame g-item" data-category="<%= item.category %>">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:<%= item.ar %>;" data-photo="<%= item.photo %>">
+          <span class="frame-tag"><%= item.label %></span>
+        </div>
+        <div class="frame-meta">
+          <span><%= item.caption %></span>
+          <span class="num"><%= item.num %></span>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

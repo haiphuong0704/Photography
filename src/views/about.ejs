@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<!-- ============================================================
+     HERO  — cinematic full-screen
+     ============================================================ -->
+<header class="about-hero">
+  <div class="about-hero-bg" aria-hidden="true">
+    <div class="about-hero-bg-img" style="background-image:url('https://picsum.photos/seed/about_hero/1800/1000')"></div>
+    <div class="about-hero-grain"></div>
+  </div>
+  <div class="about-hero-overlay"></div>
+
+  <div class="wrap about-hero-inner">
+    <div class="about-hero-eyebrow reveal">
+      <span class="mono about-hero-since">Est. <%= studioInfo.founded %> — Sài Gòn</span>
+      <span class="about-hero-line" aria-hidden="true"></span>
+    </div>
+    <h1 class="display about-hero-title">
+      <span class="about-hero-title-row reveal" data-chars>CHÚNG TÔI</span>
+      <span class="about-hero-title-row about-hero-title-row--accent reveal" data-chars>KHÔNG CHỤP</span>
+      <span class="about-hero-title-row reveal" data-chars>THEO SỐ ĐÔNG.</span>
+    </h1>
+    <p class="about-hero-sub reveal">Lệch Studio bắt đầu từ một câu hỏi đơn giản:<br>tại sao ảnh dịch vụ luôn giống nhau?</p>
+  </div>
+
+  <div class="about-hero-bottom">
+    <div class="about-hero-stat-row wrap">
+      <div class="about-hero-stat reveal"><span class="display about-stat-val" data-target="230">0</span><span class="mono">buổi chụp</span></div>
+      <div class="about-hero-stat-sep" aria-hidden="true"></div>
+      <div class="about-hero-stat reveal"><span class="display about-stat-val" data-target="86">0</span><span class="mono">đám cưới</span></div>
+      <div class="about-hero-stat-sep" aria-hidden="true"></div>
+      <div class="about-hero-stat reveal"><span class="display about-stat-val" data-target="8">0</span><span class="mono">năm kinh nghiệm</span></div>
+      <div class="about-hero-stat-sep" aria-hidden="true"></div>
+      <div class="about-hero-stat reveal"><span class="display">3</span><span class="mono">thành phố</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     STORY  — 2 photos + text
+     ============================================================ -->
+<section class="about-story section-pad">
+  <div class="wrap about-story-grid">
+
+    <div class="about-story-visual reveal">
+      <div class="frame about-story-frame-a">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:<%= storyPhoto.ar %>;" data-photo="<%= storyPhoto.photo %>">
+          <span class="frame-tag"><%- storyPhoto.tag %></span>
+        </div>
+        <div class="frame-meta"><span><%= storyPhoto.caption %></span><span class="num"><%= storyPhoto.num %></span></div>
+      </div>
+      <div class="frame about-story-frame-b">
+        <div class="frame-img" style="--ar:3/2;" data-photo="https://picsum.photos/seed/about_story2/400/267"></div>
+        <div class="frame-meta"><span>Xe máy & máy ảnh cũ</span><span class="num">202</span></div>
+      </div>
+    </div>
+
+    <div class="about-story-text reveal">
+      <div class="about-story-eyebrow">
+        <span class="mono about-story-label">CÂU CHUYỆN</span>
+        <span class="about-story-rule" aria-hidden="true"></span>
+      </div>
+      <h2 class="display about-story-title">BẮT ĐẦU TỪ<br>MỘT CHIẾC<br>XE MÁY CŨ.</h2>
+      <p class="about-story-body">Founder của Lệch từng là phóng viên ảnh, rong ruổi khắp Sài Gòn bằng một chiếc xe máy cũ và một thân máy duy nhất.</p>
+      <p class="about-story-body">Năm <%= studioInfo.founded %>, studio ra đời với đúng một nguyên tắc: <em>ưu tiên khoảnh khắc thật hơn bố cục hoàn hảo.</em> Nguyên tắc đó vẫn giữ nguyên cho đến hôm nay, dù đội ngũ đã lớn hơn nhiều.</p>
+      <div class="about-story-signature mono">— <%= studioInfo.name %> · <%= studioInfo.address.split(',').slice(-1)[0].trim() %></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ticker -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>KHOẢNH KHẮC THẬT</span><span>ÁNH SÁNG TỰ NHIÊN</span><span>KHÔNG DÀN DỰNG</span><span>LỆCH KHỎI SỐ ĐÔNG</span>
+    <span>KHOẢNH KHẮC THẬT</span><span>ÁNH SÁNG TỰ NHIÊN</span><span>KHÔNG DÀN DỰNG</span><span>LỆCH KHỎI SỐ ĐÔNG</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     VALUES  — editorial horizontal list
+     ============================================================ -->
+<section class="about-values-section section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nguyên tắc làm việc</span>
+      <h2 class="display section-title">03 ĐIỀU<br>CHÚNG TÔI GIỮ.</h2>
+    </div>
+    <div class="about-values-list">
+      <% values.forEach((v, i) => { %>
+      <div class="about-value-item reveal">
+        <span class="about-value-num mono"><%= v.num %></span>
+        <div class="about-value-center">
+          <h3 class="display about-value-title"><%= v.title %></h3>
+        </div>
+        <p class="about-value-body"><%= v.body %></p>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TIMELINE  — milestones 2018 → 2026
+     ============================================================ -->
+<section class="about-timeline-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Hành trình</span>
+      <h2 class="display section-title">8 NĂM<br>KHÔNG ĐỨT QUÃNG.</h2>
+    </div>
+    <div class="about-timeline">
+      <div class="about-timeline-line" aria-hidden="true"></div>
+      <% [
+        { year:'2018', title:'Khởi đầu', desc:'Ra đời với 1 máy ảnh, 1 xe máy, và 0 khách hàng. Buổi chụp đầu tiên là ảnh đường phố Sài Gòn.' },
+        { year:'2019', title:'Wedding đầu tiên', desc:'Nhận lời chụp đám cưới đầu tiên — run tay, nhưng bộ ảnh đẹp. Khách giới thiệu thêm 4 đám ngay sau đó.' },
+        { year:'2021', title:'Studio Thủ Đức', desc:'Chuyển về 18/2 Đường 35, Cát Lái. Lần đầu tiên có địa chỉ thật, không gian riêng, ánh sáng kiểm soát được.' },
+        { year:'2023', title:'Mở rộng', desc:'Lệch Studio có mặt tại Hà Nội & Đà Nẵng. Đội ngũ tăng lên 4 nhiếp ảnh gia chính thức.' },
+        { year:'2026', title:'Hôm nay', desc:'230+ buổi chụp, 86+ đám cưới, 3 thành phố. Vẫn giữ nguyên tắc ban đầu: thật hơn đẹp.' }
+      ].forEach((m, i) => { %>
+      <div class="about-timeline-item reveal">
+        <div class="about-timeline-content">
+          <span class="about-timeline-year mono"><%= m.year %></span>
+          <h3 class="display about-timeline-title"><%= m.title %></h3>
+          <p class="about-timeline-desc"><%= m.desc %></p>
+        </div>
+        <div class="about-timeline-dot" aria-hidden="true"></div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GEAR  — equipment editorial
+     ============================================================ -->
+<section class="about-gear-section">
+  <div class="wrap about-gear-inner">
+    <div class="about-gear-text reveal">
+      <span class="eyebrow">Thiết bị</span>
+      <h2 class="display about-gear-title">GEAR<br>OF CHOICE.</h2>
+      <p class="about-gear-sub">Công cụ tốt không tạo ra ảnh đẹp. Nhưng công cụ đúng giúp nhiếp ảnh gia tập trung vào điều quan trọng hơn — khoảnh khắc.</p>
+    </div>
+    <div class="about-gear-list reveal">
+      <% [
+        { cat:'Body',    name:'Sony A7 IV',        note:'Main camera — wedding & portrait' },
+        { cat:'Body',    name:'Sony A7S III',       note:'Low-light & video' },
+        { cat:'Lens',    name:'35mm f/1.4 GM',      note:'Everyday — natural moments' },
+        { cat:'Lens',    name:'85mm f/1.4 GM',      note:'Portrait & ceremony' },
+        { cat:'Lens',    name:'24–70mm f/2.8 GM',   note:'Events & editorial' },
+        { cat:'Light',   name:'Godox V1 ×2',        note:'On-camera flash — reception' },
+        { cat:'Light',   name:'Profoto B10 ×2',     note:'Studio & outdoor setup' }
+      ].forEach(g => { %>
+      <div class="about-gear-item">
+        <span class="mono about-gear-cat"><%= g.cat %></span>
+        <span class="about-gear-name"><%= g.name %></span>
+        <span class="about-gear-dots" aria-hidden="true"></span>
+        <span class="mono about-gear-note"><%= g.note %></span>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TEAM  — redesigned
+     ============================================================ -->
+<section class="about-team-section section-pad">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><%= team.length %> thành viên</span>
+      <h2 class="display section-title">ĐỘI NGŨ<br>ĐỨNG SAU ỐNG KÍNH.</h2>
+    </div>
+    <div class="about-team-grid stagger">
+      <% team.forEach((member, i) => { %>
+      <div class="about-team-card reveal">
+        <div class="frame about-team-frame">
+          <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
+          <div class="frame-img" style="--ar:3/4;" data-photo="<%= member.photo %>">
+            <div class="about-team-hover-overlay">
+              <span class="mono about-team-hover-tag"><%= member.tag %></span>
+            </div>
+          </div>
+          <div class="frame-meta"><span><%= member.tag %></span><span class="num"><%= member.num %></span></div>
+        </div>
+        <div class="about-team-info">
+          <h3 class="display about-team-name"><%= member.name %></h3>
+          <p class="mono about-team-role"><%= member.role %></p>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal">MUỐN LÀM VIỆC<br>CÙNG CHÚNG TÔI?</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);">Dù bạn là cô dâu chú rể, thương hiệu hay đơn giản muốn lưu lại một ngày — chúng tôi luôn sẵn sàng nghe ý tưởng.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/contact" class="btn btn-on-dark">Liên hệ ngay →</a>
+        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+<script>
+// Count-up for about hero stats
+(function(){
+  document.querySelectorAll('.about-stat-val[data-target]').forEach(function(el){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        var target = parseInt(el.dataset.target);
+        var suffix = target > 8 ? '+' : '';
+        var dur = 1400, t0 = performance.now();
+        (function step(now){
+          var p = Math.min((now-t0)/dur,1);
+          var ease = 1-Math.pow(1-p,3);
+          el.textContent = Math.round(ease*target)+suffix;
+          if(p<1) requestAnimationFrame(step);
+        })(t0);
+        io.unobserve(el);
+      });
+    },{threshold:.5});
+    io.observe(el);
+  });
+})();
+// Parallax hero bg
+(function(){
+  var bg = document.querySelector('.about-hero-bg-img');
+  if(!bg) return;
+  window.addEventListener('scroll',function(){
+    bg.style.transform = 'scale(1.1) translateY('+(window.scrollY*0.04)+'px)';
+  },{passive:true});
+})();
+</script>
+</body>
+</html>

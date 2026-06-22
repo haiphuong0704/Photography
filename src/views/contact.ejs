@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"><span data-vi="Phản hồi trong 24 giờ" data-en="Response within 24 hours">Phản hồi trong 24 giờ</span></span>
+    <h1 class="display page-hero-title tilt-1">
+      <span data-vi="LIÊN HỆ." data-en="CONTACT.">LIÊN HỆ.</span>
+    </h1>
+    <p class="hero-sub">
+      <span data-vi="Nhắn tin nhanh hoặc đặt lịch chụp trực tiếp — Lệch Studio sẽ phản hồi trong 24 giờ."
+            data-en="Send a quick message or book a session directly — Lệch Studio will reply within 24 hours.">
+        Nhắn tin nhanh hoặc đặt lịch chụp trực tiếp — Lệch Studio sẽ phản hồi trong 24 giờ.
+      </span>
+    </p>
+  </div>
+</header>
+
+<!-- Tab switcher -->
+<div class="contact-tabs-bar">
+  <div class="wrap">
+    <div class="contact-tab-nav" role="tablist">
+      <button class="contact-tab-btn<%= activeTab === 'message' ? ' is-active' : '' %>"
+        data-tab="message" role="tab">
+        <span data-vi="Nhắn tin nhanh" data-en="Quick Message">Nhắn tin nhanh</span>
+      </button>
+      <button class="contact-tab-btn<%= activeTab === 'booking' ? ' is-active' : '' %>"
+        data-tab="booking" role="tab">
+        <span data-vi="Đặt lịch chụp" data-en="Book a Session">Đặt lịch chụp</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<section class="section-pad contact-section" style="padding-top:40px;">
+  <div class="wrap contact-grid">
+
+    <!-- LEFT: Tab panels -->
+    <div class="contact-panels">
+
+      <!-- TAB 1: Quick message -->
+      <div id="tab-message" class="contact-tab-panel<%= activeTab === 'message' ? ' is-active' : '' %>" role="tabpanel">
+        <% if(success && activeTab === 'message') { %>
+        <div class="booking-success" style="padding:40px 0;text-align:left;align-items:flex-start;">
+          <span class="display" style="font-size:2rem;color:var(--volt);">✓</span>
+          <h3 class="display" style="font-size:1.4rem;">
+            <span data-vi="ĐÃ GỬI." data-en="SENT.">ĐÃ GỬI.</span>
+          </h3>
+          <p><span data-vi="Chúng tôi sẽ phản hồi trong 24 giờ." data-en="We will reply within 24 hours.">Chúng tôi sẽ phản hồi trong 24 giờ.</span></p>
+        </div>
+        <% } %>
+
+        <form class="contact-form" action="/contact" method="POST">
+          <div class="form-row">
+            <label class="mono">
+              <span data-vi="Họ và tên" data-en="Full name">Họ và tên</span>
+            </label>
+            <input type="text" name="name"
+              data-vi-placeholder="Nguyễn Văn A"
+              data-en-placeholder="Your name"
+              placeholder="Nguyễn Văn A" required>
+          </div>
+          <div class="form-row">
+            <label class="mono">
+              <span data-vi="Email / Số điện thoại" data-en="Email / Phone number">Email / Số điện thoại</span>
+            </label>
+            <input type="text" name="contact"
+              data-vi-placeholder="ban@email.com hoặc 090..."
+              data-en-placeholder="you@email.com or +84..."
+              placeholder="ban@email.com hoặc 090..." required>
+          </div>
+          <div class="form-row">
+            <label class="mono">
+              <span data-vi="Bạn cần chụp gì?" data-en="What do you need photographed?">Bạn cần chụp gì?</span>
+            </label>
+            <div class="chip-row">
+              <label class="chip"><input type="radio" name="type" value="cuoi" checked>
+                <span data-vi="Cưới" data-en="Wedding">Cưới</span></label>
+              <label class="chip"><input type="radio" name="type" value="thoitrang">
+                <span data-vi="Thời trang" data-en="Fashion">Thời trang</span></label>
+              <label class="chip"><input type="radio" name="type" value="doanhnghiep">
+                <span data-vi="Doanh nghiệp" data-en="Corporate">Doanh nghiệp</span></label>
+              <label class="chip"><input type="radio" name="type" value="doithuong">
+                <span data-vi="Đời thường" data-en="Lifestyle">Đời thường</span></label>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="mono">
+              <span data-vi="Ngày dự kiến chụp" data-en="Preferred shooting date">Ngày dự kiến chụp</span>
+            </label>
+            <input type="date" name="date">
+          </div>
+          <div class="form-row">
+            <label class="mono">
+              <span data-vi="Mô tả ý tưởng của bạn" data-en="Describe your idea">Mô tả ý tưởng của bạn</span>
+            </label>
+            <textarea name="message" rows="4"
+              data-vi-placeholder="Càng chi tiết càng tốt — địa điểm, số lượng người, cảm hứng..."
+              data-en-placeholder="As detailed as possible — location, number of people, inspiration..."
+              placeholder="Càng chi tiết càng tốt — địa điểm, số lượng người, cảm hứng..."></textarea>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <button type="submit" class="btn btn-fill">
+              <span data-vi="Gửi yêu cầu →" data-en="Send request →">Gửi yêu cầu →</span>
+            </button>
+            <button type="button" class="btn btn-ghost" id="switch-to-booking">
+              <span data-vi="Hoặc đặt lịch ngay →" data-en="Or book now →">Hoặc đặt lịch ngay →</span>
+            </button>
+          </div>
+          <p class="mono form-note">
+            <span data-vi="* Form demo — dữ liệu không được lưu trữ." data-en="* Demo form — data is not stored.">* Form demo — dữ liệu không được lưu trữ.</span>
+          </p>
+        </form>
+      </div>
+
+      <!-- TAB 2: Booking -->
+      <div id="tab-booking" class="contact-tab-panel<%= activeTab === 'booking' ? ' is-active' : '' %>" role="tabpanel">
+        <% if(success && activeTab === 'booking') { %>
+        <div class="booking-success" style="padding:40px 0;text-align:left;align-items:flex-start;">
+          <span class="display" style="font-size:2rem;color:var(--volt);">✓</span>
+          <h3 class="display" style="font-size:1.4rem;">
+            <span data-vi="ĐÃ NHẬN." data-en="RECEIVED.">ĐÃ NHẬN.</span>
+          </h3>
+          <p><span data-vi="Lệch Studio sẽ xác nhận lịch trong 24 giờ." data-en="Lệch Studio will confirm within 24 hours.">Lệch Studio sẽ xác nhận lịch trong 24 giờ.</span></p>
+        </div>
+        <% } %>
+
+        <form class="booking-form" action="/booking" method="POST">
+
+          <fieldset class="booking-group">
+            <legend class="booking-legend mono">
+              <span data-vi="01 — Chọn gói" data-en="01 — Choose a package">01 — Chọn gói</span>
+            </legend>
+            <div class="booking-pkg-grid">
+              <% packages.forEach(pkg => { %>
+              <label class="booking-pkg-opt">
+                <input type="radio" name="package" value="<%= pkg.id %>"
+                  <%= prefPackage === pkg.id ? 'checked' : (prefPackage === '' && pkg.highlighted ? 'checked' : '') %>>
+                <span class="booking-pkg-label">
+                  <span class="display" style="font-size:.9rem;"><%= pkg.name %></span>
+                  <span class="mono" style="color:var(--bone-dim);font-size:.7rem;"><%= pkg.priceLabel %></span>
+                </span>
+              </label>
+              <% }) %>
+            </div>
+          </fieldset>
+
+          <fieldset class="booking-group">
+            <legend class="booking-legend mono">
+              <span data-vi="02 — Loại buổi chụp & Ngày" data-en="02 — Session type & Date">02 — Loại buổi chụp & Ngày</span>
+            </legend>
+            <div class="booking-row">
+              <div class="booking-field">
+                <label>
+                  <span data-vi="Loại buổi chụp" data-en="Session type">Loại buổi chụp</span>
+                </label>
+                <select name="session_type" required>
+                  <option value="" disabled selected>
+                    <span data-vi="Chọn loại..." data-en="Select type...">Chọn loại...</span>
+                  </option>
+                  <% sessionTypes.forEach(t => { %>
+                  <option value="<%= t %>"><%= t %></option>
+                  <% }) %>
+                </select>
+              </div>
+              <div class="booking-field">
+                <label>
+                  <span data-vi="Ngày mong muốn" data-en="Preferred date">Ngày mong muốn</span>
+                </label>
+                <input type="date" name="preferred_date" required
+                  min="<%= new Date(Date.now() + 86400000*3).toISOString().split('T')[0] %>">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="booking-group">
+            <legend class="booking-legend mono">
+              <span data-vi="03 — Địa điểm" data-en="03 — Location">03 — Địa điểm</span>
+            </legend>
+            <div class="booking-row">
+              <div class="booking-field">
+                <label><span data-vi="Thành phố" data-en="City">Thành phố</span></label>
+                <select name="city" required>
+                  <option value="" disabled selected>
+                    <span data-vi="Chọn thành phố..." data-en="Select city...">Chọn thành phố...</span>
+                  </option>
+                  <option>TP. Hồ Chí Minh</option>
+                  <option>Hà Nội</option>
+                  <option>Đà Nẵng</option>
+                  <option>Đà Lạt</option>
+                  <option data-vi="Khác" data-en="Other">Khác</option>
+                </select>
+              </div>
+              <div class="booking-field">
+                <label>
+                  <span data-vi="Địa điểm cụ thể" data-en="Specific location">Địa điểm cụ thể</span>
+                </label>
+                <input type="text" name="location_detail"
+                  data-vi-placeholder="Công viên, studio, địa chỉ..."
+                  data-en-placeholder="Park, studio, address..."
+                  placeholder="Công viên, studio, địa chỉ...">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="booking-group">
+            <legend class="booking-legend mono">
+              <span data-vi="04 — Thông tin liên hệ" data-en="04 — Contact info">04 — Thông tin liên hệ</span>
+            </legend>
+            <div class="booking-row">
+              <div class="booking-field">
+                <label>
+                  <span data-vi="Họ & Tên" data-en="Full name">Họ & Tên</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="text" name="name" required
+                  data-vi-placeholder="Nguyễn Văn A"
+                  data-en-placeholder="Your name"
+                  placeholder="Nguyễn Văn A">
+              </div>
+              <div class="booking-field">
+                <label>
+                  <span data-vi="Số điện thoại" data-en="Phone number">Số điện thoại</span>
+                  <span class="req">*</span>
+                </label>
+                <input type="tel" name="phone" required
+                  data-vi-placeholder="09x xxx xxxx"
+                  data-en-placeholder="+84 9x xxx xxxx"
+                  placeholder="09x xxx xxxx">
+              </div>
+            </div>
+            <div class="booking-row" style="margin-top:16px;">
+              <div class="booking-field">
+                <label><span data-vi="Email" data-en="Email">Email</span></label>
+                <input type="email" name="email"
+                  placeholder="email@example.com">
+              </div>
+              <div class="booking-field">
+                <label><span data-vi="Ghi chú thêm" data-en="Additional notes">Ghi chú thêm</span></label>
+                <input type="text" name="notes"
+                  data-vi-placeholder="Yêu cầu đặc biệt..."
+                  data-en-placeholder="Special requests..."
+                  placeholder="Yêu cầu đặc biệt...">
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="booking-submit-row">
+            <button type="submit" class="btn btn-fill booking-submit">
+              <span data-vi="Gửi yêu cầu đặt lịch →" data-en="Send booking request →">Gửi yêu cầu đặt lịch →</span>
+            </button>
+            <p class="mono booking-note">
+              <span data-vi="Xác nhận & invoice trong 24 giờ." data-en="Confirmation & invoice within 24 hours.">Xác nhận & invoice trong 24 giờ.</span>
+            </p>
+          </div>
+
+        </form>
+      </div>
+
+    </div><!-- /contact-panels -->
+
+    <!-- RIGHT: Studio info (always visible) -->
+    <aside class="contact-side">
+      <div class="frame">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:4/5;" data-photo="<%= contactPhoto %>">
+          <span class="frame-tag">Studio</span>
+        </div>
+        <div class="frame-meta">
+          <span><%= studioInfo.address.split(',')[0] %></span>
+          <span class="num">301</span>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="info-block">
+          <h4 class="mono"><span data-vi="Studio" data-en="Studio">Studio</span></h4>
+          <p><%- studioInfo.address.replace(', ', ',<br>') %></p>
+        </div>
+        <div class="info-block">
+          <h4 class="mono"><span data-vi="Liên hệ trực tiếp" data-en="Direct contact">Liên hệ trực tiếp</span></h4>
+          <p><%= studioInfo.email %><br><%= studioInfo.phone %></p>
+        </div>
+        <div class="info-block">
+          <h4 class="mono"><span data-vi="Giờ làm việc" data-en="Working hours">Giờ làm việc</span></h4>
+          <p>
+            <span data-vi="Thứ 2 – Thứ 7: 9:00 – 19:00" data-en="Mon – Sat: 9:00 – 19:00">Thứ 2 – Thứ 7: 9:00 – 19:00</span><br>
+            <span data-vi="Chủ nhật: theo lịch hẹn" data-en="Sunday: by appointment">Chủ nhật: theo lịch hẹn</span>
+          </p>
+        </div>
+        <a href="/packages" class="btn btn-ghost" style="margin-top:8px;font-size:.82rem;">
+          <span data-vi="Xem bảng giá →" data-en="View pricing →">Xem bảng giá →</span>
+        </a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

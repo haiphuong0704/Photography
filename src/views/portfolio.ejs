@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('partials/head') %></head>
+<body>
+
+<%- include('partials/loader') %>
+<%- include('partials/nav') %>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow"
+          data-vi="04 chuyên môn"
+          data-en="04 specialties">04 chuyên môn</span>
+    <h1 class="display page-hero-title tilt-1">PORTFOLIO.</h1>
+    <p class="hero-sub" style="max-width:480px;"
+       data-vi="Mỗi chuyên môn một cách kể chuyện riêng — chọn để xem hoặc cuộn xuống."
+       data-en="Each specialty has its own way of telling the story — pick one or scroll down.">Mỗi chuyên môn một cách kể chuyện riêng — chọn để xem hoặc cuộn xuống.</p>
+    <nav class="port-nav">
+      <% sections.forEach((s, i) => { %>
+      <a href="#<%= s.id %>" class="port-nav-item reveal">
+        <span class="port-nav-num mono">0<%= i+1 %></span>
+        <span class="port-nav-label"
+              data-vi="<%= s.title %>"
+              data-en="<%= s.enTitle || s.title %>"><%= s.title %></span>
+      </a>
+      <% }) %>
+    </nav>
+  </div>
+</header>
+
+<% sections.forEach((section, idx) => { %>
+<section id="<%= section.id %>" class="port-section<%= section.alt ? ' port-alt' : '' %>">
+
+  <%/* Background watermark number */%>
+  <span class="port-bg-num" aria-hidden="true">0<%= idx+1 %></span>
+
+  <div class="wrap port-grid<%= section.alt ? ' port-grid-rev' : '' %>">
+
+    <% if(section.alt) { %>
+    <div class="port-mosaic reveal">
+      <% section.photos.forEach(p => { %>
+      <div class="frame <%= p.cls %>">
+        <div class="frame-img" style="--ar:<%= p.ar %>;" data-photo="<%= p.photo %>">
+          <% if(p.tag) { %><span class="frame-tag"><%= p.tag %></span><% } %>
+        </div>
+        <div class="frame-meta"><span><%= p.caption %></span><span class="num"><%= p.num %></span></div>
+      </div>
+      <% }) %>
+    </div>
+    <% } %>
+
+    <div class="port-text reveal">
+      <div class="port-text-eyebrow">
+        <span class="port-num mono">FRAME <%= section.frameNum %></span>
+        <span class="port-num-line"></span>
+      </div>
+      <h2 class="display"
+          data-vi="<%= section.title %>"
+          data-en="<%= section.enTitle || section.title %>"><%= section.title %></h2>
+      <p class="port-desc"
+         data-vi="<%= section.description %>"
+         data-en="<%= section.enDescription || section.description %>"><%= section.description %></p>
+      <div class="port-tags">
+        <% section.services.forEach((svc, si) => { %>
+        <span class="port-tag mono"
+              data-vi="<%= svc %>"
+              data-en="<%= (section.enServices && section.enServices[si]) || svc %>"><%= svc %></span>
+        <% }) %>
+      </div>
+      <a href="<%= section.cta.href %>" class="btn<%= section.alt ? ' btn-on-dark' : ' btn-fill' %>"
+         data-vi="<%= section.cta.label %>"
+         data-en="<%= (section.enCta && section.enCta.label) || section.cta.label %>"><%= section.cta.label %></a>
+    </div>
+
+    <% if(!section.alt) { %>
+    <div class="port-mosaic reveal">
+      <% section.photos.forEach(p => { %>
+      <div class="frame <%= p.cls %>">
+        <div class="frame-img" style="--ar:<%= p.ar %>;" data-photo="<%= p.photo %>">
+          <% if(p.tag) { %><span class="frame-tag"><%= p.tag %></span><% } %>
+        </div>
+        <div class="frame-meta"><span><%= p.caption %></span><span class="num"><%= p.num %></span></div>
+      </div>
+      <% }) %>
+    </div>
+    <% } %>
+
+  </div>
+</section>
+<% }) %>
+
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal"
+        data-vi="CHƯA THẤY<br>GU CỦA BẠN?"
+        data-en="HAVEN'T FOUND<br>YOUR STYLE?">CHƯA THẤY<br>GU CỦA BẠN?</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);"
+         data-vi="Xem thêm ảnh chưa được sắp xếp theo chuyên mục trong Gallery, hoặc kể cho chúng tôi nghe ý tưởng của bạn."
+         data-en="Browse unsorted photos in the Gallery, or tell us your idea and we'll make it happen.">Xem thêm ảnh chưa được sắp xếp theo chuyên mục trong Gallery, hoặc kể cho chúng tôi nghe ý tưởng của bạn.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/gallery" class="btn btn-on-dark"
+           data-vi="Xem Gallery →" data-en="View Gallery →">Xem Gallery →</a>
+        <a href="/contact" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);"
+           data-vi="Liên hệ →" data-en="Contact →">Liên hệ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
+<script src="/js/script.js"></script>
+</body>
+</html>

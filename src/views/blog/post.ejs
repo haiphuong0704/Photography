@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><%- include('../partials/head') %></head>
+<body class="post-page">
+
+<%- include('../partials/loader') %>
+<%- include('../partials/nav') %>
+
+<!-- ── Reading progress ── -->
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+<!-- ============================================================
+     HERO  — cinematic full-height
+     ============================================================ -->
+<header class="post-hero">
+  <div class="post-hero-bg" id="post-hero-bg"
+       style="background-image:url('<%= post.photo %>')"></div>
+  <div class="post-hero-grain" aria-hidden="true"></div>
+  <div class="post-hero-overlay" aria-hidden="true"></div>
+  <div class="post-hero-scanlines" aria-hidden="true"></div>
+
+  <div class="wrap post-hero-content">
+    <div class="post-hero-meta reveal">
+      <a href="/blog?cat=<%= post.catId %>" class="post-cat-tag"><%= post.category %></a>
+      <span class="post-hero-sep mono">·</span>
+      <span class="mono"><%= post.date %></span>
+      <span class="post-hero-sep mono">·</span>
+      <span class="mono"><%= post.readTime %> phút đọc</span>
+    </div>
+    <h1 class="display post-title reveal"><%- post.title %></h1>
+    <div class="post-hero-scroll mono" aria-hidden="true">CUỘN ĐỌC ↓</div>
+  </div>
+
+  <!-- film strip bottom -->
+  <div class="post-hero-filmstrip" aria-hidden="true">
+    <div class="post-filmstrip-holes"></div>
+  </div>
+</header>
+
+<!-- ============================================================
+     INTRO  — large pull quote
+     ============================================================ -->
+<div class="post-intro">
+  <div class="wrap post-intro-inner">
+    <div class="post-intro-num mono reveal">INTRO</div>
+    <p class="post-intro-text reveal"><%= post.excerpt %></p>
+    <div class="post-intro-foot reveal">
+      <span class="post-intro-rule" aria-hidden="true"></span>
+      <span class="mono post-intro-meta"><%= post.category %> · <%= post.date %></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     LAYOUT  — sidebar + article
+     ============================================================ -->
+<div class="post-layout">
+  <div class="wrap post-layout-inner">
+
+    <!-- ── Sidebar ── -->
+    <aside class="post-sidebar" id="post-sidebar">
+      <div class="post-sidebar-sticky">
+
+        <!-- TOC (populated by JS) -->
+        <div class="post-toc" id="post-toc">
+          <span class="mono post-toc-label">Nội dung bài</span>
+          <nav class="post-toc-nav" id="post-toc-nav" aria-label="Mục lục"></nav>
+        </div>
+
+        <div class="post-sidebar-sep" aria-hidden="true"></div>
+
+        <div class="post-sidebar-info">
+          <div class="post-sidebar-row">
+            <span class="mono post-sidebar-label">Chuyên mục</span>
+            <a href="/blog?cat=<%= post.catId %>" class="post-cat-tag"><%= post.category %></a>
+          </div>
+          <div class="post-sidebar-row">
+            <span class="mono post-sidebar-label">Thời gian đọc</span>
+            <span class="post-sidebar-val"><%= post.readTime %> phút</span>
+          </div>
+        </div>
+
+        <div class="post-sidebar-sep" aria-hidden="true"></div>
+
+        <div class="post-sidebar-share">
+          <span class="mono post-sidebar-label">Chia sẻ</span>
+          <div class="post-share-row">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%= encodeURIComponent('http://localhost:3000/blog/' + post.slug) %>"
+               target="_blank" class="post-share-btn" title="Chia sẻ Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank"
+               class="post-share-btn" title="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <button class="post-share-btn" id="copy-link" title="Copy link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <a href="/booking" class="btn btn-fill post-sidebar-cta">Đặt lịch chụp →</a>
+      </div>
+    </aside>
+
+    <!-- ── Article ── -->
+    <article class="post-main" id="post-main">
+
+      <div class="post-body">
+        <%- post.content %>
+      </div>
+
+      <!-- ── Video Highlight ── -->
+      <div class="post-video reveal">
+        <div class="post-video-label mono">VIDEO HIGHLIGHT</div>
+        <div class="post-video-frame">
+          <div class="post-video-thumb"
+               style="background-image:url('<%= post.photo %>')">
+            <div class="post-video-overlay"></div>
+            <div class="post-video-filmholes"></div>
+            <button class="post-video-play" aria-label="Phát video">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </button>
+            <div class="post-video-duration mono">2:47</div>
+          </div>
+          <div class="post-video-caption">
+            <span class="mono post-video-cat"><%= post.category %></span>
+            <p class="post-video-title">Video hậu trường · <%= post.title %></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Tags ── -->
+      <div class="post-tags reveal">
+        <a href="/blog?cat=<%= post.catId %>" class="post-tag mono">#<%= post.catId %></a>
+        <span class="post-tag mono">#lechstudio</span>
+        <span class="post-tag mono">#photography</span>
+        <span class="post-tag mono">#saigon</span>
+      </div>
+
+      <!-- ── Footer nav ── -->
+      <div class="post-footer reveal">
+        <a href="/blog" class="btn btn-ghost">← Tất cả bài viết</a>
+        <a href="/contact" class="btn btn-fill">Đặt lịch chụp →</a>
+      </div>
+
+    </article>
+  </div>
+</div>
+
+<!-- ============================================================
+     PHOTOGRAPHER CARD
+     ============================================================ -->
+<section class="photographer-section">
+  <div class="wrap">
+    <div class="photographer-card reveal">
+      <div class="frame photographer-frame">
+        <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
+        <div class="frame-img" style="--ar:1/1;"
+             data-photo="https://picsum.photos/seed/team1/300/300"></div>
+        <div class="frame-meta"><span>Founder</span><span class="num">T1</span></div>
+      </div>
+      <div class="photographer-body">
+        <span class="mono photographer-label">Tác giả bài viết</span>
+        <h3 class="display photographer-name">ĐỨC ANH</h3>
+        <p class="mono photographer-role">Founder & Lead Photographer · <%= studioInfo.name %></p>
+        <p class="photographer-bio">8 năm cầm máy, hàng trăm đám cưới, và vẫn run tay mỗi khi nhìn qua kính ngắm. Nhiếp ảnh không phải nghề — đó là cách tôi chú ý đến thế giới xung quanh mình.</p>
+        <div class="photographer-links">
+          <a href="/about" class="btn btn-ghost">Về đội ngũ →</a>
+          <a href="/booking" class="btn btn-fill">Đặt lịch →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     RELATED POSTS
+     ============================================================ -->
+<% if (related && related.length) { %>
+<section class="related-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Đọc thêm</span>
+      <h2 class="display section-title">BÀI VIẾT<br>LIÊN QUAN.</h2>
+    </div>
+    <div class="blog-index-grid blog-index-grid--related stagger">
+      <% related.forEach((p, i) => { %>
+      <a href="/blog/<%= p.slug %>" class="blog-card-v2 reveal">
+        <div class="blog-card-v2-img" style="background-image:url('<%= p.photo %>')">
+          <div class="blog-card-v2-img-overlay"></div>
+        </div>
+        <div class="blog-card-v2-body">
+          <div class="blog-card-v2-top">
+            <span class="blog-card-v2-num mono">0<%= i+1 %></span>
+            <span class="blog-card-v2-cat mono"><%= p.category %></span>
+          </div>
+          <h3 class="blog-card-v2-title"><%= p.title %></h3>
+          <div class="blog-card-v2-footer">
+            <span class="mono blog-card-v2-date"><%= p.date %></span>
+            <span class="mono blog-card-v2-read"><%= p.readTime %> phút →</span>
+          </div>
+        </div>
+      </a>
+      <% }) %>
+    </div>
+  </div>
+</section>
+<% } %>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap cta-grid">
+    <h2 class="display reveal">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
+    <div class="reveal">
+      <p class="hero-sub" style="color:var(--bone-dim);">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+        <a href="/booking" class="btn btn-on-dark">Đặt lịch ngay →</a>
+        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>
+<script src="/js/script.js"></script>
+<script>
+// Reading progress
+(function(){
+  var bar = document.getElementById('reading-progress');
+  var article = document.getElementById('post-main');
+  if(!bar || !article) return;
+  window.addEventListener('scroll', function(){
+    var rect  = article.getBoundingClientRect();
+    var total = article.offsetHeight - window.innerHeight;
+    var pct   = Math.min(100, Math.max(0, (-rect.top / total) * 100));
+    bar.style.width = pct + '%';
+  }, {passive:true});
+})();
+
+// Hero parallax
+(function(){
+  var bg = document.getElementById('post-hero-bg');
+  if(!bg) return;
+  window.addEventListener('scroll', function(){
+    bg.style.transform = 'scale(1.08) translateY(' + (window.scrollY * 0.035) + 'px)';
+  }, {passive:true});
+})();
+
+// Build TOC from h2 tags
+(function(){
+  var body = document.getElementById('post-main');
+  var nav  = document.getElementById('post-toc-nav');
+  var toc  = document.getElementById('post-toc');
+  if(!body || !nav) return;
+  var headings = body.querySelectorAll('h2');
+  if(headings.length < 2){ toc.style.display = 'none'; return; }
+  headings.forEach(function(h, i){
+    var id = 'section-' + i;
+    h.id = id;
+    var a = document.createElement('a');
+    a.href = '#' + id;
+    a.className = 'post-toc-link';
+    a.textContent = h.textContent;
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      h.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    nav.appendChild(a);
+  });
+
+  // Highlight active heading
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      var link = nav.querySelector('[href="#' + en.target.id + '"]');
+      if(link) link.classList.toggle('is-active', en.isIntersecting);
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  headings.forEach(function(h){ io.observe(h); });
+})();
+
+// Copy link
+(function(){
+  var btn = document.getElementById('copy-link');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText(window.location.href).then(function(){
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+      btn.style.color = 'var(--rust)';
+      setTimeout(function(){
+        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>';
+        btn.style.color = '';
+      }, 1600);
+    });
+  });
+})();
+
+// Video play button ripple
+(function(){
+  var play = document.querySelector('.post-video-play');
+  if(!play) return;
+  play.addEventListener('click', function(){
+    play.classList.toggle('is-playing');
+  });
+})();
+</script>
+</body>
+</html>

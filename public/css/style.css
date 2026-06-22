@@ -601,28 +601,30 @@ section{position:relative;}
 }
 .quote-visual{
   display:flex;
-  flex-direction:column;
-  align-items:flex-start;
+  flex-direction:row;
+  align-items:flex-end;
+  justify-content:flex-end;
   gap:14px;
   position:relative;
 }
 .quote-frame-main{
   width:100%;
   max-width:300px;
-  transform:rotate(1.5deg);
+  transform:rotate(-2deg);
+  filter:brightness(.75);
   box-shadow:0 32px 72px rgba(0,0,0,.6);
-  transition:transform .5s var(--ease);
+  transition:filter .4s,transform .4s var(--ease);
 }
-.quote-frame-main:hover{transform:rotate(.5deg) translateY(-6px);}
+.quote-frame-main:hover{filter:brightness(1);transform:rotate(-1deg) translateY(-6px);}
 .quote-frame-small{
   width:55%;
   max-width:160px;
-  transform:rotate(-2.5deg) translateX(48px);
-  filter:brightness(.8);
+  transform:rotate(3deg) translateY(-20px);
+  filter:brightness(.6);
   box-shadow:0 16px 40px rgba(0,0,0,.5);
-  transition:transform .5s var(--ease),filter .4s;
+  transition:filter .4s,transform .4s var(--ease);
 }
-.quote-frame-small:hover{transform:rotate(-1.5deg) translateX(48px) translateY(-4px);filter:brightness(.95);}
+.quote-frame-small:hover{filter:brightness(.9);transform:rotate(2deg) translateY(-26px);}
 @media(max-width:900px){
   .quote-grid{grid-template-columns:1fr;}
   .quote-visual{display:none;}

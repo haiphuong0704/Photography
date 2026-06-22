@@ -1564,8 +1564,8 @@ p.about-hero-sub.reveal.is-in {
    ============================================================ */
 .blog-manifesto{
   position:relative;
-  background:var(--void);
-  padding:120px 0 130px;
+  background:var(--void));
+  padding: 100px 0 60px;
   overflow:hidden;
   border-top:1px solid var(--line);
 }

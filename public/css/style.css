@@ -3212,7 +3212,7 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 }
 .plcy-hero-sep{width:40px;height:1px;background:rgba(243,240,231,.25);}
 .plcy-hero-title{line-height:.9;margin-bottom:28px;}
-.plcy-title-row{display:block;font-size:clamp(72px,10vw,140px);}
+.plcy-title-row{display:block;font-size:72px;}
 .plcy-title-row--accent{color:var(--volt);}
 .plcy-hero-sub{
   font-size:clamp(15px,1.2vw,17px);
@@ -3386,15 +3386,17 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 /* CTA section */
 .plcy-cta-section{
   background:var(--void);color:var(--bone);
-  padding:120px 0;
+  padding: 100px 0 50px;
 }
 .plcy-cta-inner{
   display:grid;grid-template-columns:1fr 1fr;
   gap:80px;align-items:start;
 }
-.plcy-cta-title{
-  font-size:clamp(36px,5vw,64px);
-  line-height:1;margin-top:20px;
+.plcy-cta-title {
+  font-size: 45px;
+  line-height: 1;
+  padding-bottom: 25px;
+  margin-top: 20px;
 }
 .plcy-cta-cards{
   display:flex;flex-direction:column;gap:1px;

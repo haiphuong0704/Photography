@@ -8,9 +8,13 @@
 
 <header class="page-hero">
   <div class="wrap">
-    <span class="eyebrow"><%= items.length %> khung hình — cập nhật 06/2026</span>
+    <span class="eyebrow"
+      data-vi="<%= items.length %> khung hình — cập nhật 06/2026"
+      data-en="<%= items.length %> frames — updated 06/2026"><%= items.length %> khung hình — cập nhật 06/2026</span>
     <h1 class="display page-hero-title tilt-2">GALLERY.</h1>
-    <p class="hero-sub">Bấm vào một khung để xem lớn. Lọc theo chuyên môn nếu bạn đang tìm một thể loại cụ thể.</p>
+    <p class="hero-sub"
+      data-vi="Bấm vào một khung để xem lớn. Lọc theo chuyên môn nếu bạn đang tìm một thể loại cụ thể."
+      data-en="Click a frame to view full size. Filter by specialty if you're looking for a particular type.">Bấm vào một khung để xem lớn. Lọc theo chuyên môn nếu bạn đang tìm một thể loại cụ thể.</p>
     <div class="filter-row mono" data-filter-row data-active-filter="<%= activeFilter %>">
       <% filters.forEach(f => { %>
       <button class="filter-btn<%= f.id === activeFilter ? ' is-active' : '' %>" data-filter="<%= f.id %>">
@@ -28,10 +32,14 @@
       <div class="frame g-item" data-category="<%= item.category %>">
         <div class="frame-strip"><span></span><span></span><span></span><span></span></div>
         <div class="frame-img" style="--ar:<%= item.ar %>;" data-photo="<%= item.photo %>">
-          <span class="frame-tag"><%= item.label %></span>
+          <span class="frame-tag"
+            data-vi="<%= item.label %>"
+            data-en="<%= item.enLabel || item.label %>"><%= item.label %></span>
         </div>
         <div class="frame-meta">
-          <span><%= item.caption %></span>
+          <span
+            data-vi="<%= item.caption %>"
+            data-en="<%= item.enCaption || item.caption %>"><%= item.caption %></span>
           <span class="num"><%= item.num %></span>
         </div>
       </div>

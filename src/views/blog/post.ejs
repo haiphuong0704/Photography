@@ -119,9 +119,14 @@
     <!-- ── Article ── -->
     <article class="post-main" id="post-main">
 
-      <div class="post-body">
+      <div class="post-body post-body--vi">
         <%- post.content %>
       </div>
+      <% if (post.enContent) { %>
+      <div class="post-body post-body--en" style="display:none;">
+        <%- post.enContent %>
+      </div>
+      <% } %>
 
       <!-- ── Video Highlight ── -->
       <div class="post-video reveal">
@@ -260,6 +265,25 @@
 <%- include('../partials/footer') %>
 <script src="/js/script.js"></script>
 <script>
+// Bilingual article body — swap VI/EN blocks with language
+(function(){
+  var vi = document.querySelector('.post-body--vi');
+  var en = document.querySelector('.post-body--en');
+  if(!vi || !en) return;
+  function applyLang(lang){
+    if(lang === 'en'){ vi.style.display='none'; en.style.display=''; }
+    else             { en.style.display='none'; vi.style.display=''; }
+  }
+  applyLang(localStorage.getItem('lech-lang') || 'vi');
+  window.addEventListener('storage', function(e){
+    if(e.key === 'lech-lang') applyLang(e.newValue || 'vi');
+  });
+  // also listen for same-tab toggle via custom event dispatched by script.js
+  document.addEventListener('lech-lang-change', function(e){
+    applyLang(e.detail || 'vi');
+  });
+})();
+
 // Reading progress
 (function(){
   var bar = document.getElementById('reading-progress');

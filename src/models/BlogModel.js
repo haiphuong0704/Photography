@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 
 const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 
@@ -33,6 +33,23 @@ class BlogModel {
             <li>Godox V1 (×2) — bounce flash tại tiệc</li>
           </ul>
           <p>Kết thúc ngày, 1.847 tấm RAW. Chọn lại còn 312. Edit ra 87 ảnh giao cho khách. Đó là tỷ lệ chọn lọc nghiêm khắc của Lệch Studio — thà ít mà chất hơn nhiều mà loãng.</p>
+        `,
+        enContent: `
+          <p>5 a.m. The phone buzzes. That's the signal that one of our longest days of the year has begun — shadowing Linh and Khoa from the moment the bride sits down for hair and makeup to the moment the two of them close the door on their wedding night, just before midnight.</p>
+          <h2>Part 1: Getting ready — the quietest moment</h2>
+          <p>The hotel room is still dim. The makeup light reflecting off the mirror creates a warm pool of illumination — enough to shoot without adding flash. We always prioritise available light in intimate moments like this; a strobe would shatter the mood in an instant.</p>
+          <p>Linh sits still, eyes on the mirror but clearly somewhere else — maybe already imagining the walk into the reception hall, or simply savoring the rare quiet before the noise of the day ahead.</p>
+          <h2>Part 2: The bridal procession — fast, crowded, and relentless</h2>
+          <p>This is the hardest part. Cramped space, uncontrollable light, fifty people packed into a narrow townhouse. We shoot with the 35mm f/1.4, ISO 3200, and a lot of patience.</p>
+          <p>The trick is never to stand still and wait. Keep moving, anticipate the next angle, and never chimp the LCD after each frame — you'll miss the moment that follows.</p>
+          <h2>Gear used on the day</h2>
+          <ul>
+            <li>Sony A7IV + 35mm f/1.4 GM — morning indoors</li>
+            <li>Sony A7IV + 85mm f/1.4 GM — ceremony and portraits</li>
+            <li>Sony A7IV + 24-70mm f/2.8 GM — reception</li>
+            <li>Godox V1 (×2) — bounce flash at the banquet</li>
+          </ul>
+          <p>End of day: 1,847 RAW files. Culled to 312. Delivered 87 finished images to the couple. That's the strict selection ratio Lệch Studio holds to — fewer great shots always beats a flood of mediocre ones.</p>
         `
       },
       {
@@ -56,6 +73,16 @@ class BlogModel {
           <p>Vải lụa mỏng nhìn đẹp nhưng rất nhăn. Vải dày như denim, len, kaki nhìn có chiều sâu hơn trên ảnh. Tránh vải bóng loáng (polyester sáng) vì sẽ bắt sáng không đẹp.</p>
           <h2>Độ vừa vặn: quan trọng hơn thương hiệu</h2>
           <p>Một chiếc áo Zara vừa vặn trông đẹp hơn áo hiệu mà rộng thùng thình. Trước buổi chụp, hãy mặc thử và ngồi xuống — nếu vai áo bị xô lệch hoặc cổ áo bị bai, hãy đổi ngay.</p>
+        `,
+        enContent: `
+          <p>Your outfit accounts for roughly 40% of how a portrait session looks. That's not a scientific figure — it's what years of shooting hundreds of portrait sessions at Lệch Studio has taught us.</p>
+          <h2>Color: stay away from busy patterns</h2>
+          <p>Fine stripes, small checks, dense prints — all of these create moiré interference when printed or viewed on screen. Opt for solid colors, neutral tones (beige, grey, off-white), or deep saturated tones like navy, black, or forest green.</p>
+          <p>If you want a bold color, commit to one dominant tone and let your accessories be the small accent.</p>
+          <h2>Fabric: good cloth makes great photos</h2>
+          <p>Thin silk looks beautiful in person but wrinkles mercilessly on camera. Heavier fabrics like denim, wool, and khaki read with more depth and texture in photos. Avoid shiny synthetics (bright polyester) — they catch light badly and flatten the look.</p>
+          <h2>Fit: more important than the brand</h2>
+          <p>A well-fitted Zara shirt looks better than a designer piece that's two sizes too big. Before the session, put the outfit on and sit down — if the shoulders pull or the collar gaps, swap it out. The camera will notice before you do.</p>
         `
       },
       {
@@ -82,6 +109,19 @@ class BlogModel {
           <p>Documentary và street photography thuần túy. Ánh đèn huỳnh quang vàng, bóng người qua lại, mùi trái cây và bụi chợ. Đây là Sài Gòn thật.</p>
           <h2>5. Studio Lệch — 12 Lê Thánh Tôn</h2>
           <p>Đương nhiên là studio của chúng tôi. Kiểm soát hoàn toàn ánh sáng, nền cyclorama trắng và đen, và một góc brick wall cho editorial shot. Phù hợp mọi thể loại.</p>
+        `,
+        enContent: `
+          <p>Saigon has thousands of photogenic corners — the problem is most of them have been shot so many times they've become clichés. These are the five locations we're returning to most in 2026.</p>
+          <h2>1. Bình Thạnh brick alley</h2>
+          <p>A narrow lane in Bình Thạnh district lined with red brick walls and afternoon light filtering through gaps in the corrugated iron roofs. Between 3 and 5 p.m. the light here turns a natural gold — soft enough and warm enough to shoot without any fill.</p>
+          <h2>2. Old Tân Bình industrial zone</h2>
+          <p>Abandoned factories with rusted steel structures and broken windows produce a stunning industrial backdrop for editorials. Permissions must be arranged in advance and the best time to arrive is before 7 a.m.</p>
+          <h2>3. District 1 hotel rooftop</h2>
+          <p>We won't name it — it'd be overcrowded within a week — but book a session with Lệch Studio and we'll take you there. A full panoramic view of District 1 at golden hour is impossible to fault.</p>
+          <h2>4. Bình Tây Market at 5 a.m.</h2>
+          <p>Pure documentary and street photography. Yellow fluorescent light, moving silhouettes, the smell of fruit and market dust. This is the real Saigon.</p>
+          <h2>5. Lệch Studio — 12 Lê Thánh Tôn</h2>
+          <p>Our own studio, obviously. Full control over light, white and black cyclorama backdrops, and a brick wall corner for editorial shots. Suitable for every genre.</p>
         `
       },
       {
@@ -106,6 +146,17 @@ class BlogModel {
           <p>14 giờ, 6 bộ trang phục, 2 địa điểm, 1.200 tấm RAW. Khó khăn nhất là ánh sáng lúc 2 giờ chiều tại khu công nghiệp — quá cứng và quá cao. Giải pháp: 2 tấm diffuser 2×2m và chờ đám mây che.</p>
           <h2>Hậu kỳ: màu sắc là tất cả</h2>
           <p>Grade màu trong Lightroom trước, export sang Photoshop cho frequency separation. Tổng thời gian: 4 ngày làm việc cho 40 ảnh final.</p>
+        `,
+        enContent: `
+          <p>When brand K— reached out to Lệch Studio in November 2025, their brief was simple: "We want a lookbook that looks like a magazine, not a catalogue." That was the beginning of three weeks working together.</p>
+          <h2>Week 1: Concept and mood board</h2>
+          <p>The initial brief was "minimal, urban, cold." We developed that into a moodboard built around cool greys, raw concrete, and hard single-source light. References: Juergen Teller, Alasdair McLellan, and a handful of Japanese editorials from the nineties.</p>
+          <h2>Week 2: Casting and location scouting</h2>
+          <p>We cast two lead models — one with an androgynous look, one with distinctly Vietnamese features. That contrast became the editorial's core idea. Locations chosen: the old Tân Bình industrial zone and our studio.</p>
+          <h2>Shoot day: 6 a.m. to 8 p.m.</h2>
+          <p>14 hours, 6 looks, 2 locations, 1,200 RAW files. The hardest moment was 2 p.m. light at the industrial site — too harsh, too overhead. Solution: two 2×2m diffusion panels and waiting for cloud cover to do its job.</p>
+          <h2>Post-production: color is everything</h2>
+          <p>We grade in Lightroom first, then export to Photoshop for frequency separation retouching. Total time: 4 working days for 40 final images.</p>
         `
       }
     ];
@@ -130,5 +181,3 @@ class BlogModel {
 }
 
 module.exports = BlogModel;
-
-

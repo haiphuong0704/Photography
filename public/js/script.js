@@ -300,6 +300,7 @@
     drop.querySelectorAll('.lang-opt').forEach(o => {
       o.classList.toggle('is-active', o.dataset.lang === l);
     });
+    document.dispatchEvent(new CustomEvent('lech-lang-change', { detail: l }));
     closeMenu();
   }
 

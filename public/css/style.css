@@ -106,6 +106,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   display:inline-flex;align-items:center;gap:8px;
 }
 .eyebrow::before{
+  color: wheat;
   content:"";width:8px;height:8px;
   background:var(--rust);border-radius:50%;display:inline-block;
   animation:dot-pulse 2.2s ease-in-out infinite;

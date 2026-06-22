@@ -133,6 +133,44 @@
   </div>
 </section>
 
+<!-- ---------- CONTACT SHEET STRIP ---------- -->
+<div class="pkg-filmstrip" aria-hidden="true">
+  <div class="filmstrip-holes filmstrip-holes--top"></div>
+  <div class="filmstrip-track-wrap">
+    <div class="filmstrip-track">
+      <% [
+        {photo:'https://images.unsplash.com/photo-1519741196428-6a2175fa2557?w=800&h=500&fit=crop&auto=format&q=80', label:'Cưới · 2026'},
+        {photo:'https://images.unsplash.com/photo-1612883833766-7930d960e16f?w=800&h=500&fit=crop&auto=format&q=80', label:'Wedding detail'},
+        {photo:'https://images.unsplash.com/photo-1630491198015-3d997fe8db72?w=800&h=500&fit=crop&auto=format&q=80', label:'Editorial'},
+        {photo:'https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?w=800&h=500&fit=crop&auto=format&q=80', label:'Portrait'},
+        {photo:'https://images.unsplash.com/photo-1606221982782-407853fb4627?w=800&h=500&fit=crop&auto=format&q=80', label:'Fashion'},
+        {photo:'https://images.unsplash.com/photo-1654984809168-2f6c51bfb25c?w=800&h=500&fit=crop&auto=format&q=80', label:'Lifestyle'},
+        {photo:'https://images.unsplash.com/photo-1613506240218-738319838405?w=800&h=500&fit=crop&auto=format&q=80', label:'Lookbook'},
+        {photo:'https://images.unsplash.com/photo-1627117204847-ec306fe712bb?w=800&h=500&fit=crop&auto=format&q=80', label:'Product'},
+        {photo:'https://images.unsplash.com/photo-1631330612137-07b3a03f7cf1?w=800&h=500&fit=crop&auto=format&q=80', label:'Brand'},
+        {photo:'https://images.unsplash.com/photo-1525284890203-9ee752d3f44f?w=800&h=500&fit=crop&auto=format&q=80', label:'Gia đình'},
+        {photo:'https://images.unsplash.com/photo-1519741196428-6a2175fa2557?w=800&h=500&fit=crop&auto=format&q=80', label:'Cưới · 2026'},
+        {photo:'https://images.unsplash.com/photo-1612883833766-7930d960e16f?w=800&h=500&fit=crop&auto=format&q=80', label:'Wedding detail'},
+        {photo:'https://images.unsplash.com/photo-1630491198015-3d997fe8db72?w=800&h=500&fit=crop&auto=format&q=80', label:'Editorial'},
+        {photo:'https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?w=800&h=500&fit=crop&auto=format&q=80', label:'Portrait'},
+        {photo:'https://images.unsplash.com/photo-1606221982782-407853fb4627?w=800&h=500&fit=crop&auto=format&q=80', label:'Fashion'},
+        {photo:'https://images.unsplash.com/photo-1654984809168-2f6c51bfb25c?w=800&h=500&fit=crop&auto=format&q=80', label:'Lifestyle'},
+        {photo:'https://images.unsplash.com/photo-1613506240218-738319838405?w=800&h=500&fit=crop&auto=format&q=80', label:'Lookbook'},
+        {photo:'https://images.unsplash.com/photo-1627117204847-ec306fe712bb?w=800&h=500&fit=crop&auto=format&q=80', label:'Product'},
+        {photo:'https://images.unsplash.com/photo-1631330612137-07b3a03f7cf1?w=800&h=500&fit=crop&auto=format&q=80', label:'Brand'},
+        {photo:'https://images.unsplash.com/photo-1525284890203-9ee752d3f44f?w=800&h=500&fit=crop&auto=format&q=80', label:'Gia đình'}
+      ].forEach((f,i) => { %>
+      <div class="filmstrip-frame">
+        <span class="filmstrip-frame-num mono"><%= String(i % 10 + 1).padStart(2,'0') %></span>
+        <div class="filmstrip-img" style="background-image:url('<%= f.photo %>')"></div>
+        <span class="filmstrip-label mono"><%= f.label %></span>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+  <div class="filmstrip-holes filmstrip-holes--bot"></div>
+</div>
+
 <!-- ---------- VIDEO REEL ---------- -->
 <section class="reel-section">
   <div class="reel-wrapper">

@@ -1958,7 +1958,7 @@ p.about-hero-sub.reveal.is-in {
 .photographer-links .btn-ghost{border-color:rgba(243,240,231,.2);color:rgba(243,240,231,.5);}
 .photographer-links .btn-ghost:hover{border-color:var(--volt);color:var(--volt);}
 
-.related-section{background:var(--void);}
+.related-section{background:var(--void);color:var(--bone);padding:80px 0;}
 
 /* Keep old blog-grid for homepage usage */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}

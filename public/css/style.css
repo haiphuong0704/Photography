@@ -1404,7 +1404,7 @@ p.about-hero-sub.reveal.is-in {
   border-bottom:1px solid var(--line);
 }
 .blog-hero-title{
-  font-size:clamp(4rem,12vw,11rem);
+  font-size:72px;
   line-height:.9;letter-spacing:-.01em;margin-bottom:28px;
 }
 .blog-hero-sub{

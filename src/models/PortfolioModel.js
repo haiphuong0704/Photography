@@ -1,5 +1,7 @@
 'use strict';
 
+const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
+
 class PortfolioModel {
   static getSections() {
     return [
@@ -14,9 +16,9 @@ class PortfolioModel {
         cta:         { label: 'Đặt lịch chụp cưới →', href: '/contact' },
         enCta:       { label: 'Book a wedding shoot →' },
         photos: [
-          { photo: '/images/ph-4x5.svg', ar: '4/5', tag: 'Cưới',    caption: 'Linh & Khoa', num: '021', cls: 'pm-a' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,      caption: 'Thảo & Nam', num: '022', cls: 'pm-b' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,      caption: 'Pháo giấy',  num: '023', cls: 'pm-c' }
+          { photo: U('1604017011826-d3b4c23f8914',400,500), ar: '4/5', tag: 'Cưới',    caption: 'Linh & Khoa', num: '021', cls: 'pm-a' },
+          { photo: U('1533091090875-1ff4acc497dd',400,400), ar: '1/1', tag: null,      caption: 'Chi tiết nhẫn', num: '022', cls: 'pm-b' },
+          { photo: U('1573676048035-9c2a72b6a12a',400,400), ar: '1/1', tag: null,     caption: 'Pháo giấy',  num: '023', cls: 'pm-c' }
         ],
         alt: false
       },
@@ -31,9 +33,9 @@ class PortfolioModel {
         cta:         { label: 'Hợp tác chụp editorial →', href: '/contact' },
         enCta:       { label: 'Collaborate on an editorial →' },
         photos: [
-          { photo: '/images/ph-3x4.svg', ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,        caption: 'Lookbook',    num: '032', cls: 'pm-b' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,        caption: 'Studio test', num: '033', cls: 'pm-c' }
+          { photo: U('1505780674400-60e4d324d370',400,533), ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
+          { photo: U('1609006998306-60b2fc4ba6a0',400,400), ar: '1/1', tag: null,        caption: 'Lookbook',    num: '032', cls: 'pm-b' },
+          { photo: U('1539616908003-dcffab608e11',400,400), ar: '1/1', tag: null,        caption: 'Studio test', num: '033', cls: 'pm-c' }
         ],
         alt: true
       },
@@ -48,9 +50,9 @@ class PortfolioModel {
         cta:         { label: 'Yêu cầu báo giá doanh nghiệp →', href: '/contact' },
         enCta:       { label: 'Request a brand quote →' },
         photos: [
-          { photo: '/images/ph-4x5.svg', ar: '4/5', tag: 'CEO', caption: 'Chân dung CEO', num: '041', cls: 'pm-a' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,  caption: 'Đội ngũ',      num: '042', cls: 'pm-b' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,  caption: 'Văn phòng',    num: '043', cls: 'pm-c' }
+          { photo: U('1664439709257-7d4dde51b775',400,500), ar: '4/5', tag: 'CEO', caption: 'Chân dung CEO', num: '041', cls: 'pm-a' },
+          { photo: U('1584016235603-290a5f94af4a',400,400), ar: '1/1', tag: null,  caption: 'Đội ngũ',      num: '042', cls: 'pm-b' },
+          { photo: U('1703118952348-24b89f059f7c',400,400), ar: '1/1', tag: null,  caption: 'Văn phòng',    num: '043', cls: 'pm-c' }
         ],
         alt: false
       },
@@ -65,9 +67,9 @@ class PortfolioModel {
         cta:         { label: 'Đặt buổi chụp đời thường →', href: '/contact' },
         enCta:       { label: 'Book a lifestyle shoot →' },
         photos: [
-          { photo: '/images/ph-3x4.svg', ar: '3/4', tag: 'Street', caption: 'Sài Gòn về đêm', num: '051', cls: 'pm-a' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,     caption: 'Chợ sáng',      num: '052', cls: 'pm-b' },
-          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,     caption: 'Gia đình',      num: '053', cls: 'pm-c' }
+          { photo: U('1690812063097-d57c5b7c21f1',400,533), ar: '3/4', tag: 'Street', caption: 'Sài Gòn về đêm', num: '051', cls: 'pm-a' },
+          { photo: U('1618375601660-3e6842f5b791',400,400), ar: '1/1', tag: null,     caption: 'Chợ sáng',      num: '052', cls: 'pm-b' },
+          { photo: U('1525284890203-9ee752d3f44f',400,400), ar: '1/1', tag: null,     caption: 'Gia đình',      num: '053', cls: 'pm-c' }
         ],
         alt: true
       }

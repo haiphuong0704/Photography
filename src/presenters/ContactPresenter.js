@@ -8,7 +8,7 @@ class ContactPresenter {
       currentPage:  'contact',
       success:      req.query.success === '1',
       activeTab:    req.query.tab || 'message',
-      contactPhoto: '/images/ph-4x5.svg',
+      contactPhoto: 'https://images.unsplash.com/photo-1622277430358-f4d134452e2e?w=600&h=750&fit=crop&auto=format&q=80',
       packages:     PackagesModel.getAll(),
       sessionTypes: PackagesModel.getSessionTypes(),
       prefPackage:  req.query.package || ''

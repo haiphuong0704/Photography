@@ -10,7 +10,7 @@
 <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
 <!-- ============================================================
-     HERO  — cinematic full-height
+     HERO
      ============================================================ -->
 <header class="post-hero">
   <div class="post-hero-bg" id="post-hero-bg"
@@ -25,25 +25,31 @@
       <span class="post-hero-sep mono">·</span>
       <span class="mono"><%= post.date %></span>
       <span class="post-hero-sep mono">·</span>
-      <span class="mono"><%= post.readTime %> phút đọc</span>
+      <span class="mono"
+        data-vi="<%= post.readTime %> phút đọc"
+        data-en="<%= post.readTime %> min read"><%= post.readTime %> phút đọc</span>
     </div>
-    <h1 class="display post-title reveal"><%- post.title %></h1>
-    <div class="post-hero-scroll mono" aria-hidden="true">CUỘN ĐỌC ↓</div>
+    <h1 class="display post-title reveal"
+      data-vi="<%- post.title %>"
+      data-en="<%- post.enTitle || post.title %>"><%- post.title %></h1>
+    <div class="post-hero-scroll mono" aria-hidden="true"
+      data-vi="CUỘN ĐỌC ↓" data-en="SCROLL TO READ ↓">CUỘN ĐỌC ↓</div>
   </div>
 
-  <!-- film strip bottom -->
   <div class="post-hero-filmstrip" aria-hidden="true">
     <div class="post-filmstrip-holes"></div>
   </div>
 </header>
 
 <!-- ============================================================
-     INTRO  — large pull quote
+     INTRO
      ============================================================ -->
 <div class="post-intro">
   <div class="wrap post-intro-inner">
     <div class="post-intro-num mono reveal">INTRO</div>
-    <p class="post-intro-text reveal"><%= post.excerpt %></p>
+    <p class="post-intro-text reveal"
+      data-vi="<%= post.excerpt %>"
+      data-en="<%= post.enExcerpt || post.excerpt %>"><%= post.excerpt %></p>
     <div class="post-intro-foot reveal">
       <span class="post-intro-rule" aria-hidden="true"></span>
       <span class="mono post-intro-meta"><%= post.category %> · <%= post.date %></span>
@@ -52,7 +58,7 @@
 </div>
 
 <!-- ============================================================
-     LAYOUT  — sidebar + article
+     LAYOUT — sidebar + article
      ============================================================ -->
 <div class="post-layout">
   <div class="wrap post-layout-inner">
@@ -61,9 +67,10 @@
     <aside class="post-sidebar" id="post-sidebar">
       <div class="post-sidebar-sticky">
 
-        <!-- TOC (populated by JS) -->
         <div class="post-toc" id="post-toc">
-          <span class="mono post-toc-label">Nội dung bài</span>
+          <span class="mono post-toc-label"
+            data-vi="Nội dung bài"
+            data-en="Contents">Nội dung bài</span>
           <nav class="post-toc-nav" id="post-toc-nav" aria-label="Mục lục"></nav>
         </div>
 
@@ -71,22 +78,27 @@
 
         <div class="post-sidebar-info">
           <div class="post-sidebar-row">
-            <span class="mono post-sidebar-label">Chuyên mục</span>
+            <span class="mono post-sidebar-label"
+              data-vi="Chuyên mục" data-en="Category">Chuyên mục</span>
             <a href="/blog?cat=<%= post.catId %>" class="post-cat-tag"><%= post.category %></a>
           </div>
           <div class="post-sidebar-row">
-            <span class="mono post-sidebar-label">Thời gian đọc</span>
-            <span class="post-sidebar-val"><%= post.readTime %> phút</span>
+            <span class="mono post-sidebar-label"
+              data-vi="Thời gian đọc" data-en="Read time">Thời gian đọc</span>
+            <span class="post-sidebar-val"
+              data-vi="<%= post.readTime %> phút"
+              data-en="<%= post.readTime %> min"><%= post.readTime %> phút</span>
           </div>
         </div>
 
         <div class="post-sidebar-sep" aria-hidden="true"></div>
 
         <div class="post-sidebar-share">
-          <span class="mono post-sidebar-label">Chia sẻ</span>
+          <span class="mono post-sidebar-label"
+            data-vi="Chia sẻ" data-en="Share">Chia sẻ</span>
           <div class="post-share-row">
             <a href="https://www.facebook.com/sharer/sharer.php?u=<%= encodeURIComponent('http://localhost:3000/blog/' + post.slug) %>"
-               target="_blank" class="post-share-btn" title="Chia sẻ Facebook">
+               target="_blank" class="post-share-btn" title="Facebook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
             <a href="https://www.instagram.com" target="_blank"
@@ -99,7 +111,8 @@
           </div>
         </div>
 
-        <a href="/booking" class="btn btn-fill post-sidebar-cta">Đặt lịch chụp →</a>
+        <a href="/booking" class="btn btn-fill post-sidebar-cta"
+          data-vi="Đặt lịch chụp →" data-en="Book a session →">Đặt lịch chụp →</a>
       </div>
     </aside>
 
@@ -125,7 +138,9 @@
           </div>
           <div class="post-video-caption">
             <span class="mono post-video-cat"><%= post.category %></span>
-            <p class="post-video-title">Video hậu trường · <%= post.title %></p>
+            <p class="post-video-title"
+              data-vi="Video hậu trường · <%= post.title %>"
+              data-en="Behind the scenes video · <%= post.enTitle || post.title %>">Video hậu trường · <%= post.title %></p>
           </div>
         </div>
       </div>
@@ -140,7 +155,9 @@
 
       <!-- ── Footer nav ── -->
       <div class="post-footer reveal">
-        <a href="/blog" class="btn btn-ghost">← Tất cả bài viết</a>
+        <a href="/blog" class="btn btn-ghost"
+          data-vi="← Tất cả bài viết"
+          data-en="← All posts">← Tất cả bài viết</a>
       </div>
 
     </article>
@@ -160,13 +177,19 @@
         <div class="frame-meta"><span>Founder</span><span class="num">T1</span></div>
       </div>
       <div class="photographer-body">
-        <span class="mono photographer-label">Tác giả bài viết</span>
+        <span class="mono photographer-label"
+          data-vi="Tác giả bài viết"
+          data-en="Author">Tác giả bài viết</span>
         <h3 class="display photographer-name">ĐỨC ANH</h3>
         <p class="mono photographer-role">Founder & Lead Photographer · <%= studioInfo.name %></p>
-        <p class="photographer-bio">8 năm cầm máy, hàng trăm đám cưới, và vẫn run tay mỗi khi nhìn qua kính ngắm. Nhiếp ảnh không phải nghề — đó là cách tôi chú ý đến thế giới xung quanh mình.</p>
+        <p class="photographer-bio"
+          data-vi="8 năm cầm máy, hàng trăm đám cưới, và vẫn run tay mỗi khi nhìn qua kính ngắm. Nhiếp ảnh không phải nghề — đó là cách tôi chú ý đến thế giới xung quanh mình."
+          data-en="8 years behind the lens, hundreds of weddings, and still nervous every time I look through the viewfinder. Photography isn't a job — it's how I pay attention to the world.">8 năm cầm máy, hàng trăm đám cưới, và vẫn run tay mỗi khi nhìn qua kính ngắm. Nhiếp ảnh không phải nghề — đó là cách tôi chú ý đến thế giới xung quanh mình.</p>
         <div class="photographer-links">
-          <a href="/about" class="btn btn-ghost">Về đội ngũ →</a>
-          <a href="/booking" class="btn btn-fill">Đặt lịch →</a>
+          <a href="/about" class="btn btn-ghost"
+            data-vi="Về đội ngũ →" data-en="Meet the team →">Về đội ngũ →</a>
+          <a href="/booking" class="btn btn-fill"
+            data-vi="Đặt lịch →" data-en="Book →">Đặt lịch →</a>
         </div>
       </div>
     </div>
@@ -180,8 +203,11 @@
 <section class="related-section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Đọc thêm</span>
-      <h2 class="display section-title">BÀI VIẾT<br>LIÊN QUAN.</h2>
+      <span class="eyebrow"
+        data-vi="Đọc thêm" data-en="Read more">Đọc thêm</span>
+      <h2 class="display section-title"
+        data-vi="BÀI VIẾT<br>LIÊN QUAN."
+        data-en="RELATED<br>POSTS.">BÀI VIẾT<br>LIÊN QUAN.</h2>
     </div>
     <div class="blog-index-grid blog-index-grid--related stagger">
       <% related.forEach((p, i) => { %>
@@ -194,10 +220,14 @@
             <span class="blog-card-v2-num mono">0<%= i+1 %></span>
             <span class="blog-card-v2-cat mono"><%= p.category %></span>
           </div>
-          <h3 class="blog-card-v2-title"><%= p.title %></h3>
+          <h3 class="blog-card-v2-title"
+            data-vi="<%= p.title %>"
+            data-en="<%= p.enTitle || p.title %>"><%= p.title %></h3>
           <div class="blog-card-v2-footer">
             <span class="mono blog-card-v2-date"><%= p.date %></span>
-            <span class="mono blog-card-v2-read"><%= p.readTime %> phút →</span>
+            <span class="mono blog-card-v2-read"
+              data-vi="<%= p.readTime %> phút →"
+              data-en="<%= p.readTime %> min →"><%= p.readTime %> phút →</span>
           </div>
         </div>
       </a>
@@ -210,12 +240,18 @@
 <!-- CTA -->
 <section class="cta-band">
   <div class="wrap cta-grid">
-    <h2 class="display reveal">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
+    <h2 class="display reveal"
+      data-vi="ĐỌC XONG,<br>SẴN SÀNG CHỤP?"
+      data-en="DONE READING,<br>READY TO SHOOT?">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
     <div class="reveal">
-      <p class="hero-sub" style="color:var(--bone-dim);">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
+      <p class="hero-sub" style="color:var(--bone-dim);"
+        data-vi="Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ."
+        data-en="Lệch Studio takes bookings weekly — reserve your slot early.">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
-        <a href="/booking" class="btn btn-on-dark">Đặt lịch ngay →</a>
-        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+        <a href="/booking" class="btn btn-on-dark"
+          data-vi="Đặt lịch ngay →" data-en="Book now →">Đặt lịch ngay →</a>
+        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);"
+          data-vi="Xem bảng giá" data-en="View pricing">Xem bảng giá</a>
       </div>
     </div>
   </div>
@@ -267,8 +303,6 @@
     });
     nav.appendChild(a);
   });
-
-  // Highlight active heading
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
       var link = nav.querySelector('[href="#' + en.target.id + '"]');
@@ -294,7 +328,7 @@
   });
 })();
 
-// Video play button ripple
+// Video play button
 (function(){
   var play = document.querySelector('.post-video-play');
   if(!play) return;

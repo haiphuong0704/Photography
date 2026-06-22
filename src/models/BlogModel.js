@@ -9,7 +9,9 @@ class BlogModel {
         id:       1,
         slug:     'behind-the-scenes-dam-cuoi-linh-khoa',
         title:    'Behind the Scenes: Đám cưới Linh & Khoa',
+        enTitle:  'Behind the Scenes: Linh & Khoa\'s Wedding',
         excerpt:  'Từ 5 giờ sáng theo chân cô dâu trang điểm đến lúc pháo giấy bay lúc nửa đêm — một ngày dài nhất trong năm của Lệch Studio.',
+        enExcerpt:'From 5 a.m. bridal prep to midnight confetti — the longest day of the year for Lệch Studio.',
         category: 'Behind the Scenes',
         catId:    'bts',
         date:     '2026-05-20',
@@ -37,7 +39,9 @@ class BlogModel {
         id:       2,
         slug:     'chon-trang-phuc-chup-chan-dung',
         title:    'Cách chọn trang phục cho buổi chụp chân dung',
+        enTitle:  'How to Choose Outfits for a Portrait Session',
         excerpt:  'Màu sắc, chất liệu, và độ vừa vặn — ba yếu tố quyết định bộ ảnh của bạn trông chuyên nghiệp hay trông như selfie.',
+        enExcerpt:'Color, fabric, and fit — the three factors that decide whether your photos look professional or like a selfie.',
         category: 'Tips & Tricks',
         catId:    'tips',
         date:     '2026-04-12',
@@ -58,7 +62,9 @@ class BlogModel {
         id:       3,
         slug:     '5-dia-diem-chup-anh-sai-gon',
         title:    '5 địa điểm chụp ảnh đẹp nhất Sài Gòn 2026',
+        enTitle:  'Top 5 Photography Spots in Saigon 2026',
         excerpt:  'Không phải Bưu điện Trung tâm, không phải Nhà thờ Đức Bà — đây là những góc Sài Gòn ít ai biết nhưng cho ra ảnh cực kỳ chất.',
+        enExcerpt:'Not the Central Post Office, not the Notre-Dame Cathedral — these are Saigon\'s lesser-known corners that produce extraordinary shots.',
         category: 'Locations',
         catId:    'location',
         date:     '2026-03-08',
@@ -82,7 +88,9 @@ class BlogModel {
         id:       4,
         slug:     'editorial-fw26-tu-concept-den-hinh',
         title:    'Editorial FW26 — Từ concept đến hình thật',
+        enTitle:  'Editorial FW26 — From Concept to Final Frames',
         excerpt:  'Bộ editorial Thu Đông 2026 cho local brand K— mất 3 tuần chuẩn bị, 1 ngày chụp, và 4 ngày hậu kỳ. Đây là toàn bộ quá trình.',
+        enExcerpt:'The FW26 editorial for local brand K— took 3 weeks of prep, 1 shoot day, and 4 days of post. Here\'s the full process.',
         category: 'Behind the Scenes',
         catId:    'bts',
         date:     '2026-02-18',
@@ -113,10 +121,10 @@ class BlogModel {
 
   static getCategories() {
     return [
-      { id: 'all',      label: 'Tất cả' },
-      { id: 'bts',      label: 'Behind the Scenes' },
-      { id: 'tips',     label: 'Tips & Tricks' },
-      { id: 'location', label: 'Locations' }
+      { id: 'all',      label: 'Tất cả',           enLabel: 'All' },
+      { id: 'bts',      label: 'Behind the Scenes', enLabel: 'Behind the Scenes' },
+      { id: 'tips',     label: 'Tips & Tricks',     enLabel: 'Tips & Tricks' },
+      { id: 'location', label: 'Locations',          enLabel: 'Locations' }
     ];
   }
 }

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head><%- include('../partials/head') %></head>
 <body>
@@ -7,7 +7,7 @@
 <%- include('../partials/nav') %>
 
 <!-- ============================================================
-     BLOG HERO  (magazine masthead style)
+     BLOG HERO
      ============================================================ -->
 <header class="blog-hero">
   <% if (posts[0]) { %>
@@ -20,20 +20,22 @@
       <span class="blog-hero-edition">LỆCH STUDIO EDITORIAL</span>
     </div>
     <h1 class="display blog-hero-title reveal" data-chars>BLOG.</h1>
-    <p class="blog-hero-sub reveal">Behind the scenes — Tips nhiếp ảnh —<br>Những địa điểm ít ai biết.</p>
+    <p class="blog-hero-sub reveal"
+      data-vi="Behind the scenes — Tips nhiếp ảnh —<br>Những địa điểm ít ai biết."
+      data-en="Behind the scenes — Photography tips —<br>Hidden spots you didn't know existed.">Behind the scenes — Tips nhiếp ảnh —<br>Những địa điểm ít ai biết.</p>
     <div class="blog-hero-stats mono reveal">
-      <span><%= posts.length %> bài viết</span>
+      <span data-vi="<%= posts.length %> bài viết" data-en="<%= posts.length %> posts"><%= posts.length %> bài viết</span>
       <span class="blog-hero-sep">·</span>
-      <span><%= categories.length - 1 %> chuyên mục</span>
+      <span data-vi="<%= categories.length - 1 %> chuyên mục" data-en="<%= categories.length - 1 %> categories"><%= categories.length - 1 %> chuyên mục</span>
       <span class="blog-hero-sep">·</span>
-      <span>Cập nhật mỗi tuần</span>
+      <span data-vi="Cập nhật mỗi tuần" data-en="Updated weekly">Cập nhật mỗi tuần</span>
     </div>
   </div>
   <div class="blog-hero-scroll-hint mono" aria-hidden="true">CUỘN XUỐNG ↓</div>
 </header>
 
 <!-- ============================================================
-     FEATURED POST  (cinematic full-width, only on "all" view)
+     FEATURED POST
      ============================================================ -->
 <% if (activeCategory === 'all' && posts.length > 0) { const feat = posts[0]; %>
 <a href="/blog/<%= feat.slug %>" class="blog-featured reveal">
@@ -47,11 +49,17 @@
         <span class="blog-featured-sep">·</span>
         <span><%= feat.date %></span>
         <span class="blog-featured-sep">·</span>
-        <span><%= feat.readTime %> phút đọc</span>
+        <span data-vi="<%= feat.readTime %> phút đọc" data-en="<%= feat.readTime %> min read"><%= feat.readTime %> phút đọc</span>
       </div>
-      <h2 class="display blog-featured-title"><%- feat.title %></h2>
-      <p class="blog-featured-excerpt"><%= feat.excerpt %></p>
-      <span class="blog-featured-read mono">Đọc bài → </span>
+      <h2 class="display blog-featured-title"
+        data-vi="<%- feat.title %>"
+        data-en="<%- feat.enTitle || feat.title %>"><%- feat.title %></h2>
+      <p class="blog-featured-excerpt"
+        data-vi="<%= feat.excerpt %>"
+        data-en="<%= feat.enExcerpt || feat.excerpt %>"><%= feat.excerpt %></p>
+      <span class="blog-featured-read mono"
+        data-vi="Đọc bài → "
+        data-en="Read post → ">Đọc bài → </span>
     </div>
     <div class="blog-featured-num mono" aria-hidden="true">01</div>
   </div>
@@ -67,7 +75,7 @@
       <% categories.forEach(cat => { %>
       <a href="/blog?cat=<%= cat.id %>"
          class="blog-filter-btn mono<%= activeCategory === cat.id ? ' is-active' : '' %>">
-        <%= cat.label %>
+        <span data-vi="<%= cat.label %>" data-en="<%= cat.enLabel || cat.label %>"><%= cat.label %></span>
         <% const count = cat.id === 'all' ? posts.length : posts.filter(p=>p.catId===cat.id).length; %>
         <span class="blog-filter-count"><%= count %></span>
       </a>
@@ -77,17 +85,22 @@
 </div>
 
 <!-- ============================================================
-     POSTS GRID  (editorial mixed layout)
+     POSTS GRID
      ============================================================ -->
 <section class="blog-index-section">
   <div class="wrap">
     <% const gridPosts = activeCategory === 'all' ? posts.slice(1) : posts; %>
     <% if (posts.length === 0) { %>
-    <p style="color:var(--bone-dim);text-align:center;padding:80px 0;">Chưa có bài viết trong mục này.</p>
+    <p style="color:var(--bone-dim);text-align:center;padding:80px 0;"
+      data-vi="Chưa có bài viết trong mục này."
+      data-en="No posts in this category yet.">Chưa có bài viết trong mục này.</p>
     <% } else if (gridPosts.length === 0) { %>
     <div style="text-align:center;padding:80px 0;">
-      <p style="color:var(--bone-dim);">Tất cả bài viết trong mục này đang được hiển thị ở trên.</p>
-      <a href="/blog" class="btn btn-ghost" style="margin-top:16px;">Xem tất cả →</a>
+      <p style="color:var(--bone-dim);"
+        data-vi="Tất cả bài viết trong mục này đang được hiển thị ở trên."
+        data-en="All posts in this category are shown above.">Tất cả bài viết trong mục này đang được hiển thị ở trên.</p>
+      <a href="/blog" class="btn btn-ghost" style="margin-top:16px;"
+        data-vi="Xem tất cả →" data-en="View all →">Xem tất cả →</a>
     </div>
     <% } else { %>
     <div class="blog-index-grid stagger">
@@ -102,11 +115,17 @@
             <span class="blog-card-v2-num mono">0<%= i + (activeCategory === 'all' ? 2 : 1) %></span>
             <span class="blog-card-v2-cat mono"><%= post.category %></span>
           </div>
-          <h2 class="blog-card-v2-title"><%= post.title %></h2>
-          <p class="blog-card-v2-excerpt"><%= post.excerpt %></p>
+          <h2 class="blog-card-v2-title"
+            data-vi="<%= post.title %>"
+            data-en="<%= post.enTitle || post.title %>"><%= post.title %></h2>
+          <p class="blog-card-v2-excerpt"
+            data-vi="<%= post.excerpt %>"
+            data-en="<%= post.enExcerpt || post.excerpt %>"><%= post.excerpt %></p>
           <div class="blog-card-v2-footer">
             <span class="mono blog-card-v2-date"><%= post.date %></span>
-            <span class="mono blog-card-v2-read"><%= post.readTime %> phút →</span>
+            <span class="mono blog-card-v2-read"
+              data-vi="<%= post.readTime %> phút →"
+              data-en="<%= post.readTime %> min →"><%= post.readTime %> phút →</span>
           </div>
         </div>
       </a>
@@ -122,21 +141,27 @@
 <section class="blog-cats-section">
   <div class="wrap">
     <div class="blog-cats-head reveal">
-      <span class="eyebrow">Đọc theo chủ đề</span>
+      <span class="eyebrow"
+        data-vi="Đọc theo chủ đề"
+        data-en="Browse by topic">Đọc theo chủ đề</span>
     </div>
     <div class="blog-cats-grid stagger">
       <% [
-        { id:'bts',      label:'Behind the Scenes', sub:'Hậu trường & quy trình',   photo:'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='bts').length },
-        { id:'tips',     label:'Tips & Tricks',     sub:'Kỹ thuật & kinh nghiệm',   photo:'https://images.unsplash.com/photo-1654512697681-8434b50096dd?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='tips').length },
-        { id:'location', label:'Locations',         sub:'Địa điểm đẹp ít ai biết',  photo:'https://images.unsplash.com/photo-1690812063433-36b580074b8b?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='location').length }
+        { id:'bts',      label:'Behind the Scenes', sub:'Hậu trường & quy trình',  enSub:'Process & behind the lens',  photo:'https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='bts').length },
+        { id:'tips',     label:'Tips & Tricks',     sub:'Kỹ thuật & kinh nghiệm',  enSub:'Technique & experience',     photo:'https://images.unsplash.com/photo-1654512697681-8434b50096dd?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='tips').length },
+        { id:'location', label:'Locations',         sub:'Địa điểm đẹp ít ai biết', enSub:'Hidden spots worth shooting', photo:'https://images.unsplash.com/photo-1690812063433-36b580074b8b?w=800&h=500&fit=crop&auto=format&q=80', count: posts.filter(p=>p.catId==='location').length }
       ].forEach(cat => { %>
       <a href="/blog?cat=<%= cat.id %>" class="blog-cat-card reveal">
         <div class="blog-cat-card-bg" style="background-image:url('<%= cat.photo %>')"></div>
         <div class="blog-cat-card-overlay"></div>
         <div class="blog-cat-card-body">
-          <span class="mono blog-cat-count"><%= cat.count %> bài</span>
+          <span class="mono blog-cat-count"
+            data-vi="<%= cat.count %> bài"
+            data-en="<%= cat.count %> posts"><%= cat.count %> bài</span>
           <h3 class="display blog-cat-title"><%= cat.label %></h3>
-          <p class="mono blog-cat-sub"><%= cat.sub %></p>
+          <p class="mono blog-cat-sub"
+            data-vi="<%= cat.sub %>"
+            data-en="<%= cat.enSub %>"><%= cat.sub %></p>
         </div>
       </a>
       <% }) %>
@@ -150,12 +175,22 @@
 <section class="blog-manifesto">
   <span class="manifesto-bg-mark" aria-hidden="true">"</span>
   <div class="wrap blog-manifesto-inner">
-    <div class="manifesto-label mono reveal">Triết lý nhiếp ảnh · Lệch Studio</div>
+    <div class="manifesto-label mono reveal"
+      data-vi="Triết lý nhiếp ảnh · Lệch Studio"
+      data-en="Photography philosophy · Lệch Studio">Triết lý nhiếp ảnh · Lệch Studio</div>
     <blockquote class="manifesto-body">
-      <p class="manifesto-line reveal"><em>Mọi studio đều có công thức.</em></p>
-      <p class="manifesto-line manifesto-line--accent reveal">Lệch Studio không có.</p>
-      <p class="manifesto-line reveal"><em>Vì cảm xúc thật</em></p>
-      <p class="manifesto-line manifesto-line--accent reveal">không có công thức nào.</p>
+      <p class="manifesto-line reveal"
+        data-vi="<em>Mọi studio đều có công thức.</em>"
+        data-en="<em>Every studio has a formula.</em>"><em>Mọi studio đều có công thức.</em></p>
+      <p class="manifesto-line manifesto-line--accent reveal"
+        data-vi="Lệch Studio không có."
+        data-en="Lệch Studio doesn't.">Lệch Studio không có.</p>
+      <p class="manifesto-line reveal"
+        data-vi="<em>Vì cảm xúc thật</em>"
+        data-en="<em>Because real emotion</em>"><em>Vì cảm xúc thật</em></p>
+      <p class="manifesto-line manifesto-line--accent reveal"
+        data-vi="không có công thức nào."
+        data-en="has no formula.">không có công thức nào.</p>
     </blockquote>
     <div class="manifesto-footer reveal">
       <span class="manifesto-rule" aria-hidden="true"></span>
@@ -169,12 +204,18 @@
      ============================================================ -->
 <section class="cta-band">
   <div class="wrap cta-grid">
-    <h2 class="display reveal">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
+    <h2 class="display reveal"
+      data-vi="ĐỌC XONG,<br>SẴN SÀNG CHỤP?"
+      data-en="DONE READING,<br>READY TO SHOOT?">ĐỌC XONG,<br>SẴN SÀNG CHỤP?</h2>
     <div class="reveal">
-      <p class="hero-sub" style="color:var(--bone-dim);">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
+      <p class="hero-sub" style="color:var(--bone-dim);"
+        data-vi="Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ."
+        data-en="Lệch Studio takes bookings weekly — reserve your slot early.">Lệch Studio nhận lịch mỗi tuần — đặt trước để chắc chỗ.</p>
       <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
-        <a href="/booking" class="btn btn-on-dark">Đặt lịch ngay →</a>
-        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+        <a href="/booking" class="btn btn-on-dark"
+          data-vi="Đặt lịch ngay →" data-en="Book now →">Đặt lịch ngay →</a>
+        <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);"
+          data-vi="Xem bảng giá" data-en="View pricing">Xem bảng giá</a>
       </div>
     </div>
   </div>
@@ -184,4 +225,3 @@
 <script src="/js/script.js"></script>
 </body>
 </html>
-

@@ -101,7 +101,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   letter-spacing:.08em;
 }
 .eyebrow{
-  color: wheat;
+  color: #C2410C;
   font-family:'DM Mono',monospace;
   font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   display:inline-flex;align-items:center;gap:8px;

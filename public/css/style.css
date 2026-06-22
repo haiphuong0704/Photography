@@ -2681,7 +2681,7 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
   color:rgba(243,240,231,.3);margin-bottom:20px;
 }
 .bk-hero-title{
-  font-size:clamp(3rem,8vw,7.5rem);line-height:.92;
+  font-size:72px;line-height:.92;
   margin-bottom:24px;
 }
 .bk-hero-sub{
@@ -2868,7 +2868,7 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 .bk-submit-note strong {
   color: var(--void);
 }
-.bk-submit-btn{font-size:1rem;padding:18px 48px;white-space:nowrap;}
+.bk-submit-btn{font-size:14px;padding:18px 48px;white-space:nowrap;}
 .btn-volt{
   background:var(--volt);color:var(--void);border:none;
   font-weight:600;letter-spacing:.06em;

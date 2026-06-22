@@ -42,7 +42,7 @@ class BlogModel {
         catId:    'tips',
         date:     '2026-04-12',
         readTime: 4,
-        photo:    U('1606221982782-407853fb4627',1200,750),
+        photo:    U('1552014785-a6e5f8bc9131',1200,750),
         content: `
           <p>Trang phục chiếm 40% quyết định bộ ảnh trông như thế nào. Đây không phải số liệu khoa học — đây là kinh nghiệm sau hàng trăm buổi chụp chân dung của Lệch Studio.</p>
           <h2>Màu sắc: tránh xa pattern rậm rịt</h2>
@@ -122,4 +122,5 @@ class BlogModel {
 }
 
 module.exports = BlogModel;
+
 

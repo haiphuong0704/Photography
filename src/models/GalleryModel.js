@@ -22,7 +22,7 @@ class GalleryModel {
       { id: 18, category: 'product',  label: 'Interior',    caption: 'Không gian văn phòng Q.2',    num: '118', photo: U('1631330612137-07b3a03f7cf1',400,400), ar: '1/1'  },
       // Commercial
       { id:  2, category: 'commercial', label: 'Editorial',  caption: 'BST Thu Đông — Look 03',     num: '102', photo: U('1608497275992-b04e06353862',400,533), ar: '3/4'  },
-      { id:  6, category: 'commercial', label: 'Lookbook',   caption: 'Local brand — SS26',          num: '106', photo: U('1606221982782-407853fb4627',400,500), ar: '4/5'  },
+      { id:  6, category: 'commercial', label: 'Lookbook',   caption: 'Local brand — SS26',          num: '106', photo: U('1552014785-a6e5f8bc9131',400,500), ar: '4/5'  },
       { id:  8, category: 'commercial', label: 'Đội ngũ',   caption: 'Văn phòng startup Q.2',       num: '108', photo: U('1630491198015-3d997fe8db72',400,533), ar: '3/4'  },
       { id: 12, category: 'commercial', label: 'Sự kiện',   caption: 'Hội nghị thường niên',         num: '112', photo: U('1675655588018-362521ece58d',400,400), ar: '1/1'  }
     ];
@@ -44,4 +44,5 @@ class GalleryModel {
 }
 
 module.exports = GalleryModel;
+
 

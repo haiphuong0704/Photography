@@ -101,6 +101,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   letter-spacing:.08em;
 }
 .eyebrow{
+  color: wheat;
   font-family:'DM Mono',monospace;
   font-size:12px;letter-spacing:.18em;text-transform:uppercase;
   display:inline-flex;align-items:center;gap:8px;
@@ -354,7 +355,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 /* ---------- Sections ---------- */
 section{position:relative;}
-.section-pad{padding:120px 0;}
+.section-pad{padding:50px 0;}
 .hairline{border-top:1px solid var(--line-dark);}
 
 /* ---------- Ticker ---------- */
@@ -2845,7 +2846,7 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 
 /* Submit zone */
 .bk-submit-zone{
-  background:var(--void);color:var(--bone);
+  color:var(--void);
   margin:0 calc(50% - 50vw);padding:64px 0;
 }
 .bk-submit-inner{
@@ -2855,13 +2856,17 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 }
 .bk-submit-title{
   font-size:clamp(1.4rem,3vw,2.4rem);line-height:1.0;
-  color:var(--bone);margin-bottom:12px;
+  color:var(--void);margin-bottom:12px;
 }
-.bk-submit-note{
-  font-size:.72rem;letter-spacing:.08em;
-  color:rgba(243,240,231,.4);line-height:1.7;
+.bk-submit-note {
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--void);
+  line-height: 1.7;
 }
-.bk-submit-note strong{color:rgba(243,240,231,.7);}
+.bk-submit-note strong {
+  color: var(--void);
+}
 .bk-submit-btn{font-size:1rem;padding:18px 48px;white-space:nowrap;}
 .btn-volt{
   background:var(--volt);color:var(--void);border:none;

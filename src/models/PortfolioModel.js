@@ -30,7 +30,7 @@ class PortfolioModel {
         enDescription:'Hard light, off-axis compositions, strong color contrasts. Working directly with stylists and brands so each set has its own attitude — no safe lookbook formulas.',
         services:    ['Lookbook & catalogue', 'Editorial tạp chí', 'Campaign thương hiệu'],
         enServices:  ['Lookbook & catalogue', 'Magazine editorial', 'Brand campaign'],
-        cta:         { label: 'Hợp tác chụp editorial →', href: '/contact' },
+        cta:         { label: 'Hợp tác chụp editorial →', href: '/booking' },
         enCta:       { label: 'Collaborate on an editorial →' },
         photos: [
           { photo: U('1654512697681-8434b50096dd',400,533), ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
@@ -64,7 +64,7 @@ class PortfolioModel {
         enDescription:'Wandering with a camera, no script. Perfect for families, friends, or anyone who wants photos that feel nothing like a studio session.',
         services:    ['Street photography', 'Ảnh gia đình tự nhiên', 'Theo chân một ngày (documentary)'],
         enServices:  ['Street photography', 'Natural family portraits', 'Documentary day-in-the-life'],
-        cta:         { label: 'Đặt buổi chụp đời thường →', href: '/contact' },
+        cta:         { label: 'Đặt buổi chụp đời thường →', href: '/booking' },
         enCta:       { label: 'Book a lifestyle shoot →' },
         photos: [
           { photo: U('1690812063097-d57c5b7c21f1',400,533), ar: '3/4', tag: 'Street', caption: 'Sài Gòn về đêm', num: '051', cls: 'pm-a' },

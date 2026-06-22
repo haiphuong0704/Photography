@@ -15,13 +15,21 @@
     <div class="bk-success-check reveal" aria-hidden="true">
       <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
-    <h1 class="display bk-success-title reveal">ĐÃ NHẬN<br>YÊU CẦU.</h1>
-    <p class="bk-success-sub reveal">Lệch Studio sẽ liên hệ lại trong vòng <strong>24 giờ</strong> để xác nhận lịch và gửi invoice.</p>
+    <h1 class="display bk-success-title reveal"
+      data-vi="ĐÃ NHẬN<br>YÊU CẦU."
+      data-en="REQUEST<br>RECEIVED.">ĐÃ NHẬN<br>YÊU CẦU.</h1>
+    <p class="bk-success-sub reveal"
+      data-vi="Lệch Studio sẽ liên hệ lại trong vòng <strong>24 giờ</strong> để xác nhận lịch và gửi invoice."
+      data-en="Lệch Studio will reach out within <strong>24 hours</strong> to confirm your booking and send an invoice.">Lệch Studio sẽ liên hệ lại trong vòng <strong>24 giờ</strong> để xác nhận lịch và gửi invoice.</p>
     <div class="bk-success-links reveal">
-      <a href="/" class="btn btn-on-dark">Về trang chủ</a>
-      <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);">Xem bảng giá</a>
+      <a href="/" class="btn btn-on-dark"
+        data-vi="Về trang chủ" data-en="Back to home">Về trang chủ</a>
+      <a href="/packages" class="btn btn-ghost" style="border-color:var(--volt);color:var(--volt);"
+        data-vi="Xem bảng giá" data-en="View pricing">Xem bảng giá</a>
     </div>
-    <span class="mono bk-success-note">Kiểm tra hộp thư — xác nhận sẽ được gửi tới email của bạn.</span>
+    <span class="mono bk-success-note"
+      data-vi="Kiểm tra hộp thư — xác nhận sẽ được gửi tới email của bạn."
+      data-en="Check your inbox — a confirmation will be sent to your email.">Kiểm tra hộp thư — xác nhận sẽ được gửi tới email của bạn.</span>
   </div>
 </section>
 
@@ -35,15 +43,29 @@
   <div class="wrap bk-hero-inner">
 
     <div class="bk-hero-text">
-      <span class="mono bk-hero-eyebrow reveal">Lệch Studio · Đặt lịch</span>
-      <h1 class="display bk-hero-title reveal" data-chars>ĐẶT<br>LỊCH.</h1>
-      <p class="bk-hero-sub reveal">Điền form — nhận xác nhận trong 24 giờ.<br>Không cần đặt cọc để giữ slot.</p>
+      <span class="mono bk-hero-eyebrow reveal"
+        data-vi="Lệch Studio · Đặt lịch"
+        data-en="Lệch Studio · Book a session">Lệch Studio · Đặt lịch</span>
+      <h1 class="display bk-hero-title reveal" data-chars
+        data-vi="ĐẶT<br>LỊCH." data-en="BOOK<br>NOW.">ĐẶT<br>LỊCH.</h1>
+      <p class="bk-hero-sub reveal"
+        data-vi="Điền form — nhận xác nhận trong 24 giờ.<br>Không cần đặt cọc để giữ slot."
+        data-en="Fill the form — get a confirmation within 24 hours.<br>No deposit needed to hold your slot.">Điền form — nhận xác nhận trong 24 giờ.<br>Không cần đặt cọc để giữ slot.</p>
       <div class="bk-hero-facts reveal">
-        <div class="bk-fact"><span class="display bk-fact-num">24h</span><span class="mono">xác nhận</span></div>
+        <div class="bk-fact">
+          <span class="display bk-fact-num">24h</span>
+          <span class="mono" data-vi="xác nhận" data-en="response">xác nhận</span>
+        </div>
         <div class="bk-fact-sep" aria-hidden="true"></div>
-        <div class="bk-fact"><span class="display bk-fact-num">3</span><span class="mono">gói chụp</span></div>
+        <div class="bk-fact">
+          <span class="display bk-fact-num">3</span>
+          <span class="mono" data-vi="gói chụp" data-en="packages">gói chụp</span>
+        </div>
         <div class="bk-fact-sep" aria-hidden="true"></div>
-        <div class="bk-fact"><span class="display bk-fact-num">0₫</span><span class="mono">đặt cọc</span></div>
+        <div class="bk-fact">
+          <span class="display bk-fact-num">0₫</span>
+          <span class="mono" data-vi="đặt cọc" data-en="deposit">đặt cọc</span>
+        </div>
       </div>
     </div>
 
@@ -70,16 +92,18 @@
 <div class="bk-process">
   <div class="wrap bk-process-inner">
     <% [
-      { n:'01', title:'Điền form',   desc:'Chọn gói & điền thông tin' },
-      { n:'02', title:'Xác nhận',   desc:'Lệch liên hệ trong 24 giờ' },
-      { n:'03', title:'Buổi chụp',  desc:'Gặp nhau, chụp, tạo ra ảnh' },
-      { n:'04', title:'Nhận ảnh',   desc:'Giao file chỉnh sửa hoàn chỉnh' }
+      { n:'01', title:'Điền form',  enTitle:'Fill the form',   desc:'Chọn gói & điền thông tin',          enDesc:'Choose a package & fill in your details' },
+      { n:'02', title:'Xác nhận',  enTitle:'Confirmation',     desc:'Lệch liên hệ trong 24 giờ',          enDesc:'Lệch gets back to you within 24h' },
+      { n:'03', title:'Buổi chụp', enTitle:'The shoot',        desc:'Gặp nhau, chụp, tạo ra ảnh',         enDesc:'We meet, shoot, and create together' },
+      { n:'04', title:'Nhận ảnh',  enTitle:'Receive photos',   desc:'Giao file chỉnh sửa hoàn chỉnh',     enDesc:'Fully edited files delivered to you' }
     ].forEach((s, i) => { %>
     <div class="bk-proc-step reveal">
       <span class="mono bk-proc-num"><%= s.n %></span>
       <div class="bk-proc-arrow" aria-hidden="true"></div>
-      <h3 class="display bk-proc-title"><%= s.title %></h3>
-      <p class="bk-proc-desc"><%= s.desc %></p>
+      <h3 class="display bk-proc-title"
+        data-vi="<%= s.title %>" data-en="<%= s.enTitle %>"><%= s.title %></h3>
+      <p class="bk-proc-desc"
+        data-vi="<%= s.desc %>" data-en="<%= s.enDesc %>"><%= s.desc %></p>
     </div>
     <% }) %>
   </div>
@@ -97,8 +121,11 @@
         <div class="bk-step-head">
           <span class="bk-step-num mono">01</span>
           <div>
-            <h2 class="display bk-step-title">Chọn gói</h2>
-            <p class="bk-step-hint">Bạn có thể đổi gói sau khi chúng tôi liên hệ.</p>
+            <h2 class="display bk-step-title"
+              data-vi="Chọn gói" data-en="Choose package">Chọn gói</h2>
+            <p class="bk-step-hint"
+              data-vi="Bạn có thể đổi gói sau khi chúng tôi liên hệ."
+              data-en="You can change the package after we reach out.">Bạn có thể đổi gói sau khi chúng tôi liên hệ.</p>
           </div>
         </div>
         <div class="bk-pkg-grid">
@@ -107,16 +134,19 @@
             <input type="radio" name="package" value="<%= pkg.id %>"
               <%= prefPackage === pkg.id ? 'checked' : (prefPackage === '' && pkg.highlighted ? 'checked' : '') %>>
             <div class="bk-pkg-inner">
-              <% if (pkg.highlighted) { %><span class="bk-pkg-badge mono">Đề xuất</span><% } %>
+              <% if (pkg.highlighted) { %>
+              <span class="bk-pkg-badge mono"
+                data-vi="Đề xuất" data-en="Recommended">Đề xuất</span>
+              <% } %>
               <span class="mono bk-pkg-index">0<%= i+1 %></span>
               <h3 class="display bk-pkg-name"><%= pkg.name %></h3>
               <p class="bk-pkg-price"><%= pkg.priceLabel %></p>
               <div class="bk-pkg-specs">
-                <span><%= pkg.duration %></span>
+                <span data-vi="<%= pkg.duration %>" data-en="<%= pkg.enDuration %>"><%= pkg.duration %></span>
                 <span class="bk-pkg-dot">·</span>
-                <span><%= pkg.photos %></span>
+                <span data-vi="<%= pkg.photos %>" data-en="<%= pkg.enPhotos %>"><%= pkg.photos %></span>
                 <span class="bk-pkg-dot">·</span>
-                <span><%= pkg.delivery %></span>
+                <span data-vi="<%= pkg.delivery %>" data-en="<%= pkg.enDelivery %>"><%= pkg.delivery %></span>
               </div>
               <div class="bk-pkg-check" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -132,20 +162,30 @@
         <div class="bk-step-head">
           <span class="bk-step-num mono">02</span>
           <div>
-            <h2 class="display bk-step-title">Loại & Ngày</h2>
-            <p class="bk-step-hint">Đề xuất ngày dự phòng trong phần ghi chú nếu cần.</p>
+            <h2 class="display bk-step-title"
+              data-vi="Loại & Ngày" data-en="Type & Date">Loại & Ngày</h2>
+            <p class="bk-step-hint"
+              data-vi="Đề xuất ngày dự phòng trong phần ghi chú nếu cần."
+              data-en="Suggest a backup date in the notes section if needed.">Đề xuất ngày dự phòng trong phần ghi chú nếu cần.</p>
           </div>
         </div>
         <div class="bk-fields-row">
           <div class="bk-field">
-            <label for="session_type">Loại buổi chụp <span class="req">*</span></label>
+            <label for="session_type">
+              <span data-vi="Loại buổi chụp" data-en="Session type">Loại buổi chụp</span>
+              <span class="req">*</span>
+            </label>
             <select id="session_type" name="session_type" required>
-              <option value="" disabled selected>Chọn loại...</option>
+              <option value="" disabled selected
+                data-vi="Chọn loại..." data-en="Select type...">Chọn loại...</option>
               <% sessionTypes.forEach(t => { %><option value="<%= t %>"><%= t %></option><% }) %>
             </select>
           </div>
           <div class="bk-field">
-            <label for="preferred_date">Ngày mong muốn <span class="req">*</span></label>
+            <label for="preferred_date">
+              <span data-vi="Ngày mong muốn" data-en="Preferred date">Ngày mong muốn</span>
+              <span class="req">*</span>
+            </label>
             <input type="date" id="preferred_date" name="preferred_date" required
               min="<%= new Date(Date.now() + 86400000*3).toISOString().split('T')[0] %>">
           </div>
@@ -157,25 +197,36 @@
         <div class="bk-step-head">
           <span class="bk-step-num mono">03</span>
           <div>
-            <h2 class="display bk-step-title">Địa điểm</h2>
-            <p class="bk-step-hint">Chụp ngoại thành có phụ phí di chuyển từ 300.000 ₫.</p>
+            <h2 class="display bk-step-title"
+              data-vi="Địa điểm" data-en="Location">Địa điểm</h2>
+            <p class="bk-step-hint"
+              data-vi="Chụp ngoại thành có phụ phí di chuyển từ 300.000 ₫."
+              data-en="Shoots outside the city centre incur a travel surcharge from 300,000 ₫.">Chụp ngoại thành có phụ phí di chuyển từ 300.000 ₫.</p>
           </div>
         </div>
         <div class="bk-fields-row">
           <div class="bk-field">
-            <label for="city">Thành phố <span class="req">*</span></label>
+            <label for="city">
+              <span data-vi="Thành phố" data-en="City">Thành phố</span>
+              <span class="req">*</span>
+            </label>
             <select id="city" name="city" required>
-              <option value="" disabled selected>Chọn thành phố...</option>
+              <option value="" disabled selected
+                data-vi="Chọn thành phố..." data-en="Select city...">Chọn thành phố...</option>
               <option>TP. Hồ Chí Minh</option>
               <option>Hà Nội</option>
               <option>Đà Nẵng</option>
               <option>Đà Lạt</option>
-              <option>Khác (ghi rõ bên dưới)</option>
+              <option data-vi="Khác (ghi rõ bên dưới)" data-en="Other (specify below)">Khác (ghi rõ bên dưới)</option>
             </select>
           </div>
           <div class="bk-field">
-            <label for="location_detail">Địa điểm cụ thể</label>
+            <label for="location_detail">
+              <span data-vi="Địa điểm cụ thể" data-en="Specific location">Địa điểm cụ thể</span>
+            </label>
             <input type="text" id="location_detail" name="location_detail"
+              data-vi-placeholder="Công viên, studio, địa chỉ..."
+              data-en-placeholder="Park, studio, address..."
               placeholder="Công viên, studio, địa chỉ...">
           </div>
         </div>
@@ -186,17 +237,29 @@
         <div class="bk-step-head">
           <span class="bk-step-num mono">04</span>
           <div>
-            <h2 class="display bk-step-title">Liên hệ</h2>
-            <p class="bk-step-hint">Thông tin chỉ dùng để xác nhận lịch — không spam.</p>
+            <h2 class="display bk-step-title"
+              data-vi="Liên hệ" data-en="Contact">Liên hệ</h2>
+            <p class="bk-step-hint"
+              data-vi="Thông tin chỉ dùng để xác nhận lịch — không spam."
+              data-en="Your details are only used to confirm the booking — no spam.">Thông tin chỉ dùng để xác nhận lịch — không spam.</p>
           </div>
         </div>
         <div class="bk-fields-row">
           <div class="bk-field">
-            <label for="name">Họ & Tên <span class="req">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Nguyễn Văn A">
+            <label for="name">
+              <span data-vi="Họ & Tên" data-en="Full name">Họ & Tên</span>
+              <span class="req">*</span>
+            </label>
+            <input type="text" id="name" name="name" required
+              data-vi-placeholder="Nguyễn Văn A"
+              data-en-placeholder="Your full name"
+              placeholder="Nguyễn Văn A">
           </div>
           <div class="bk-field">
-            <label for="phone">Số điện thoại <span class="req">*</span></label>
+            <label for="phone">
+              <span data-vi="Số điện thoại" data-en="Phone number">Số điện thoại</span>
+              <span class="req">*</span>
+            </label>
             <input type="tel" id="phone" name="phone" required placeholder="09x xxx xxxx">
           </div>
         </div>
@@ -217,11 +280,16 @@
         <div class="bk-step-head">
           <span class="bk-step-num mono">05</span>
           <div>
-            <h2 class="display bk-step-title">Ghi chú</h2>
-            <p class="bk-step-hint">Concept, trang phục, số người, yêu cầu riêng...</p>
+            <h2 class="display bk-step-title"
+              data-vi="Ghi chú" data-en="Notes">Ghi chú</h2>
+            <p class="bk-step-hint"
+              data-vi="Concept, trang phục, số người, yêu cầu riêng..."
+              data-en="Concept, outfits, number of people, special requests...">Concept, trang phục, số người, yêu cầu riêng...</p>
           </div>
         </div>
         <textarea name="notes" rows="5" class="bk-textarea"
+          data-vi-placeholder="Ví dụ: Tôi muốn chụp ngoài trời buổi chiều, mặc áo dài trắng, 2 người. Nếu có thể muốn thêm 1 địa điểm với bối cảnh đô thị..."
+          data-en-placeholder="E.g. I'd like an outdoor afternoon shoot, white ao dai, 2 people. If possible, I'd love a second location with an urban backdrop..."
           placeholder="Ví dụ: Tôi muốn chụp ngoài trời buổi chiều, mặc áo dài trắng, 2 người. Nếu có thể muốn thêm 1 địa điểm với bối cảnh đô thị..."></textarea>
       </div>
 
@@ -229,12 +297,16 @@
       <div class="bk-submit-zone reveal">
         <div class="bk-submit-inner">
           <div class="bk-submit-text">
-            <h3 class="display bk-submit-title">Sẵn sàng<br>rồi chứ?</h3>
-            <p class="mono bk-submit-note">Lệch Studio xác nhận trong <strong>24 giờ</strong>.<br>Không đặt cọc — không ràng buộc.</p>
+            <h3 class="display bk-submit-title"
+              data-vi="Sẵn sàng<br>rồi chứ?"
+              data-en="All set<br>to go?">Sẵn sàng<br>rồi chứ?</h3>
+            <p class="mono bk-submit-note"
+              data-vi="Lệch Studio xác nhận trong <strong>24 giờ</strong>.<br>Không đặt cọc — không ràng buộc."
+              data-en="Lệch Studio confirms within <strong>24 hours</strong>.<br>No deposit — no obligation.">Lệch Studio xác nhận trong <strong>24 giờ</strong>.<br>Không đặt cọc — không ràng buộc.</p>
           </div>
-          <button type="submit" class="btn btn-volt bk-submit-btn">
-            Gửi yêu cầu đặt lịch →
-          </button>
+          <button type="submit" class="btn btn-volt bk-submit-btn"
+            data-vi="Gửi yêu cầu đặt lịch →"
+            data-en="Send booking request →">Gửi yêu cầu đặt lịch →</button>
         </div>
       </div>
 

@@ -12,7 +12,7 @@ class BlogModel {
         catId:    'bts',
         date:     '2026-05-20',
         readTime: 6,
-        photo:    'https://picsum.photos/seed/blog1/800/450',
+        photo:    '/images/ph-wide.svg',
         content: `
           <p>5 giờ sáng. Điện thoại rung. Đó là tín hiệu bắt đầu một trong những ngày dài nhất của chúng tôi trong năm — theo chân Linh và Khoa từ khoảnh khắc cô dâu bắt đầu trang điểm cho đến khi đôi bạn trẻ bước vào căn phòng riêng của họ lúc gần nửa đêm.</p>
           <h2>Phần 1: Trang điểm — khoảnh khắc yên tĩnh nhất</h2>
@@ -40,7 +40,7 @@ class BlogModel {
         catId:    'tips',
         date:     '2026-04-12',
         readTime: 4,
-        photo:    'https://picsum.photos/seed/blog2/800/450',
+        photo:    '/images/ph-wide.svg',
         content: `
           <p>Trang phục chiếm 40% quyết định bộ ảnh trông như thế nào. Đây không phải số liệu khoa học — đây là kinh nghiệm sau hàng trăm buổi chụp chân dung của Lệch Studio.</p>
           <h2>Màu sắc: tránh xa pattern rậm rịt</h2>
@@ -61,7 +61,7 @@ class BlogModel {
         catId:    'location',
         date:     '2026-03-08',
         readTime: 5,
-        photo:    'https://picsum.photos/seed/blog3/800/450',
+        photo:    '/images/ph-wide.svg',
         content: `
           <p>Sài Gòn có hàng nghìn góc đẹp — vấn đề là phần lớn trong số đó đã bị chụp quá nhiều đến mức nhàm. Đây là 5 địa điểm chúng tôi đang dùng nhiều nhất trong 2026.</p>
           <h2>1. Hẻm gạch Bình Thạnh</h2>
@@ -85,7 +85,7 @@ class BlogModel {
         catId:    'bts',
         date:     '2026-02-18',
         readTime: 7,
-        photo:    'https://picsum.photos/seed/blog4/800/450',
+        photo:    '/images/ph-wide.svg',
         content: `
           <p>Khi brand K— liên hệ với Lệch Studio vào tháng 11/2025, yêu cầu của họ rất đơn giản: "Chúng tôi muốn lookbook trông như tạp chí, không phải catalogue". Đó là bắt đầu của 3 tuần làm việc cùng nhau.</p>
           <h2>Tuần 1: Concept và mood board</h2>

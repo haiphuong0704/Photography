@@ -8,7 +8,7 @@ class ContactPresenter {
       currentPage:  'contact',
       success:      req.query.success === '1',
       activeTab:    req.query.tab || 'message',
-      contactPhoto: 'https://picsum.photos/seed/ct301/400/500',
+      contactPhoto: '/images/ph-4x5.svg',
       packages:     PackagesModel.getAll(),
       sessionTypes: PackagesModel.getSessionTypes(),
       prefPackage:  req.query.package || ''

@@ -11,16 +11,16 @@ class AboutModel {
 
   static getTeam() {
     return [
-      { name: 'ĐỨC ANH',  role: 'Founder & Lead Photographer', tag: 'Founder',  num: 'T1', photo: 'https://picsum.photos/seed/team1/400/400' },
-      { name: 'HẢI YẾN',  role: 'Wedding Photographer',        tag: 'Wedding',  num: 'T2', photo: 'https://picsum.photos/seed/team2/400/400' },
-      { name: 'QUỐC BẢO', role: 'Fashion Photographer',        tag: 'Editorial',num: 'T3', photo: 'https://picsum.photos/seed/team3/400/400' },
-      { name: 'MAI CHI',  role: 'Retoucher & Studio Manager',  tag: 'Hậu kỳ',  num: 'T4', photo: 'https://picsum.photos/seed/team4/400/400' }
+      { name: 'ĐỨC ANH',  role: 'Founder & Lead Photographer', tag: 'Founder',  num: 'T1', photo: '/images/ph-3x4.svg' },
+      { name: 'HẢI YẾN',  role: 'Wedding Photographer',        tag: 'Wedding',  num: 'T2', photo: '/images/ph-3x4.svg' },
+      { name: 'QUỐC BẢO', role: 'Fashion Photographer',        tag: 'Editorial',num: 'T3', photo: '/images/ph-3x4.svg' },
+      { name: 'MAI CHI',  role: 'Retoucher & Studio Manager',  tag: 'Hậu kỳ',  num: 'T4', photo: '/images/ph-3x4.svg' }
     ];
   }
 
   static getStoryPhoto() {
     return {
-      photo:   'https://picsum.photos/seed/ab201/400/500',
+      photo:   '/images/ph-4x5.svg',
       ar:      '4/5',
       tag:     'Studio<br>2026',
       caption: 'Góc làm việc — Q.1',

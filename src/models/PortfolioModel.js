@@ -14,9 +14,9 @@ class PortfolioModel {
         cta:         { label: 'Đặt lịch chụp cưới →', href: '/contact' },
         enCta:       { label: 'Book a wedding shoot →' },
         photos: [
-          { photo: 'https://picsum.photos/seed/pm021/400/500', ar: '4/5', tag: 'Cưới',    caption: 'Linh & Khoa', num: '021', cls: 'pm-a' },
-          { photo: 'https://picsum.photos/seed/pm022/400/400', ar: '1/1', tag: null,       caption: 'Thảo & Nam', num: '022', cls: 'pm-b' },
-          { photo: 'https://picsum.photos/seed/pm023/400/400', ar: '1/1', tag: null,       caption: 'Pháo giấy',  num: '023', cls: 'pm-c' }
+          { photo: '/images/ph-4x5.svg', ar: '4/5', tag: 'Cưới',    caption: 'Linh & Khoa', num: '021', cls: 'pm-a' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,      caption: 'Thảo & Nam', num: '022', cls: 'pm-b' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,      caption: 'Pháo giấy',  num: '023', cls: 'pm-c' }
         ],
         alt: false
       },
@@ -31,9 +31,9 @@ class PortfolioModel {
         cta:         { label: 'Hợp tác chụp editorial →', href: '/contact' },
         enCta:       { label: 'Collaborate on an editorial →' },
         photos: [
-          { photo: 'https://picsum.photos/seed/pm031/400/533', ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
-          { photo: 'https://picsum.photos/seed/pm032/400/400', ar: '1/1', tag: null,         caption: 'Lookbook',    num: '032', cls: 'pm-b' },
-          { photo: 'https://picsum.photos/seed/pm033/400/400', ar: '1/1', tag: null,         caption: 'Studio test', num: '033', cls: 'pm-c' }
+          { photo: '/images/ph-3x4.svg', ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,        caption: 'Lookbook',    num: '032', cls: 'pm-b' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,        caption: 'Studio test', num: '033', cls: 'pm-c' }
         ],
         alt: true
       },
@@ -48,9 +48,9 @@ class PortfolioModel {
         cta:         { label: 'Yêu cầu báo giá doanh nghiệp →', href: '/contact' },
         enCta:       { label: 'Request a brand quote →' },
         photos: [
-          { photo: 'https://picsum.photos/seed/pm041/400/500', ar: '4/5', tag: 'CEO', caption: 'Chân dung CEO', num: '041', cls: 'pm-a' },
-          { photo: 'https://picsum.photos/seed/pm042/400/400', ar: '1/1', tag: null,   caption: 'Đội ngũ',      num: '042', cls: 'pm-b' },
-          { photo: 'https://picsum.photos/seed/pm043/400/400', ar: '1/1', tag: null,   caption: 'Văn phòng',    num: '043', cls: 'pm-c' }
+          { photo: '/images/ph-4x5.svg', ar: '4/5', tag: 'CEO', caption: 'Chân dung CEO', num: '041', cls: 'pm-a' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,  caption: 'Đội ngũ',      num: '042', cls: 'pm-b' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,  caption: 'Văn phòng',    num: '043', cls: 'pm-c' }
         ],
         alt: false
       },
@@ -65,9 +65,9 @@ class PortfolioModel {
         cta:         { label: 'Đặt buổi chụp đời thường →', href: '/contact' },
         enCta:       { label: 'Book a lifestyle shoot →' },
         photos: [
-          { photo: 'https://picsum.photos/seed/pm051/400/533', ar: '3/4', tag: 'Street', caption: 'Sài Gòn về đêm', num: '051', cls: 'pm-a' },
-          { photo: 'https://picsum.photos/seed/pm052/400/400', ar: '1/1', tag: null,      caption: 'Chợ sáng',      num: '052', cls: 'pm-b' },
-          { photo: 'https://picsum.photos/seed/pm053/400/400', ar: '1/1', tag: null,      caption: 'Gia đình',      num: '053', cls: 'pm-c' }
+          { photo: '/images/ph-3x4.svg', ar: '3/4', tag: 'Street', caption: 'Sài Gòn về đêm', num: '051', cls: 'pm-a' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,     caption: 'Chợ sáng',      num: '052', cls: 'pm-b' },
+          { photo: '/images/ph-1x1.svg', ar: '1/1', tag: null,     caption: 'Gia đình',      num: '053', cls: 'pm-c' }
         ],
         alt: true
       }

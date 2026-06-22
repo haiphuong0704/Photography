@@ -28,10 +28,10 @@ class StudioModel {
 
   static getCategories() {
     return [
-      { id: 'cuoi',        label: 'Cưới',        enLabel: 'Wedding',   sub: 'Wedding & Pre-wedding', num: 'FRAME 011', photo: 'https://picsum.photos/seed/cuoi01/800/500', ar: '16/10', big: true  },
-      { id: 'thoitrang',   label: 'Thời trang',  enLabel: 'Fashion',   sub: 'Editorial',             num: '012',       photo: 'https://picsum.photos/seed/fash01/400/500', ar: '4/5',   big: false },
-      { id: 'doanhnghiep', label: 'Doanh nghiệp',enLabel: 'Brand',     sub: 'Brand & Portrait',     num: '013',       photo: 'https://picsum.photos/seed/biz001/400/500', ar: '4/5',   big: false },
-      { id: 'doithuong',   label: 'Đời thường',  enLabel: 'Lifestyle', sub: 'Street & Lifestyle',    num: '014',       photo: 'https://picsum.photos/seed/street1/400/500',ar: '4/5',   big: false }
+      { id: 'cuoi',        label: 'Cưới',        enLabel: 'Wedding',   sub: 'Wedding & Pre-wedding', num: 'FRAME 011', photo: '/images/ph-wide.svg', ar: '16/10', big: true  },
+      { id: 'thoitrang',   label: 'Thời trang',  enLabel: 'Fashion',   sub: 'Editorial',             num: '012',       photo: '/images/ph-4x5.svg', ar: '4/5',   big: false },
+      { id: 'doanhnghiep', label: 'Doanh nghiệp',enLabel: 'Brand',     sub: 'Brand & Portrait',     num: '013',       photo: '/images/ph-4x5.svg', ar: '4/5',   big: false },
+      { id: 'doithuong',   label: 'Đời thường',  enLabel: 'Lifestyle', sub: 'Street & Lifestyle',    num: '014',       photo: '/images/ph-4x5.svg', ar: '4/5',   big: false }
     ];
   }
 

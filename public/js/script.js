@@ -297,6 +297,9 @@
         ? (el.dataset.enPlaceholder || el.dataset.viPlaceholder)
         : el.dataset.viPlaceholder;
     });
+    document.querySelectorAll('[data-label-vi]').forEach(el => {
+      el.dataset.label = l === 'en' ? (el.dataset.labelEn || el.dataset.labelVi) : el.dataset.labelVi;
+    });
     drop.querySelectorAll('.lang-opt').forEach(o => {
       o.classList.toggle('is-active', o.dataset.lang === l);
     });

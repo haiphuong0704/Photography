@@ -2206,6 +2206,8 @@ p.about-hero-sub.reveal.is-in {
   position:relative;
 }
 .pkg-menu-item--contact .pkg-menu-price{color:var(--volt);}
+.pkg-menu-price--link{text-decoration:none;transition:opacity .2s;}
+.pkg-menu-price--link:hover{opacity:.7;}
 /* pulsing underline on contact price text only */
 .pkg-menu-item--contact .pkg-menu-price::after{
   content:'';

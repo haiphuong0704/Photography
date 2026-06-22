@@ -11,6 +11,7 @@ const PackagesPresenter  = require('../presenters/PackagesPresenter');
 const BookingPresenter   = require('../presenters/BookingPresenter');
 const BlogPresenter      = require('../presenters/BlogPresenter');
 const PortalPresenter    = require('../presenters/PortalPresenter');
+const PolicyPresenter    = require('../presenters/PolicyPresenter');
 
 // Core pages
 router.get('/',          HomePresenter.show);
@@ -30,6 +31,9 @@ router.post('/booking',  BookingPresenter.submit);
 // Blog
 router.get('/blog',           BlogPresenter.index);
 router.get('/blog/:slug',     BlogPresenter.show);
+
+// Policy
+router.get('/policy', PolicyPresenter.show);
 
 // Client portal
 router.get('/portal',          PortalPresenter.login);

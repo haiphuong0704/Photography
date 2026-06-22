@@ -3171,3 +3171,41 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
   .about-value-item{grid-template-columns:1fr;gap:8px;}
   .about-value-num{display:none;}
 }
+
+/* ============================================================
+   POLICY PAGE
+   ============================================================ */
+.policy-hero{padding:140px 0 60px;}
+.policy-section{padding-top:60px;}
+.policy-wrap{display:grid;grid-template-columns:220px 1fr;gap:64px;align-items:start;}
+.policy-toc{
+  position:sticky;top:100px;
+  display:flex;flex-direction:column;gap:10px;
+  font-size:.72rem;letter-spacing:.12em;
+}
+.policy-toc-label{color:var(--bone-dim);opacity:.5;margin-bottom:4px;text-transform:uppercase;}
+.policy-toc a{color:var(--bone-dim);opacity:.6;text-decoration:none;transition:opacity .2s,color .2s;}
+.policy-toc a:hover{opacity:1;color:var(--volt);}
+.policy-body{display:flex;flex-direction:column;gap:64px;padding-bottom:80px;}
+.policy-block{display:grid;grid-template-columns:48px 1fr;gap:24px;padding-top:24px;border-top:1px solid var(--line);}
+.policy-num{font-size:.65rem;letter-spacing:.2em;color:var(--volt);padding-top:6px;}
+.policy-title{font-size:clamp(20px,2vw,26px);margin-bottom:20px;}
+.policy-content p{color:rgba(243,240,231,.75);line-height:1.8;margin-bottom:14px;font-size:.93rem;}
+.policy-content p:last-child{margin-bottom:0;}
+.policy-content strong{color:var(--bone);}
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin:16px 0;}
+.policy-list li{color:rgba(243,240,231,.75);font-size:.93rem;line-height:1.7;display:flex;align-items:flex-start;gap:10px;}
+.policy-list--plain li{display:block;}
+.policy-tag{
+  flex-shrink:0;display:inline-block;
+  font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;
+  padding:3px 8px;border-radius:3px;
+}
+.policy-tag.volt{background:rgba(214,255,58,.15);color:var(--volt);}
+.policy-tag.warn{background:rgba(194,65,12,.15);color:#f97316;}
+.policy-tag.danger{background:rgba(239,68,68,.15);color:#f87171;}
+@media(max-width:768px){
+  .policy-wrap{grid-template-columns:1fr;}
+  .policy-toc{position:static;flex-direction:row;flex-wrap:wrap;gap:8px;margin-bottom:8px;}
+  .policy-toc-label{display:none;}
+}

@@ -3,5 +3,5 @@ node_modules/
 node_out.txt
 node_err.txt
 *.html
-css/
-js/
+/css/
+/js/

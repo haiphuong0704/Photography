@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const U = (id, w, h) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&auto=format&q=80`;
 
@@ -23,8 +23,8 @@ class ClientModel {
           { num: '006', caption: 'Tiệc cưới — pháo giấy',       photo: U('1537633552985-df8429e8048b',750,500), ar: '3/2'  },
           { num: '007', caption: 'First dance',                  photo: U('1519741196428-6a2175fa2557',600,750), ar: '4/5'  },
           { num: '008', caption: 'Cả gia đình',                  photo: U('1533091090875-1ff4acc497dd',750,600), ar: '5/4'  },
-          { num: '009', caption: 'Chi tiết nhẫn cưới',           photo: U('1675655588018-362521ece58d',600,600), ar: '1/1'  },
-          { num: '010', caption: 'Kết thúc ngày',                photo: U('1630491198015-3d997fe8db72',600,750), ar: '4/5'  }
+          { num: '009', caption: 'Chi tiết nhẫn cưới',           photo: U('1527529482837-4698179dc6ce',600,600), ar: '1/1'  },
+          { num: '010', caption: 'Kết thúc ngày',                photo: U('1522071820081-009f0129c71c',600,750), ar: '4/5'  }
         ]
       },
       {
@@ -58,3 +58,4 @@ class ClientModel {
 }
 
 module.exports = ClientModel;
+

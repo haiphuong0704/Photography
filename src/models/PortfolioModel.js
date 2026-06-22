@@ -13,7 +13,7 @@ class PortfolioModel {
         enDescription:'No stiff posing. We shadow the couple all day to capture moments that only happen once — from makeup to the final confetti burst.',
         services:    ['Phóng sự cưới trọn gói', 'Pre-wedding ngoại cảnh', 'Ảnh nhanh trong tiệc (same-day edit)'],
         enServices:  ['Full wedding coverage', 'Outdoor pre-wedding', 'Same-day edit (reception)'],
-        cta:         { label: 'Đặt lịch chụp cưới →', href: '/contact' },
+        cta:         { label: 'Đặt lịch chụp cưới →', href: '/booking' },
         enCta:       { label: 'Book a wedding shoot →' },
         photos: [
           { photo: U('1604017011826-d3b4c23f8914',400,500), ar: '4/5', tag: 'Cưới',    caption: 'Linh & Khoa', num: '021', cls: 'pm-a' },

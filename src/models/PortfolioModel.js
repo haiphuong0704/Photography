@@ -35,7 +35,7 @@ class PortfolioModel {
         photos: [
           { photo: U('1654512697681-8434b50096dd',400,533), ar: '3/4', tag: 'Editorial', caption: 'BST Thu Đông', num: '031', cls: 'pm-a' },
           { photo: U('1609006998306-60b2fc4ba6a0',400,400), ar: '1/1', tag: null,        caption: 'Lookbook',    num: '032', cls: 'pm-b' },
-          { photo: U('1539616908003-dcffab608e11',400,400), ar: '1/1', tag: null,        caption: 'Studio test', num: '033', cls: 'pm-c' }
+          { photo: U('1613506240218-738319838405',400,400), ar: '1/1', tag: null,        caption: 'Studio test', num: '033', cls: 'pm-c' }
         ],
         alt: true
       },
@@ -78,4 +78,5 @@ class PortfolioModel {
 }
 
 module.exports = PortfolioModel;
+
 

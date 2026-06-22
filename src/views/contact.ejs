@@ -22,20 +22,6 @@
 </header>
 
 <!-- Tab switcher -->
-<div class="contact-tabs-bar">
-  <div class="wrap">
-    <div class="contact-tab-nav" role="tablist">
-      <button class="contact-tab-btn<%= activeTab === 'message' ? ' is-active' : '' %>"
-        data-tab="message" role="tab">
-        <span data-vi="Nhắn tin nhanh" data-en="Quick Message">Nhắn tin nhanh</span>
-      </button>
-      <button class="contact-tab-btn<%= activeTab === 'booking' ? ' is-active' : '' %>"
-        data-tab="booking" role="tab">
-        <span data-vi="Đặt lịch chụp" data-en="Book a Session">Đặt lịch chụp</span>
-      </button>
-    </div>
-  </div>
-</div>
 
 <section class="section-pad contact-section" style="padding-top:40px;">
   <div class="wrap contact-grid">
@@ -44,8 +30,8 @@
     <div class="contact-panels">
 
       <!-- TAB 1: Quick message -->
-      <div id="tab-message" class="contact-tab-panel<%= activeTab === 'message' ? ' is-active' : '' %>" role="tabpanel">
-        <% if(success && activeTab === 'message') { %>
+      <div id="tab-message">
+        <% if(success) { %>
         <div class="booking-success" style="padding:40px 0;text-align:left;align-items:flex-start;">
           <span class="display" style="font-size:2rem;color:var(--volt);">✓</span>
           <h3 class="display" style="font-size:1.4rem;">
@@ -108,9 +94,6 @@
             <button type="submit" class="btn btn-fill">
               <span data-vi="Gửi yêu cầu →" data-en="Send request →">Gửi yêu cầu →</span>
             </button>
-            <button type="button" class="btn btn-ghost" id="switch-to-booking">
-              <span data-vi="Hoặc đặt lịch ngay →" data-en="Or book now →">Hoặc đặt lịch ngay →</span>
-            </button>
           </div>
           <p class="mono form-note">
             <span data-vi="* Form demo — dữ liệu không được lưu trữ." data-en="* Demo form — data is not stored.">* Form demo — dữ liệu không được lưu trữ.</span>
@@ -118,149 +101,6 @@
         </form>
       </div>
 
-      <!-- TAB 2: Booking -->
-      <div id="tab-booking" class="contact-tab-panel<%= activeTab === 'booking' ? ' is-active' : '' %>" role="tabpanel">
-        <% if(success && activeTab === 'booking') { %>
-        <div class="booking-success" style="padding:40px 0;text-align:left;align-items:flex-start;">
-          <span class="display" style="font-size:2rem;color:var(--volt);">✓</span>
-          <h3 class="display" style="font-size:1.4rem;">
-            <span data-vi="ĐÃ NHẬN." data-en="RECEIVED.">ĐÃ NHẬN.</span>
-          </h3>
-          <p><span data-vi="Lệch Studio sẽ xác nhận lịch trong 24 giờ." data-en="Lệch Studio will confirm within 24 hours.">Lệch Studio sẽ xác nhận lịch trong 24 giờ.</span></p>
-        </div>
-        <% } %>
-
-        <form class="booking-form" action="/booking" method="POST">
-
-          <fieldset class="booking-group">
-            <legend class="booking-legend mono">
-              <span data-vi="01 — Chọn gói" data-en="01 — Choose a package">01 — Chọn gói</span>
-            </legend>
-            <div class="booking-pkg-grid">
-              <% packages.forEach(pkg => { %>
-              <label class="booking-pkg-opt">
-                <input type="radio" name="package" value="<%= pkg.id %>"
-                  <%= prefPackage === pkg.id ? 'checked' : (prefPackage === '' && pkg.highlighted ? 'checked' : '') %>>
-                <span class="booking-pkg-label">
-                  <span class="display" style="font-size:.9rem;"><%= pkg.name %></span>
-                  <span class="mono" style="color:var(--bone-dim);font-size:.7rem;"><%= pkg.priceLabel %></span>
-                </span>
-              </label>
-              <% }) %>
-            </div>
-          </fieldset>
-
-          <fieldset class="booking-group">
-            <legend class="booking-legend mono">
-              <span data-vi="02 — Loại buổi chụp & Ngày" data-en="02 — Session type & Date">02 — Loại buổi chụp & Ngày</span>
-            </legend>
-            <div class="booking-row">
-              <div class="booking-field">
-                <label>
-                  <span data-vi="Loại buổi chụp" data-en="Session type">Loại buổi chụp</span>
-                </label>
-                <select name="session_type" required>
-                  <option value="" disabled selected>
-                    <span data-vi="Chọn loại..." data-en="Select type...">Chọn loại...</span>
-                  </option>
-                  <% sessionTypes.forEach(t => { %>
-                  <option value="<%= t %>"><%= t %></option>
-                  <% }) %>
-                </select>
-              </div>
-              <div class="booking-field">
-                <label>
-                  <span data-vi="Ngày mong muốn" data-en="Preferred date">Ngày mong muốn</span>
-                </label>
-                <input type="date" name="preferred_date" required
-                  min="<%= new Date(Date.now() + 86400000*3).toISOString().split('T')[0] %>">
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="booking-group">
-            <legend class="booking-legend mono">
-              <span data-vi="03 — Địa điểm" data-en="03 — Location">03 — Địa điểm</span>
-            </legend>
-            <div class="booking-row">
-              <div class="booking-field">
-                <label><span data-vi="Thành phố" data-en="City">Thành phố</span></label>
-                <select name="city" required>
-                  <option value="" disabled selected>
-                    <span data-vi="Chọn thành phố..." data-en="Select city...">Chọn thành phố...</span>
-                  </option>
-                  <option>TP. Hồ Chí Minh</option>
-                  <option>Hà Nội</option>
-                  <option>Đà Nẵng</option>
-                  <option>Đà Lạt</option>
-                  <option data-vi="Khác" data-en="Other">Khác</option>
-                </select>
-              </div>
-              <div class="booking-field">
-                <label>
-                  <span data-vi="Địa điểm cụ thể" data-en="Specific location">Địa điểm cụ thể</span>
-                </label>
-                <input type="text" name="location_detail"
-                  data-vi-placeholder="Công viên, studio, địa chỉ..."
-                  data-en-placeholder="Park, studio, address..."
-                  placeholder="Công viên, studio, địa chỉ...">
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset class="booking-group">
-            <legend class="booking-legend mono">
-              <span data-vi="04 — Thông tin liên hệ" data-en="04 — Contact info">04 — Thông tin liên hệ</span>
-            </legend>
-            <div class="booking-row">
-              <div class="booking-field">
-                <label>
-                  <span data-vi="Họ & Tên" data-en="Full name">Họ & Tên</span>
-                  <span class="req">*</span>
-                </label>
-                <input type="text" name="name" required
-                  data-vi-placeholder="Nguyễn Văn A"
-                  data-en-placeholder="Your name"
-                  placeholder="Nguyễn Văn A">
-              </div>
-              <div class="booking-field">
-                <label>
-                  <span data-vi="Số điện thoại" data-en="Phone number">Số điện thoại</span>
-                  <span class="req">*</span>
-                </label>
-                <input type="tel" name="phone" required
-                  data-vi-placeholder="09x xxx xxxx"
-                  data-en-placeholder="+84 9x xxx xxxx"
-                  placeholder="09x xxx xxxx">
-              </div>
-            </div>
-            <div class="booking-row" style="margin-top:16px;">
-              <div class="booking-field">
-                <label><span data-vi="Email" data-en="Email">Email</span></label>
-                <input type="email" name="email"
-                  placeholder="email@example.com">
-              </div>
-              <div class="booking-field">
-                <label><span data-vi="Ghi chú thêm" data-en="Additional notes">Ghi chú thêm</span></label>
-                <input type="text" name="notes"
-                  data-vi-placeholder="Yêu cầu đặc biệt..."
-                  data-en-placeholder="Special requests..."
-                  placeholder="Yêu cầu đặc biệt...">
-              </div>
-            </div>
-          </fieldset>
-
-          <div class="booking-submit-row">
-            <button type="submit" class="btn btn-fill booking-submit">
-              <span data-vi="Gửi yêu cầu đặt lịch →" data-en="Send booking request →">Gửi yêu cầu đặt lịch →</span>
-            </button>
-            <p class="mono booking-note">
-              <span data-vi="Xác nhận & invoice trong 24 giờ." data-en="Confirmation & invoice within 24 hours.">Xác nhận & invoice trong 24 giờ.</span>
-            </p>
-          </div>
-
-        </form>
-      </div>
 
     </div><!-- /contact-panels -->
 

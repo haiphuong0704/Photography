@@ -38,9 +38,11 @@ class StudioModel {
   static getQuote() {
     return {
       text:    '"Không ai bảo em cười đi cả —<br>vậy mà ảnh đẹp nhất đời."',
+      enText:  '"Nobody told me to smile —<br>and those turned out to be my best photos ever."',
       author:  'Minh Anh',
       role:    'Cô dâu',
-      context: 'Bộ ảnh cưới · 03/2026'
+      context: 'Bộ ảnh cưới · 03/2026',
+      enContext: 'Wedding shoot · 03/2026'
     };
   }
 

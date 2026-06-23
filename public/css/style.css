@@ -3301,8 +3301,10 @@ details[open] .faq-icon::after{opacity:0;transform:translate(-50%,-50%) rotate(9
 .plcy-section--dark .plcy-callout{background:rgba(214,255,58,.06);}
 .plcy-callout-icon{
   font-family:'Playfair Display',serif;
-  font-size:1.8rem;font-weight:700;
-  color:var(--volt);line-height:1;flex-shrink:0;
+  font-size:1.8rem;
+  font-weight:700;
+  color: var(--rust);
+  line-height:1;flex-shrink:0;
 }
 .plcy-callout--info .plcy-callout-icon{color:var(--cobalt);}
 .plcy-callout p{margin:0!important;font-size:.9rem!important;}

@@ -241,9 +241,10 @@
   <span class="quote-bg-mark" aria-hidden="true">"</span>
   <div class="wrap quote-grid">
     <div class="quote-inner reveal">
-      <p class="quote-text display"
-         data-vi="<%- quote.text %>"
-         data-en="<%- quote.enText || quote.text %>"><%- quote.text %></p>
+      <p class="quote-text display quote-text--vi"><%- quote.text %></p>
+      <% if (quote.enText) { %>
+      <p class="quote-text display quote-text--en" style="display:none;"><%- quote.enText %></p>
+      <% } %>
       <div class="quote-credit">
         <div class="quote-credit-info">
           <span class="quote-credit-name"><%= quote.author %></span>
@@ -278,6 +279,22 @@
     </div>
   </div>
 </section>
+<% if (quote.enText) { %>
+<script>
+(function(){
+  var vi = document.querySelector('.quote-text--vi');
+  var en = document.querySelector('.quote-text--en');
+  if(!vi || !en) return;
+  function applyLang(l){
+    if(l === 'en'){ vi.style.display='none'; en.style.display=''; }
+    else          { en.style.display='none'; vi.style.display=''; }
+  }
+  applyLang(localStorage.getItem('lech-lang') || 'vi');
+  window.addEventListener('storage', function(e){ if(e.key==='lech-lang') applyLang(e.newValue||'vi'); });
+  document.addEventListener('lech-lang-change', function(e){ applyLang(e.detail||'vi'); });
+})();
+</script>
+<% } %>
 
 <!-- ---------- BLOG PREVIEW ---------- -->
 <% if (recentPosts && recentPosts.length) { %>
